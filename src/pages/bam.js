@@ -10,30 +10,19 @@ const Bam = () => ({
       <div>
         <Header title="Bäm" />
         <ContentWrapper>
-          <h2>Intro</h2>
+          <h2 id="toc_0">Products with the extra bäm effect</h2>
+
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-            ut fermentum massa justo sit amet risus. Maecenas sed diam eget
-            risus varius blandit sit amet non magna. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec id elit non mi porta gravida at eget metus. Sed posuere
-            consectetur est at lobortis.
+            Bäm is a brand and registered trademark by Dr. Johannes Jacubeit,
+            under which he has bundled and marketed various smaller projects and
+            products in the past. The common denominator is the motto &quot;Bäm
+            - make things happen.&quot;
           </p>
+
           <p>
-            Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac
-            cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
-            justo sit amet risus. Maecenas faucibus mollis interdum. Aenean eu
-            leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-            Donec ullamcorper nulla non metus auctor fringilla.
-          </p>
-          <p>
-            Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed
-            diam eget risus varius blandit sit amet non magna. Vestibulum id
-            ligula porta felis euismod semper. Donec sed odio dui. Sed posuere
-            consectetur est at lobortis. Aenean lacinia bibendum nulla sed
-            consectetur. Maecenas sed diam eget risus varius blandit sit amet
-            non magna.
+            Bäm - Afterclimb is a soothing gel for the hands, which provides for
+            a faster healing of the skin after sports climbing. I have provided
+            packaging and web designs for it.
           </p>
         </ContentWrapper>
         <Footer />

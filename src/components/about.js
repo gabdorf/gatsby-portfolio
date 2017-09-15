@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import styled from 'styled-components'
 import { Page, Row, Column } from 'hedron'
 
@@ -18,7 +19,7 @@ const ProfileImageWrapper = styled.div`
     height: 470px;
   }
   @media (min-width: 1400px) {
-    border:none;
+    border: none;
   }
 `
 
@@ -34,7 +35,7 @@ export default class About extends React.Component {
           <ColorBar color="#FFA6A6" />
           <p>
             <strong>
-              Hi. I'm Gabriel, a designer and festival promoter
+              Hi. I'm Gabriel, a designer and festival creater
               based&nbsp;in&nbsp;Berlin.
             </strong>
           </p>
@@ -46,8 +47,8 @@ export default class About extends React.Component {
             I contributed designs to several side projects during my time at
             university and decided to pursue this path full time after
             graduation. Currently I am working with{' '}
-            <a href="https://lifetime.eu">LifeTime</a>, raising a child and
-            learning how to code.
+            <Link to="/lifetime">LifeTime</Link>, raising a child and learning
+            how to&nbsp;code.
           </p>
         </Column>
       </Row>

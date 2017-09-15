@@ -231,9 +231,13 @@ export default class Spirograph extends React.Component {
 
   render() {
     return (
-      <CanvasDiv onMouseDown={this.speedUp} onMouseUp={this.speedDown} innerRef={canvasDiv => (this.canvasDiv = canvasDiv)}>
+      <CanvasDiv
+        onMouseDown={this.speedUp}
+        onMouseUp={this.speedDown}
+        innerRef={canvasDiv => (this.canvasDiv = canvasDiv)}
+      >
         <Canvas innerRef={movingCanvas => (this.movingCanvas = movingCanvas)} />
-        <Canvas 
+        <Canvas
           innerRef={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
         />
       </CanvasDiv>

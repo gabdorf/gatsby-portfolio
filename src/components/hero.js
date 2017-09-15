@@ -18,30 +18,31 @@ const FrontPageHeader = styled.div`
 `
 
 const LogoWrapper = styled.div`
+  color: #333;
   margin: 24px 0 0 0px;
   @media (min-width: 768px) {
     margin: 24px 0 0 24px;
   }
 `
 
-const Name = styled.div`
+const Name = styled.h1`
   font-family: 'bebasneuebold', Helvetica, sans-serif;
   font-size: 60px;
   line-height: 60px;
   text-align: center;
+  margin: 0;
   @media (min-width: 500px) {
     font-size: 70px;
   }
   @media (min-width: 768px) {
     font-size: 80px;
-    margin: 0px 0px 8px 0;
     text-align: left;
   }
 `
 
 const Role = styled.div`
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 1.2em;
+  line-height: 1em;
   text-align: center;
   @media (min-width: 768px) {
     text-align: left;

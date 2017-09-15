@@ -35,7 +35,7 @@ const Projects = () => ({
             logo={BamLogo()}
             url="/bam"
             title="Bäm"
-            abstract="Climbing products that give you the extra bäm effect."
+            abstract="Climbing products and other stuff that gives you the extra bäm effect."
           />
         </Column>
       </Row>

@@ -55,9 +55,9 @@ const Title = styled.div`
   text-align: center;
 `
 
-const ArticleHeader = ({props}) => ({
+const ArticleHeader = ({ props }) => ({
   render() {
-      console.log(this.props.coverImage)
+    console.log(this.props.coverImage)
     return (
       <div>
         <ArticleHeaderSection>

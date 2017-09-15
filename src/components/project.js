@@ -17,10 +17,11 @@ const ProjectWrapper = styled.div`
 
 const Description = styled.div`@media (max-width: 660px) {margin-top: 32px;}`
 
-const Title = styled.div`
-  font-size: 24px;
+const Title = styled.h3`
+  color: #333;
+  font-size: 1.6em;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
 `
 
 const Abstract = styled.div`margin-bottom: 16px;`

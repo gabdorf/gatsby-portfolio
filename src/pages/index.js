@@ -17,11 +17,59 @@ import Notes from '../components/notes'
 import Footer from '../components/footer'
 
 injectGlobal`
+/*  @font-face {
+    font-family: 'bebasneue';
+    src: url('bebasneuethin.woff2') format('woff2'),
+         url('bebasneuethin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+  }
+
   @font-face {
-    font-family: 'bebasneuebold';
+    font-family: 'bebasneue';
+    src: url('bebasneuelight.woff2') format('woff2'),
+         url('bebasneuelight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'bebasneue';
+    src: url('bebasneuebook.woff2') format('woff2'),
+         url('bebasneuebook.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'bebasneue';
+    src: url('bebasneueregular.woff2') format('woff2'),
+         url('bebasneueregular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }*/
+
+  @font-face {
+    font-family: 'bebasneue';
     src: url('bebasneuebold.woff2') format('woff2'),
          url('bebasneuebold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'charter';
+    src: url('charterregular.woff2') format('woff2');
+    src: url('charterregular.woff') format('woff');
     font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'charter';
+    src: url('charterbold.woff2') format('woff2');
+    src: url('charterbold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
   }
 
@@ -35,6 +83,19 @@ injectGlobal`
     :visited {
       color: #333;
     }
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p+ h2 {
+    margin-top: 1.2em;
+  }
+
+  p + h3 {
+    margin-top: 1.5em;
   }
 `
 
