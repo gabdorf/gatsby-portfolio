@@ -17,38 +17,6 @@ import Notes from '../components/notes'
 import Footer from '../components/footer'
 
 injectGlobal`
-/*  @font-face {
-    font-family: 'bebasneue';
-    src: url('bebasneuethin.woff2') format('woff2'),
-         url('bebasneuethin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'bebasneue';
-    src: url('bebasneuelight.woff2') format('woff2'),
-         url('bebasneuelight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'bebasneue';
-    src: url('bebasneuebook.woff2') format('woff2'),
-         url('bebasneuebook.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'bebasneue';
-    src: url('bebasneueregular.woff2') format('woff2'),
-         url('bebasneueregular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }*/
-
   @font-face {
     font-family: 'bebasneue';
     src: url('bebasneuebold.woff2') format('woff2'),
@@ -103,13 +71,17 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Helmet
-          title="Gatsby Default Starter"
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+        <Helmet>
+          <title>Gabriel Adorf</title>
+          <meta name='description' content='Sample' />
+          <meta name='keywords' content='sample, something' />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="theme-color" content="#ffffff" />
+        </Helmet>
         <Hero />
         <ScrollableAnchor id={'about'}>
           <Section>

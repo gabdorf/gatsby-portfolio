@@ -29,13 +29,13 @@ const Projects = () => ({
             logo={KellerkindLogo()}
             url="/kellerkind"
             title="Kellerkind"
-            abstract="A social event company organizing two open air festivals with 16.000 yearly event visitors north of munich."
+            abstract="A social event company organizing two open air festivals with 15.000 yearly event visitors north of munich."
           />
           <Project
             logo={BamLogo()}
             url="/bam"
             title="Bäm"
-            abstract="Climbing products and other stuff that gives you the extra bäm effect."
+            abstract="Climbing products and other stuff that gives you the bäm effect."
           />
         </Column>
       </Row>
