@@ -3,15 +3,13 @@ import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 
 const CanvasDiv = styled.div`
-  /*background: red;*/
   width: 50%;
   margin: auto;
   height: 1000px;
-  z-index: 99;
+  z-index: -99;
 `
 
 const Canvas = styled.canvas`
-  /*border: 1px solid limegreen;*/
   position: absolute;
   top: 25vh;
   bottom: 0;
@@ -234,6 +232,8 @@ export default class Spirograph extends React.Component {
       <CanvasDiv
         onMouseDown={this.speedUp}
         onMouseUp={this.speedDown}
+        onTouchStart={this.speedUp}
+        onTouchEnd={this.speedDown}
         innerRef={canvasDiv => (this.canvasDiv = canvasDiv)}
       >
         <Canvas innerRef={movingCanvas => (this.movingCanvas = movingCanvas)} />

@@ -1,17 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/article/header'
-import CoverImage from '../img/articles/lifetime/lifetimeCover.jpg'
+
+import CoverImage from '../components/article/coverimage'
 import ContentWrapper from '../components/article/contentwrapper'
 import Footer from '../components/footer'
+import TwoImage from '../components/article/twoimage'
+import LargeImage from '../components/article/largeimage'
+import FullSizeImage from '../components/article/fullsizeimage'
 
-const Image = styled.div`
-  background: #cdcdcd;
-  background-image: url(${CoverImage});
-  background-size: cover;
-  background-position: 73.5%;
+import LifeTimeCoverImage from '../img/articles/lifetime/lifetimeCover.jpg'
+import SilosImage from '../img/articles/lifetime/silos.jpg'
+import LifeTimeUIImage from '../img/articles/lifetime/lifetimeUI.jpg'
+import LifeTimeMobileImage from '../img/articles/lifetime/lifetimePhoneDocuments.jpg'
+import Screenshot1 from '../img/articles/lifetime/screenshot1.jpg'
+import Screenshot2 from '../img/articles/lifetime/screenshot2.jpg'
+import LifeTimeDesktopImage from '../img/articles/lifetime/lifetimeDesktop.jpg'
+import LifeTimeHubImage from '../img/articles/lifetime/lifetimeHub.jpg'
+import LifeTimeHubImage2 from '../img/articles/lifetime/lifetimeHub2.jpg'
+
+const EmbedContainer = styled.div`
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
   width: 100%;
-  height: 82vh;
+  height: auto;
+  @media (min-width: 1000px) {
+    width: 1000px;
+    height: 562px;
+    padding-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
+
+const Video = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 const LifeTime = () => ({
@@ -19,7 +48,7 @@ const LifeTime = () => ({
     return (
       <div>
         <Header title="LifeTime" />
-        <Image />
+        <CoverImage src={LifeTimeCoverImage} focusX={'73.5%'} focusY={'50%'} />
         <ContentWrapper>
           <h2 id="toc_0">Data flow in medicine is broken </h2>
 
@@ -35,19 +64,19 @@ const LifeTime = () => ({
 
           <p>
             Historically, the fact that people are not granted direct access to
-            their own health data can be explained by the historic role of
-            doctors as &quot;gods in white&quot;. Patients weren&#39;t
-            considered as wise and educated enough to be able to have a say in
-            the matter and diagnostic details are only an overwhelming burden to
-            them. This attitude can still be found with older doctors today.
+            their own health data can be explained by the role of doctors as
+            &quot;gods in white&quot;. Patients weren&#39;t considered as wise
+            and educated enough to be able to have a say in the matter and
+            diagnostic details were considered to be only an overwhelming burden
+            to them. This attitude can still be found with older doctors today.
           </p>
 
           <p>
-            In fact, I believe only in the field of psychiatry/psychotherapy, it
-            sometimes is better if doctors are able to make diagnoses and take
-            notes without patients having access to them. In all other medical
-            areas, in my opinion transparency should be an absolute prerequisite
-            for medical treatment.
+            In reality, I believe only in the field of psychiatry/psychotherapy,
+            it sometimes is better if doctors are able to make diagnoses and
+            take notes without patients having access to them. In all other
+            medical areas, in my opinion transparency should be an absolute
+            prerequisite for medical treatment.
           </p>
 
           <p>
@@ -59,7 +88,9 @@ const LifeTime = () => ({
             best&quot; without trying to figure on which basis decisions are
             made.
           </p>
-
+        </ContentWrapper>
+        <FullSizeImage src={SilosImage} />
+        <ContentWrapper>
           <h3 id="toc_2">
             Doctors don&#39;t have access to the medical history of their
             patients
@@ -74,8 +105,8 @@ const LifeTime = () => ({
             of these folders varies from place to place. In some facilities, the
             documents are all scanned in. In others, the doctor leafs through
             them briefly just before the treatment, hoping that something
-            accidentally strikes his eye. In other facilities, the paper stacks
-            are simply ignored.
+            accidentally strikes her or his eye. In other facilities, the paper
+            stacks are simply ignored.
           </p>
 
           <p>
@@ -83,14 +114,14 @@ const LifeTime = () => ({
             minutes for one treatment and have no chance to process big stacks
             of files during this time. If a certain information of an earlier
             treatment is urgently needed, the current standard process is a
-            phone call and a subsequent direct transmission of the from doctor
-            to doctor by fax. A technology from the 1970ies that nobody else
-            wants to use anymore since 20 years ago.
+            phone call and a subsequent direct transmission of the file from
+            doctor to doctor by fax. A technology from the 1970ies that almost
+            nobody else has wanted to use anymore for the last 20 years.
           </p>
 
-          <h2 id="toc_3">
-            Computers cannot help doctors to take medical decisions.
-          </h2>
+          <h3 id="toc_3">
+            Computers can not help doctors to take medical decisions.
+          </h3>
 
           <p>
             If previous findings are not digital and do not contain any
@@ -106,7 +137,7 @@ const LifeTime = () => ({
             data they collect themselves during treatment or on the few pieces
             of information that are collected through questionaires, handed out
             to patients preceding the appointement. A tiresome repetitive work
-            for patients and who is really abe to reproduce all the medical
+            for patients and who is really able to reproduce all the medical
             details of family members by heart? This information could be very
             valuable for a better diagnosis.
           </p>
@@ -138,7 +169,9 @@ const LifeTime = () => ({
             aggregate this data base in a meaningful and understandable way and
             thus enable raw computing power to be used for medical purposes.
           </p>
-
+        </ContentWrapper>
+        <FullSizeImage src={LifeTimeUIImage} />
+        <ContentWrapper>
           <h3 id="toc_6">Designing mobile first</h3>
 
           <p>
@@ -183,10 +216,10 @@ const LifeTime = () => ({
           <p>
             The assignment between physician and patient is created using the
             insurance number and the mobile phone number when asynchronously
-            sending data via LifeTime. Normally, doctors&#39; practices are
-            already have both stored in their systems. It is also possible to
-            send files directly to patients via a local encrypted WLAN without
-            any patient information at all.
+            sending data via LifeTime. Normally, doctors&#39; offices already
+            have both stored in their systems. It is also possible to send files
+            directly to patients via a local encrypted WLAN without any patient
+            information at all.
           </p>
 
           <p>
@@ -195,7 +228,9 @@ const LifeTime = () => ({
             is being discontinued in the future, the patient has enough time to
             export the data to another system.
           </p>
-
+        </ContentWrapper>
+        <FullSizeImage src={LifeTimeMobileImage} />
+        <ContentWrapper>
           <h3 id="toc_7">The components of LifeTime</h3>
 
           <p>
@@ -251,7 +286,9 @@ const LifeTime = () => ({
             that the app is much better accepted when mostly using known
             patterns and only teaches new patterns in a bite-size manner.
           </p>
-
+        </ContentWrapper>
+        <TwoImage src1={Screenshot1} src2={Screenshot2} maxHeight={'900px'} />
+        <ContentWrapper>
           <h3 id="toc_9">The best interface is no interface</h3>
 
           <p>
@@ -272,7 +309,17 @@ const LifeTime = () => ({
             LifeTime Desktop Interface became invisible. It only appears when it
             is needed.
           </p>
-
+        </ContentWrapper>
+        <EmbedContainer>
+          <Video
+            width="850"
+            height="478"
+            src="https://www.youtube.com/embed/dazrp7Ni7do?rel=0&amp;showinfo=0"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </EmbedContainer>
+        <ContentWrapper>
           <p>
             Doctors only need to log in once. From this moment on, they just
             have to click on <code>print</code> or alternatively put a file in a
@@ -288,7 +335,9 @@ const LifeTime = () => ({
             but the brainstorming and mockup process to achieve an optimal UX
             for the practice team.
           </p>
-
+        </ContentWrapper>
+        <LargeImage src={LifeTimeDesktopImage} />
+        <ContentWrapper>
           <h3 id="toc_10">The hardware</h3>
 
           <p>
@@ -307,7 +356,13 @@ const LifeTime = () => ({
             Hofmann helped me out to translate the files into CAD and printed
             the first prototypes using a laser-sintering process.
           </p>
-
+        </ContentWrapper>
+        <TwoImage
+          src1={LifeTimeHubImage2}
+          src2={LifeTimeHubImage}
+          maxHeight={'430px'}
+        />
+        <ContentWrapper>
           <h2 id="toc_11">Outlook</h2>
 
           <p>

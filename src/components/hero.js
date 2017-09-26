@@ -26,7 +26,7 @@ const LogoWrapper = styled.div`
 `
 
 const Name = styled.h1`
-  font-family: 'bebasneuebold', Helvetica, sans-serif;
+  font-family: 'bebasneue', Helvetica, sans-serif;
   font-size: 60px;
   line-height: 60px;
   text-align: center;
@@ -74,8 +74,12 @@ const SocialLink = styled.a``
 const SpirographWrapper = styled.div``
 
 const ArrowWrapper = styled.div`
+  display: none;
   position: absolute;
   bottom: 32px;
+  @media (min-width: 500px) {
+    display: block;
+  }
   @media (min-width: 768px) {
     bottom: 32px;
   }

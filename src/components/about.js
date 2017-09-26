@@ -11,7 +11,7 @@ const ProfileImageWrapper = styled.div`
   border-bottom: 1px solid #e0e0e0;
   background-image: url(${ProfileImage});
   background-size: cover;
-  background-position: 50px 22%;
+  background-position: 20% 22%;
   height: 280px;
   @media (min-width: 768px) {
     background-position: 60% center;
@@ -35,20 +35,20 @@ export default class About extends React.Component {
           <ColorBar color="#FFA6A6" />
           <p>
             <strong>
-              Hi. I'm Gabriel, a designer and festival creater
-              based&nbsp;in&nbsp;Berlin.
+              Hi. I'm Gabriel, an interface and UX designer based
+              in&nbsp;Berlin.
             </strong>
           </p>
           <p>
-            I studied engineering & economy at the technical university berlin,
-            but never lost my passion for design out of view.
+            I studied business & engineering at the Technical University and
+            soon after graduation rediscovered my passion for design.
           </p>
           <p style={{ marginBottom: 0 }}>
-            I contributed designs to several side projects during my time at
-            university and decided to pursue this path full time after
-            graduation. Currently I am working with{' '}
-            <Link to="/lifetime">LifeTime</Link>, raising a child and learning
-            how to&nbsp;code.
+            Since then I have always tried to balance the understanding of the
+            technical aspects of creating products with the aesthetic and
+            usability requirements from a user's point of view. Currently I am
+            working with <Link to="/lifetime">LifeTime</Link>, raising a child
+            and learning how to&nbsp;code.
           </p>
         </Column>
       </Row>

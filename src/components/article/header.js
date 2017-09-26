@@ -25,7 +25,7 @@ const LogoLink = styled(Link)`
 `
 
 const Logo = styled.div`
-  font-family: 'bebasneuebold', Helvetica, sans-serif;
+  font-family: 'bebasneue', Helvetica, sans-serif;
   font-size: 36px;
   line-height: 32px;
 `
@@ -42,11 +42,15 @@ const SocialIcon = styled.svg`
 const SocialLink = styled.a``
 
 const BackArrow = styled.svg`
-  margin: 24px 0 0 24px;
-  position: absolute;
-  fill: #333;
-  :hover {
-    fill: red;
+  display: none;
+  @media (min-width: 500px) {
+    margin: 24px 0 0 24px;
+    position: absolute;
+    fill: #333;
+    :hover {
+      fill: red;
+    }
+    display: block;
   }
 `
 
@@ -57,7 +61,6 @@ const Title = styled.div`
 
 const ArticleHeader = ({ props }) => ({
   render() {
-    console.log(this.props.coverImage)
     return (
       <div>
         <ArticleHeaderSection>
@@ -106,7 +109,7 @@ const ArticleHeader = ({ props }) => ({
             </SocialLink>
           </SocialIconWrapper>
         </ArticleHeaderSection>
-        <Link to="/#projects">
+        <Link to="/">
           <BackArrow
             width="28"
             height="42"
