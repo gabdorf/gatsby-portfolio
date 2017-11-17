@@ -27,6 +27,7 @@ const typography = new Typography({
     h2: {
       color: darkGray,
       fontWeight: 700,
+      fontSize: '3em',
       lineHeight: '1.3em',
     },
     h3: {
