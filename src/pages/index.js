@@ -80,8 +80,14 @@ export default class App extends React.Component {
       <div>
         <Helmet>
           <title>Gabriel Adorf</title>
-          <meta name="description" content="Sample" />
-          <meta name="keywords" content="sample, something" />
+          <meta name="description" content="Gabriel Adorf's projects" />
+          <meta name="keywords" content="design, ux, ui, product, graphic, health, climbing, app, interface, experience, festival, techno, code" />
+          <meta property="og:image" content="https://www.gabrieladorf.com/static/kellerkindCover.14f87246.jpg" />
+          <meta property="og:description" content="Gabriel Adorf's projects" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://gabrieladorf.com" />
+          <meta property="og:title" content="Gabriel Adorf" />
+
           <link
             rel="apple-touch-icon"
             sizes="180x180"
