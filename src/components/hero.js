@@ -113,7 +113,7 @@ export default class Hero extends React.Component {
         <FrontPageHeader>
           <LogoWrapper>
             <Name>Gabriel Adorf</Name>
-            <Role>Product Design</Role>
+            <Role>UI / UX Design</Role>
           </LogoWrapper>
           <SocialIconWrapper>
             <SocialLink href="https://twitter.com/gabdorf">

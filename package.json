@@ -10,9 +10,6 @@
     "gatsby-plugin-react-helmet": "^1.0.3",
     "gatsby-plugin-styled-components": "^1.0.3",
     "gatsby-plugin-typography": "^1.7.6",
-    "gatsby-source-filesystem": "^1.4.12",
-    "gatsby-transformer-remark": "^1.7.7",
-    "gatsby-transformer-yaml": "^1.5.7",
     "hedron": "^0.7.1",
     "lodash": "^4.17.4",
     "react-scrollable-anchor": "^0.5.0"
