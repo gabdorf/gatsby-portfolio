@@ -1,7 +1,7 @@
 # gabriel-adorf-portfolio
 Gabriel Adorf's personal website
 
-Feel free to build your own portfolio by forking and customizing my page.
-Built with gatsby, styled components and hedron (https://github.com/JSBros/hedron)
+Feel free to build your own portfolio by forking and customizing this page.
+Built with [gatsby](https://github.com/gatsbyjs/gatsby), [styled components](https://github.com/styled-components/styled-components) and [hedron](https://github.com/JSBros/hedron)
 
-DM me on twitter if you have any questions.
+DM me on [twitter](https://twitter.com/gabdorf) if you have any questions.
