@@ -33,6 +33,7 @@ const typography = new Typography({
     },
     body: {
       color: lightGray,
+
     },
     strong: {
       color: darkGray,

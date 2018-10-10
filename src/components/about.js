@@ -35,8 +35,8 @@ export default class About extends React.Component {
           <ColorBar color="#FFA6A6" />
           <p>
             <strong>
-              Hi. I'm Gabriel, a user interface and user experience designer based
-              in&nbsp;Berlin.
+              Hi. I'm Gabriel, a user interface and user experience designer
+              based in&nbsp;Berlin.
             </strong>
           </p>
           <p>

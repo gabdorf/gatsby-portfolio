@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styledNormalize from 'styled-normalize'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { injectGlobal } from 'styled-components'
@@ -12,8 +13,6 @@ import Section from '../components/section'
 import About from '../components/about'
 import Projects from '../components/projects'
 import Writing from '../components/writing'
-import Photo from '../components/photo'
-import Notes from '../components/notes'
 import Footer from '../components/footer'
 
 import BebasNeueBoldWoff2 from '../fonts/bebasneuebold.woff2'
@@ -24,6 +23,9 @@ import CharterBoldWoff2 from '../fonts/charterbold.woff2'
 import CharterBoldWoff from '../fonts/charterbold.woff'
 
 injectGlobal`
+
+  /* ${styledNormalize} */
+
   @font-face {
     font-family: 'bebasneue';
     src: url(${BebasNeueBoldWoff2}) format('woff2'),
@@ -60,9 +62,20 @@ injectGlobal`
     }
   }
 
+  html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
   }
 
   p+ h2 {
@@ -81,8 +94,14 @@ export default class App extends React.Component {
         <Helmet>
           <title>Gabriel Adorf</title>
           <meta name="description" content="Gabriel Adorf's projects" />
-          <meta name="keywords" content="design, ux, ui, product, graphic, health, climbing, app, interface, experience, festival, techno, code" />
-          <meta property="og:image" content="https://www.gabrieladorf.com/static/kellerkindCover.14f87246.jpg" />
+          <meta
+            name="keywords"
+            content="design, ux, ui, product, graphic, health, climbing, app, interface, experience, festival, techno, code"
+          />
+          <meta
+            property="og:image"
+            content="https://www.gabrieladorf.com/static/kellerkindCover.14f87246.jpg"
+          />
           <meta property="og:description" content="Gabriel Adorf's projects" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://gabrieladorf.com" />
@@ -123,12 +142,6 @@ export default class App extends React.Component {
         <Section>
           <Writing />
         </Section>
-        {/*        ds<Section>
-          <Photo />
-        </Section>
-        <Section>
-          <Notes />
-        </Section>*/}
         <Footer />
       </div>
     )

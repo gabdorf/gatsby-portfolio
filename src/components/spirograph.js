@@ -1,26 +1,47 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import debounce from 'lodash/debounce'
+import media from '../utils/media-queries'
 
-const CanvasDiv = styled.div`
-  width: 50%;
-  margin: auto;
-  height: 1000px;
-  z-index: -99;
+const Div = styled.div``
+
+const CanvasWrapper = styled.div`
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
-const Canvas = styled.canvas`
-  position: absolute;
-  top: 25vh;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  margin: auto;
-  transform: translateX(-50%);
-  z-index: -99;
-  @media (min-width: 768px) {
-    top: -10vh;
+const Rotate = keyframes`
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(-360deg);
+  }
+`
+
+// const Canvas = styled.canvas.attrs({
+//   style: props => ({
+//     background: props.background,
+//   })
+// })`
+//   animation:
+//     ${Rotate} 30s linear infinite;
+//   ${media.sm`
+//     margin-top: 25vh;
+//   `};
+// `
+
+const Canvas = styled.canvas`
+  animation:
+    ${Rotate} 30s linear infinite;
+  ${media.sm`
+    margin-top: 25vh;
+  `};
 `
 
 let windowWidth
@@ -29,14 +50,20 @@ let mousePressed = false
 export default class Spirograph extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      completed: false,
+      background: "green",
+    }
+    this._onClick = this._onClick.bind(this)
     this.draw = this.draw.bind(this)
     this._resizeHandler = debounce(() => {
       if (window.innerWidth != windowWidth) {
         //check if window size has actually changed bc of iOS Safari Bug
-        this.movingCanvas.width = Math.min(1000, window.innerWidth)
-        this.movingCanvas.height = Math.min(1000, window.innerHeight)
-        this.plottingCanvas.width = Math.min(1000, window.innerWidth)
-        this.plottingCanvas.height = Math.min(1000, window.innerHeight)
+        this.canvasSize = Math.min(1000, window.innerWidth, window.innerHeight)
+        this.movingCanvas.width = this.canvasSize
+        this.movingCanvas.height = this.canvasSize
+        this.plottingCanvas.width = this.canvasSize
+        this.plottingCanvas.height = this.canvasSize
         this.newSpirograph()
         windowWidth = window.innerWidth
       } else {
@@ -50,14 +77,17 @@ export default class Spirograph extends React.Component {
 
     windowWidth = window.innerWidth
 
-    this.pctx = this.movingCanvas.getContext('2d')
-    this.mctx = this.plottingCanvas.getContext('2d')
+    this.mctx = this.movingCanvas.getContext('2d')
+    this.pctx = this.plottingCanvas.getContext('2d')
 
-    this.movingCanvas.width = Math.min(1000, window.innerWidth)
-    this.movingCanvas.height = Math.min(1000, window.innerHeight)
-    this.plottingCanvas.width = Math.min(1000, window.innerWidth)
-    this.plottingCanvas.height = Math.min(1000, window.innerHeight)
+    this.canvasSize = Math.min(1000, window.innerWidth, window.innerHeight)
+    this.movingCanvas.width = this.canvasSize
+    this.movingCanvas.height = this.canvasSize
+    this.plottingCanvas.width = this.canvasSize
+    this.plottingCanvas.height = this.canvasSize
 
+    console.log('mounted')
+    this.newSpirograph()
     window.requestAnimationFrame(this.draw)
   }
 
@@ -66,7 +96,7 @@ export default class Spirograph extends React.Component {
   }
 
   shouldComponentUpdate() {
-    return false
+    return true
   }
 
   // helper function
@@ -88,14 +118,27 @@ export default class Spirograph extends React.Component {
     mousePressed = false
   }
 
+  delay = t => new Promise(resolve => setTimeout(resolve, t))
+
   newSpirograph() {
+    console.log('new spiro')
+
+    this.setState({
+      completed: false,
+      background: "none",
+    })
+    console.log('completed: ' + this.state.completed)
+    console.log('background: ' + this.state.background)
     // display config
-    this.size = Math.max(140, this.canvasDiv.offsetWidth / 2.8)
+    this.size = Math.min(
+      498,
+      Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
+    )
     this.dotSize = 7
-    this.spiroColor = '#777'
+    this.spiroColor = this.props.color;
     this.circleColor = '#ccc'
     if (mousePressed == false) {
-      this.speed = 0.012
+      this.speed = this.props.speed;
     }
 
     // clear canvas
@@ -191,8 +234,9 @@ export default class Spirograph extends React.Component {
     this.mctx.stroke()
 
     // ---------- PLOTTING CANVAS ----------
+
+    //check if spirograph is uncomplete
     if (this.angle - this.speed < this.N * 2 * Math.PI) {
-      //check if spirograph is uncomplete
       this.pctx.beginPath()
       this.pctx.moveTo(this.spiroX, this.spiroY)
       this.spiroX =
@@ -213,8 +257,19 @@ export default class Spirograph extends React.Component {
       this.pctx.stroke()
     } else {
       // if completed, start new spirograph
-      this.newSpirograph()
-      window.requestAnimationFrame(this.draw)
+      console.log('completed')
+
+      this.setState({
+        completed: true,
+        background: "red",
+      })
+      console.log('completed: ' + this.state.completed)
+      console.log('background: ' + this.state.background)
+      this.mctx.clearRect(0, 0, this.movingCanvas.width, this.movingCanvas.height)
+      this.delay(3000)
+        .then(() => this.newSpirograph())
+        .then(() => window.requestAnimationFrame(this.draw))
+
       return
     }
 
@@ -223,24 +278,40 @@ export default class Spirograph extends React.Component {
     this.gearY = (1 - this.gearRadius) * Math.sin(this.angle) * this.size
     this.angle += this.speed
 
-    // draw next frame
+    // // draw next frame
     window.requestAnimationFrame(this.draw)
+  }
+
+  _onClick() {
+    console.log("clicked");
   }
 
   render() {
     return (
-      <CanvasDiv
-        onMouseDown={this.speedUp}
-        onMouseUp={this.speedDown}
-        onTouchStart={this.speedUp}
-        onTouchEnd={this.speedDown}
-        innerRef={canvasDiv => (this.canvasDiv = canvasDiv)}
-      >
-        <Canvas innerRef={movingCanvas => (this.movingCanvas = movingCanvas)} />
-        <Canvas
-          innerRef={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
-        />
-      </CanvasDiv>
+      <div>
+        <CanvasWrapper
+          onMouseDown={this.speedUp}
+          onMouseUp={this.speedDown}
+          onTouchStart={this.speedUp}
+          onTouchEnd={this.speedDown}
+        >
+          <Canvas
+            background={this.state.background}
+            innerRef={movingCanvas => (this.movingCanvas = movingCanvas)}
+          />
+        </CanvasWrapper>
+        <CanvasWrapper
+          onMouseDown={this.speedUp}
+          onMouseUp={this.speedDown}
+          onTouchStart={this.speedUp}
+          onTouchEnd={this.speedDown}
+        >
+          <Canvas
+            background={this.state.background}
+            innerRef={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
+          />
+        </CanvasWrapper>
+      </div>
     )
   }
 }

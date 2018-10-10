@@ -1,90 +1,94 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import media from '../utils/media-queries'
 import styled from 'styled-components'
 
 import Spirograph from '../components/spirograph'
 
-const HeroSection = styled.div`height: 100vh;`
+const HeroSection = styled.div`
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+`
 
 const FrontPageHeader = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
+  justify-content: space-between;
+  flex-direction: row;
+  flex: 0 0 auto;
+  ${media.sm`
+    display: block;
+  `};
+  z-index: 10;
 `
 
 const LogoWrapper = styled.div`
   color: #333;
-  margin: 24px 0 0 0px;
-  @media (min-width: 768px) {
-    margin: 24px 0 0 24px;
-  }
+  padding: 24px 0 24px 24px;
+  ${media.sm`
+    padding: 24px 0 0 0;
+  `};
 `
 
 const Name = styled.h1`
   font-family: 'bebasneue', Helvetica, sans-serif;
-  font-size: 60px;
+  font-size: 80px;
   line-height: 60px;
-  text-align: center;
+  text-align: left;
   margin: 0;
-  @media (min-width: 500px) {
+  user-select: none;
+  ${media.md`
     font-size: 70px;
-  }
-  @media (min-width: 768px) {
-    font-size: 80px;
-    text-align: left;
-  }
+    text-align: center;
+  `} ${media.sm`
+    font-size: 60px;
+    text-align: center;
+  `};
 `
 
 const Role = styled.div`
   font-size: 1.2em;
   line-height: 1em;
-  text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
+  text-align: left;
+  user-select: none;
+  ${media.sm`
+    text-align: center;
+  `};
 `
 
 const SocialIconWrapper = styled.div`
   display: flex;
-  padding: 16px;
-  justify-content: center;
-  @media (min-width: 768px) {
-    padding: 24px;
-  }
+  padding: 24px 24px 24px 0;
+  ${media.sm`
+    justify-content: center;
+    padding: 8px;
+  `};
 `
 
 const SocialIcon = styled.svg`
-  margin: 0 4px 0 4px;
-  @media (min-width: 768px) {
-    margin-left: 8px;
-  }
+  /* margin: 4px;
+  ${media.sm`
+    margin-left: 0 4px 0 4px;
+  `} */
   fill: #333;
   :hover {
     fill: red;
   }
 `
 
-const SocialLink = styled.a``
-
-const SpirographWrapper = styled.div``
-
-const ArrowWrapper = styled.div`
-  display: none;
-  position: absolute;
-  bottom: 32px;
-  @media (min-width: 500px) {
-    display: block;
-  }
-  @media (min-width: 768px) {
-    bottom: 32px;
-  }
-  width: 100%;
+const SocialLink = styled.a`
+  margin: 4px;
+  ${media.sm`
+    margin-left: 0 4px 0 4px;
+  `}
+  width: 48px;
+  height: 48px;
 `
+
+const Spacer = styled.div`flex: 1 1 0;`
+
+const ArrowWrapper = styled.div`flex: 0 0 0;`
 
 const ArrowCenter = styled.div`
   margin: 0 auto;
@@ -93,38 +97,43 @@ const ArrowCenter = styled.div`
   height: 100px;
 `
 
-const ArrowLink = styled.a`display: block;`
+const ArrowLink = styled.a`
+  display: block;
+  height: 100px;
+  width: 100px;
+`
 
 const Arrow = styled.svg`
-  visibility: hidden;
   fill: #dcdcdc;
+  height: 100px;
+  width: 100px;
   :hover {
     fill: #555;
   }
-  @media (min-width: 500px) {
-    visibility: visible;
-  }
+  ${media.sm`
+    display: none;
+  `};
 `
 
 export default class Hero extends React.Component {
   render() {
     return (
       <HeroSection>
+        <Spirograph color="#333" speed={0.012} />
         <FrontPageHeader>
           <LogoWrapper>
-            <Name>Gabriel Adorf</Name>
+            <Name>Gabriel&nbsp;Adorf</Name>
             <Role>UI / UX Design</Role>
           </LogoWrapper>
           <SocialIconWrapper>
             <SocialLink href="https://twitter.com/gabdorf">
               <SocialIcon
-                width="50"
+                width="48"
                 height="48"
-                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-              >
+              > 
                 <path
-                  d="M12.478 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.13-.477-4.402-1.292 1.524.18 3.045-.244 4.252-1.19-1.256-.022-2.317-.853-2.684-1.994.45.086.895.06 1.298-.05-1.38-.277-2.335-1.52-2.304-2.852.388.215.83.344 1.3.36-1.278-.856-1.64-2.545-.888-3.836 1.416 1.738 3.533 2.88 5.92 3-.42-1.795.944-3.526 2.8-3.526.824 0 1.57.35 2.095.907.654-.128 1.27-.368 1.824-.697-.214.67-.67 1.233-1.262 1.59.58-.07 1.135-.225 1.65-.454-.385.578-.87 1.084-1.434 1.49z"
+                  d="M24 0C10.746 0 0 10.746 0 24s10.746 24 24 24 24-10.746 24-24S37.254 0 24 0zm12.132 19.29c.366 8.08-5.66 17.088-16.328 17.088-3.244 0-6.262-.952-8.804-2.582 3.048.36 6.09-.488 8.504-2.378a5.758 5.758 0 0 1-5.368-3.99c.902.172 1.79.122 2.596-.098-2.762-.556-4.67-3.044-4.608-5.706a5.73 5.73 0 0 0 2.602.718 5.753 5.753 0 0 1-1.778-7.67 16.306 16.306 0 0 0 11.84 6.002c-.838-3.592 1.888-7.054 5.598-7.054a5.74 5.74 0 0 1 4.192 1.814 11.458 11.458 0 0 0 3.648-1.394 5.768 5.768 0 0 1-2.526 3.178 11.46 11.46 0 0 0 3.298-.906 11.53 11.53 0 0 1-2.866 2.978z"
                   fillRule="nonzero"
                 />
               </SocialIcon>
@@ -157,7 +166,7 @@ export default class Hero extends React.Component {
             </SocialLink>
           </SocialIconWrapper>
         </FrontPageHeader>
-        <Spirograph />
+        <Spacer />
         <ArrowWrapper>
           <ArrowCenter>
             <ArrowLink href="#about">
