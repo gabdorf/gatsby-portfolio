@@ -43,6 +43,7 @@ const SocialLink = styled.a``
 
 const BackArrow = styled.svg`
   display: none;
+
   @media (min-width: 500px) {
     margin: 24px 0 0 24px;
     position: absolute;

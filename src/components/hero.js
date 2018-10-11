@@ -10,6 +10,7 @@ const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100vw;
 `
 
 const FrontPageHeader = styled.div`
@@ -88,7 +89,10 @@ const SocialLink = styled.a`
 
 const Spacer = styled.div`flex: 1 1 0;`
 
-const ArrowWrapper = styled.div`flex: 0 0 0;`
+const ArrowWrapper = styled.div`
+  flex: 0 0 0;
+  z-index: 10;
+`
 
 const ArrowCenter = styled.div`
   margin: 0 auto;

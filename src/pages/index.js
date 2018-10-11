@@ -67,6 +67,7 @@ injectGlobal`
     width: 100%;
     height: 100%;
     margin: 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {

@@ -3,7 +3,27 @@ import styled, { keyframes } from 'styled-components'
 import debounce from 'lodash/debounce'
 import media from '../utils/media-queries'
 
-const Div = styled.div``
+const Fade = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+
+const Div = styled.div`
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+animation:
+    ${Fade} 0.5s linear;
+`
 
 const CanvasWrapper = styled.div`
   cursor: pointer;
@@ -288,7 +308,7 @@ export default class Spirograph extends React.Component {
 
   render() {
     return (
-      <div>
+      <Div>
         <CanvasWrapper
           onMouseDown={this.speedUp}
           onMouseUp={this.speedDown}
@@ -311,7 +331,7 @@ export default class Spirograph extends React.Component {
             innerRef={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
           />
         </CanvasWrapper>
-      </div>
+      </Div>
     )
   }
 }

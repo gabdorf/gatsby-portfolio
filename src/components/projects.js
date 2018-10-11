@@ -15,7 +15,7 @@ const Projects = () => ({
     return (
       <Row>
         <Column xs={12} sm={12} md={12} lg={3} lgShift={1}>
-          <h2>Projects</h2>
+          <h2>Work</h2>
           <ColorBar color="#A6FFD7" />
         </Column>
         <Column sm={12} md={9} lg={7}>

@@ -35,20 +35,19 @@ export default class About extends React.Component {
           <ColorBar color="#FFA6A6" />
           <p>
             <strong>
-              Hi. I'm Gabriel, a user interface and user experience designer
+              Hi. I'm Gabriel, a UI and UX designer
               based in&nbsp;Berlin.
             </strong>
           </p>
           <p>
-            I studied business & engineering at the Technical University and
-            soon after graduation rediscovered my passion for design.
+            After having studied management and engineering, I became increasingly involved with the subject of design in its full spectrum. 
+          </p>
+          <p>
+            Since then I accompanied the development of numerous different digital and physical products from the first sketches up to market readiness and beyond.
           </p>
           <p style={{ marginBottom: 0 }}>
-            Since then I have always tried to balance the understanding of the
-            technical aspects of creating products with the aesthetic and
-            usability requirements from a user's point of view. Currently I am
-            working with <Link to="/lifetime">LifeTime</Link>, raising a child
-            and learning how to&nbsp;code.
+            In my work I try to balance the understanding of the technical aspects of creating products with the aesthetic and usability requirements from a user's point of view. Currently I am
+            working with <Link to="/lifetime">LifeTime</Link>.
           </p>
         </Column>
       </Row>
