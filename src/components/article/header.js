@@ -129,7 +129,7 @@ const ArticleHeader = ({ props }) => ({
               {this.props.title}
             </h1>
           </Title>
-          <ColorBar color="#A6FFD7" />
+          <ColorBar barColor="#A6FFD7" />
         </Row>
       </div>
     )

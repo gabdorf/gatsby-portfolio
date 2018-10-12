@@ -93,6 +93,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Helmet>
+          <html lang="en" />
           <title>Gabriel Adorf</title>
           <meta name="description" content="Gabriel Adorf's projects" />
           <meta

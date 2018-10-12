@@ -12,7 +12,7 @@ export default class Writing extends React.Component {
       <Row>
         <Column xs={12} sm={12} md={12} lg={3} lgShift={1}>
           <h2>Writing</h2>
-          <ColorBar color="#A6E7FF" />
+          <ColorBar barColor="#A6E7FF" />
         </Column>
         <Column sm={12} md={9} lg={7}>
           <Project

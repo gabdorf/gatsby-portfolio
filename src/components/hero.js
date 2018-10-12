@@ -80,9 +80,6 @@ const SocialIcon = styled.svg`
 
 const SocialLink = styled.a`
   margin: 4px;
-  ${media.sm`
-    margin-left: 0 4px 0 4px;
-  `}
   width: 48px;
   height: 48px;
 `
