@@ -3,7 +3,6 @@ module.exports = {
     title: `Gabriel Adorf`
   },
   plugins: [
-    '@raygesualdo/gatsby-plugin-babel-styled-components',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {

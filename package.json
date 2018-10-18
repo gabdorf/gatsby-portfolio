@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@raygesualdo/gatsby-plugin-babel-styled-components": "^1.0.1",
+    "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.21",
     "gatsby-link": "^2.0.4",
     "gatsby-plugin-google-analytics": "^2.0.6",
