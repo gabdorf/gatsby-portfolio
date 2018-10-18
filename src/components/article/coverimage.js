@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-var test
-
 const Image = styled.div`
   background: #cdcdcd;
   background-image: url(${props => props.src});
@@ -12,16 +10,8 @@ const Image = styled.div`
   height: 82vh;
 `
 
-const LargeImage = ({ props }) => ({
-  render() {
-    return (
-      <Image
-        src={this.props.src}
-        focusX={this.props.focusX}
-        focusY={this.props.focusY}
-      />
-    )
-  },
-})
+function LargeImage(props) {
+  return <Image src={props.src} focusX={props.focusX} focusY={props.focusY} />
+}
 
 export default LargeImage

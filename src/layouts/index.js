@@ -6,11 +6,7 @@ import NotFound from './notfound'
 
 const MasterLayout = ({ data }) => ({
   render() {
-    return (
-      <div>
-        {this.props.children()}
-      </div>
-    )
+    return <div>{this.props.children()}</div>
   },
 })
 

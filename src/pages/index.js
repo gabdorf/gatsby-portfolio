@@ -1,17 +1,12 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import styledNormalize from 'styled-normalize'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
 import { injectGlobal } from 'styled-components'
-import ScrollableAnchor from 'react-scrollable-anchor'
-
-import { Page, Row, Column } from 'hedron'
 
 import Hero from '../components/hero'
 import Section from '../components/section'
 import About from '../components/about'
-import Projects from '../components/projects'
+import Work from '../components/work'
 import Writing from '../components/writing'
 import Footer from '../components/footer'
 
@@ -131,16 +126,12 @@ export default class App extends React.Component {
           <meta name="theme-color" content="#ffffff" />
         </Helmet>
         <Hero />
-        <ScrollableAnchor id={'about'}>
-          <Section>
-            <About />
-          </Section>
-        </ScrollableAnchor>
-        <ScrollableAnchor id={'projects'}>
-          <Section>
-            <Projects />
-          </Section>
-        </ScrollableAnchor>
+        <Section id={'about'}>
+          <About />
+        </Section>
+        <Section id={'projects'}>
+          <Work />
+        </Section>
         <Section>
           <Writing />
         </Section>

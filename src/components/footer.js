@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Page, Row, Column } from 'hedron'
 
 const FooterSection = styled.div`
   color: #666;
@@ -13,22 +12,27 @@ const FooterSection = styled.div`
   font-family: 'bebasneue';
 `
 
-const FooterText = styled.div`margin: 20px auto 0 auto;`
+const FooterText = styled.div`
+  margin: 20px auto 0 auto;
+`
 
-const FooterLink = styled.a`color: #666 !important;`
+const FooterLink = styled.a`
+  color: #666 !important;
+`
 
-export default class Footer extends React.Component {
-  render() {
-    return (
-      <FooterSection>
-        <FooterText>
-          This page is open source, Check it out on{' '}
-          <FooterLink href="https://github.com/gabdorf/gabriel-adorf-portfolio">
-            Github
-          </FooterLink>.
-          <br />© 2017 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<FooterLink href="/imprint">Imprint</FooterLink>
-        </FooterText>
-      </FooterSection>
-    )
-  }
+function Footer() {
+  return (
+    <FooterSection>
+      <FooterText>
+        This page is open source, Check it out on{' '}
+        <FooterLink href="https://github.com/gabdorf/gabriel-adorf-portfolio">
+          Github
+        </FooterLink>
+        .<br />© 2017 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <FooterLink href="/imprint">Imprint</FooterLink>
+      </FooterText>
+    </FooterSection>
+  )
 }
+
+export default Footer

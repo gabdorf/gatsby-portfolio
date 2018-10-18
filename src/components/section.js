@@ -1,35 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from '../utils/media-queries'
 
-const Section = styled.div`
-  padding-top: 80px;
-  padding-bottom: 80px;
-  @media (max-width: 768px) {
+const Section = styled.section`
+  padding-top: 96px;
+  padding-bottom: 96px;
+  ${media.md`
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-`
-
-const StyledSection = styled(Section)`
-  &:nth-of-type(2n) {
-    background: #F9F9F9;
+  `} &:nth-of-type(2n) {
+    background: #f9f9f9;
   }
 `
 
 const Container = styled.div`
-  max-width: 1600px;
+  max-width: 1360px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
 `
 
-export default class About extends React.Component {
-  render() {
-    return (
-      <StyledSection>
-        <Container>
-          {this.props.children}
-        </Container>
-      </StyledSection>
-    )
-  }
+function SectionComponent(props) {
+  return (
+    <Section id={props.id}>
+      <Container>{props.children}</Container>
+    </Section>
+  )
 }
+
+export default SectionComponent

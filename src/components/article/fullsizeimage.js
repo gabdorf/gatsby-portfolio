@@ -8,10 +8,8 @@ const Image = styled.img`
   max-height: 750px;
 `
 
-const FullSizeImage = ({ props }) => ({
-  render() {
-    return <Image src={this.props.src} alt={this.props.alt} />
-  },
-})
+function FullSizeImage(props) {
+  return <Image src={props.src} alt={props.alt} />
+}
 
 export default FullSizeImage
