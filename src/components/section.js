@@ -19,6 +19,14 @@ const Container = styled.div`
   padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
+  ${media.xl`
+    padding-left: 64px;
+    padding-right: 64px;
+  `}
+  ${media.md`
+    padding-left: 24px;
+    padding-right: 24px;
+  `}
 `
 
 function SectionComponent(props) {

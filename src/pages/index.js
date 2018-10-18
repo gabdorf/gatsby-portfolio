@@ -2,6 +2,7 @@ import React from 'react'
 import styledNormalize from 'styled-normalize'
 import Helmet from 'react-helmet'
 import { injectGlobal } from 'styled-components'
+import Breakpoints from '../utils/breakpoints'
 
 import Hero from '../components/hero'
 import Section from '../components/section'
@@ -125,6 +126,7 @@ export default class App extends React.Component {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="theme-color" content="#ffffff" />
         </Helmet>
+        {/* <Breakpoints /> */}
         <Hero />
         <Section id={'about'}>
           <About />
