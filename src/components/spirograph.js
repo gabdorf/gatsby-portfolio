@@ -13,16 +13,15 @@ const Fade = keyframes`
 `
 
 const Div = styled.div`
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-width: 100vw;
-height: 100vh;
-overflow: hidden;
-animation:
-    ${Fade} 0.5s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  animation: ${Fade} 0.5s linear;
 `
 
 const CanvasWrapper = styled.div`
@@ -57,8 +56,7 @@ const Rotate = keyframes`
 // `
 
 const Canvas = styled.canvas`
-  animation:
-    ${Rotate} 30s linear infinite;
+  animation: ${Rotate} 30s linear infinite;
   ${media.sm`
     margin-top: 25vh;
   `};
@@ -72,12 +70,12 @@ export default class Spirograph extends React.Component {
     super(props)
     this.state = {
       completed: false,
-      background: "green",
+      background: 'green',
     }
     this._onClick = this._onClick.bind(this)
     this.draw = this.draw.bind(this)
     this._resizeHandler = debounce(() => {
-      if (window.innerWidth != windowWidth) {
+      if (window.innerWidth !== windowWidth) {
         //check if window size has actually changed bc of iOS Safari Bug
         this.canvasSize = Math.min(1000, window.innerWidth, window.innerHeight)
         this.movingCanvas.width = this.canvasSize
@@ -145,7 +143,7 @@ export default class Spirograph extends React.Component {
 
     this.setState({
       completed: false,
-      background: "none",
+      background: 'none',
     })
     console.log('completed: ' + this.state.completed)
     console.log('background: ' + this.state.background)
@@ -155,10 +153,10 @@ export default class Spirograph extends React.Component {
       Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
     )
     this.dotSize = 7
-    this.spiroColor = this.props.color;
+    this.spiroColor = this.props.color
     this.circleColor = '#ccc'
-    if (mousePressed == false) {
-      this.speed = this.props.speed;
+    if (mousePressed === false) {
+      this.speed = this.props.speed
     }
 
     // clear canvas
@@ -281,11 +279,16 @@ export default class Spirograph extends React.Component {
 
       this.setState({
         completed: true,
-        background: "red",
+        background: 'red',
       })
       console.log('completed: ' + this.state.completed)
       console.log('background: ' + this.state.background)
-      this.mctx.clearRect(0, 0, this.movingCanvas.width, this.movingCanvas.height)
+      this.mctx.clearRect(
+        0,
+        0,
+        this.movingCanvas.width,
+        this.movingCanvas.height
+      )
       this.delay(3000)
         .then(() => this.newSpirograph())
         .then(() => window.requestAnimationFrame(this.draw))
@@ -303,7 +306,7 @@ export default class Spirograph extends React.Component {
   }
 
   _onClick() {
-    console.log("clicked");
+    console.log('clicked')
   }
 
   render() {

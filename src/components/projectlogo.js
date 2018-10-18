@@ -12,7 +12,7 @@ const Image = styled.div`
   margin-right: 40px;
 `
 
-const ProjectLogo = ({ children }) => {
+function ProjectLogo(props) {
   return (
     <Image>
       <svg
@@ -21,7 +21,7 @@ const ProjectLogo = ({ children }) => {
         viewBox="0 0 120 120"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {children}
+        {props.children}
       </svg>
     </Image>
   )

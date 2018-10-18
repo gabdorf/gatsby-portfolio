@@ -8,10 +8,8 @@ const Image = styled.img`
   margin-right: auto;
 `
 
-const LargeImage = ({ props }) => ({
-  render() {
-    return <Image src={this.props.src} alt={this.props.alt} />
-  },
-})
+function LargeImage(props) {
+  return <Image src={props.src} alt={props.alt} />
+}
 
 export default LargeImage

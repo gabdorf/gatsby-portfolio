@@ -9,7 +9,7 @@ const ColorBarDiv = styled.div`
   margin-bottom: 48px;
 `
 
-const ColorBar = props => {
+function ColorBar(props) {
   return <ColorBarDiv barColor={props.barColor} />
 }
 

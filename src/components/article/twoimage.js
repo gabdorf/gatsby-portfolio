@@ -12,23 +12,13 @@ const Image = styled.img`
   align-self: center;
 `
 
-const TwoImage = ({ props }) => ({
-  render() {
-    return (
-      <TwoImageWrapper>
-        <Image
-          src={this.props.src1}
-          alt={this.props.alt1}
-          maxHeight={this.props.maxHeight}
-        />
-        <Image
-          src={this.props.src2}
-          alt={this.props.alt2}
-          maxHeight={this.props.maxHeight}
-        />
-      </TwoImageWrapper>
-    )
-  },
-})
+function TwoImage(props) {
+  return (
+    <TwoImageWrapper>
+      <Image src={props.src1} alt={props.alt1} maxHeight={props.maxHeight} />
+      <Image src={props.src2} alt={props.alt2} maxHeight={props.maxHeight} />
+    </TwoImageWrapper>
+  )
+}
 
 export default TwoImage
