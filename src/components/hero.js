@@ -129,7 +129,7 @@ function Hero() {
           <Role>UI / UX Design</Role>
         </LogoWrapper>
         <SocialIconWrapper>
-          <SocialLink href="https://twitter.com/gabdorf">
+          <SocialLink alt="Gabriel Adorf's twitter profile" href="https://twitter.com/gabdorf">
             <SocialIcon
               width="48"
               height="48"
@@ -141,7 +141,7 @@ function Hero() {
               />
             </SocialIcon>
           </SocialLink>
-          <SocialLink href="https://dribbble.com/gabdorf">
+          <SocialLink alt="Gabriel Adorf's dribbble profile" href="https://dribbble.com/gabdorf">
             <SocialIcon
               width="48"
               height="48"
@@ -154,7 +154,7 @@ function Hero() {
               />
             </SocialIcon>
           </SocialLink>
-          <SocialLink href="mailto:gabriel.adorf@gmail.com">
+          <SocialLink alt="Send Gabriel Adorf an email" href="mailto:gabriel.adorf@gmail.com">
             <SocialIcon
               width="48"
               height="48"
