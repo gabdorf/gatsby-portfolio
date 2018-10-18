@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterSection = styled.div`
-  color: #666;
+  color: #a6a6a6;
   background: #1a1a1a;
   height: 200px;
   padding-top: 55px;
@@ -17,7 +17,7 @@ const FooterText = styled.div`
 `
 
 const FooterLink = styled.a`
-  color: #666 !important;
+  color: #a6a6a6 !important;
 `
 
 function Footer() {
@@ -28,7 +28,7 @@ function Footer() {
         <FooterLink href="https://github.com/gabdorf/gabriel-adorf-portfolio">
           Github
         </FooterLink>
-        .<br />© 2017 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        .<br />© 2018 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <FooterLink href="/imprint">Imprint</FooterLink>
       </FooterText>
     </FooterSection>
