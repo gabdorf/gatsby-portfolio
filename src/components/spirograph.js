@@ -320,7 +320,7 @@ export default class Spirograph extends React.Component {
         >
           <Canvas
             background={this.state.background}
-            innerRef={movingCanvas => (this.movingCanvas = movingCanvas)}
+            ref={movingCanvas => (this.movingCanvas = movingCanvas)}
           />
         </CanvasWrapper>
         <CanvasWrapper
@@ -331,7 +331,7 @@ export default class Spirograph extends React.Component {
         >
           <Canvas
             background={this.state.background}
-            innerRef={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
+            ref={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
           />
         </CanvasWrapper>
       </Div>
