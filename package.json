@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
+    "depcheck": "^0.6.11",
     "gatsby": "^2.0.21",
     "gatsby-link": "^2.0.4",
     "gatsby-plugin-google-analytics": "^2.0.6",
