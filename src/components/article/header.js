@@ -46,7 +46,7 @@ const SocialIcon = styled.svg`
 const SocialLink = styled.a``
 
 const BackArrow = styled.svg`
-  margin: 24px 0 0 24px;
+  margin: 16px 0 0 24px;
   position: absolute;
   fill: #333;
   :hover {
