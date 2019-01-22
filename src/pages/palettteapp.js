@@ -20,7 +20,7 @@ function Bam() {
       <Header title="Palettte App" />
       <CoverImage src={PalettteCoverImage} focusX={'50%'} focusY={'0%'} />
       <ContentWrapper>
-        <h2 id="toc_0">Build, analyze and edit smooth color schemes</h2>
+        <h2 id="toc_0">Build, analyze and edit smooth color palettes</h2>
         <h3>Why yet another color palette tool?</h3>
         <p>
           Most existing apps generate new color schemes based on different
@@ -67,7 +67,7 @@ function Bam() {
               and of each color swatch individually
             </li>
             <li>
-              Import and analyze and <b>edit existing color schemes</b>, find
+              Import, analyze and <b>edit existing color schemes</b>, find
               errors or automatically find the most similar colors from a new
               palette to a list of legacy colors from your codebase
             </li>
@@ -137,7 +137,7 @@ function Bam() {
         </p>
         <LargeImage src={PalettteImage1} />
         <p>
-          It's also useful if you want to add shades to your palette and rename
+          It can also be useful if you want to add shades to your palette and need to rename
           all existing colors.
         </p>
         <br />
