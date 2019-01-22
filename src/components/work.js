@@ -7,6 +7,7 @@ import ColorBar from '../components/colorbar'
 import Project from '../components/project'
 
 import KellerkindLogo from '../img/kellerkindlogo'
+import PalettteAppLogo from '../img/palettteapplogo'
 import LifeTimeLogo from '../img/lifetimelogo'
 import BamLogo from '../img/bamlogo'
 
@@ -33,6 +34,7 @@ const Projects = styled.div`
 `
 
 const LifeTimeLink = <Link to="/lifetime">Read More</Link>
+const PalettteLink = <Link to="/palettteapp">Read More</Link>
 const KellerkindLink = <Link to="/kellerkind">Read More</Link>
 const BamLink = <Link to="/bam">Read More</Link>
 
@@ -49,6 +51,12 @@ function Work() {
           title="LifeTime"
           abstract="A digital health solution facilitating medical data exchange."
           link={LifeTimeLink}
+        />
+        <Project
+          logo={PalettteAppLogo()}
+          title="Palettte App"
+          abstract="An app that allows you to build, analyze and edit smooth color schemes."
+          link={PalettteLink}
         />
         <Project
           logo={KellerkindLogo()}
