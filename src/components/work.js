@@ -55,7 +55,7 @@ function Work() {
         <Project
           logo={PalettteAppLogo()}
           title="Palettte App"
-          abstract="An app that allows you to build, analyze and edit smooth color schemes."
+          abstract="An app that allows you to build, analyze and edit smooth color palettes."
           link={PalettteLink}
         />
         <Project

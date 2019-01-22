@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/article/header'
 import ContentWrapper from '../components/article/contentwrapper'
 import Footer from '../components/footer'
+import Link from 'gatsby-link'
 
 import CoverImage from '../components/article/coverimage'
 import LargeImage from '../components/article/largeimage'
@@ -21,15 +22,24 @@ function Bam() {
       <CoverImage src={PalettteCoverImage} focusX={'50%'} focusY={'0%'} />
       <ContentWrapper>
         <h2 id="toc_0">Build, analyze and edit smooth color palettes</h2>
+        <p>
+          <a href="https://palettte.app">Palettte App</a> is a tool I built in
+          order to learn react and solve a specific problem I had when working
+          on our color palettes at <Link to="/lifetime">LifeTime</Link>.<br />
+        </p>
+        <br />
         <h3>Why yet another color palette tool?</h3>
         <p>
           Most existing apps generate new color schemes based on different
           geometrical concepts such as complementary colors or colors that are
-          layed out in a triangle or another shape in a certain color space. The
-          resulting color schemes might be suitable for logos or classic graphic
-          design, but they rarely work for UI Design, where most of the time you
-          need to work with a few base colors - that are often set by brand
-          guidelines - and a whole range of different variations and shades.
+          layed out in a triangle or another shape in a certain color space.
+        </p>
+        <p>
+          The resulting color schemes might be suitable for logos or classic
+          graphic design, but they rarely work for UI Design, where most of the
+          time you need to work with a few base colors (that are often set by
+          brand guidelines) and a whole range of different variations and
+          shades.
         </p>
 
         <p>
@@ -56,30 +66,28 @@ function Bam() {
         </p>
 
         <p>This is where palettte app comes into play:</p>
-        <p>
-          <ul>
-            <li>
-              Build <b>smooth color schemes</b> that flow from one color to
-              another
-            </li>
-            <li>
-              <b>Finetune hue, saturation value gradients</b> of your palette
-              and of each color swatch individually
-            </li>
-            <li>
-              Import, analyze and <b>edit existing color schemes</b>, find
-              errors or automatically find the most similar colors from a new
-              palette to a list of legacy colors from your codebase
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li>
+            Build <b>smooth color schemes</b> that flow from one color to
+            another
+          </li>
+          <li>
+            <b>Finetune hue, saturation value gradients</b> of your palette and
+            of each color swatch individually
+          </li>
+          <li>
+            Import, analyze and <b>edit existing color schemes</b>, find errors
+            or automatically find the most similar colors from a new palette to
+            a list of legacy colors from your codebase
+          </li>
+        </ul>
         <br />
         <h3>Building a new color palette</h3>
         <p>
           To create a new color palette, click on the plus icon in the left
           sidebar and delete all sample colors by clicking on backspace. You can
-          now add your base color by clicking "add swatch" and enter the
-          HEX-Value in the right sidebar.
+          now add your base color by clicking "add swatch" or hitting the
+          spacebar and entering the HEX-Value in the right sidebar.
         </p>
         <p>
           When adding more swatches you can see that three curves form: one for
@@ -90,8 +98,9 @@ function Bam() {
         <p>
           A basic palette for UI Design consists of 8-10 shades where the hue
           stays the same for all shades, the value goes up and the saturation
-          goes down as the colors get lighter.
+          goes down <b>smoothly</b> as the colors get lighter.
         </p>
+        <br />
         <h3>Analyzing and editing existing color palettes</h3>
         <p>
           If you already have a color palette and you want to know if it can be
@@ -120,25 +129,24 @@ function Bam() {
           When you are happy with your edit, simply export your new colors
           again.
         </p>
-
         <br />
-        <h3>Map old colors to new ones</h3>
+        <h3>Mapping old colors to new ones</h3>
         <p>
           You will often somehow find yourself in a situation where you have
-          built a wonderful new color color palette - but your legacy code does
+          built a wonderful new color color palette, but your legacy code does
           not reflect the beauty of it as a lot of different shades and colors
           have piled up over time.
         </p>
         <p>
-          With palettte app, you can import those (legacy) colors and find
-          the most similar colors from your new palettes automatically. You will
+          With palettte app, you can import those (legacy) colors and find the
+          most similar colors from your new palettes automatically. You will
           also immediatly spot when colors are too far off, and you need to
           introduce more colors in your palettes.
         </p>
         <LargeImage src={PalettteImage1} />
         <p>
-          It can also be useful if you want to add shades to your palette and need to rename
-          all existing colors.
+          It can also be useful if you want to add shades to your palette and
+          need to rename all existing colors.
         </p>
         <br />
         <h3>Feedback welcome</h3>
