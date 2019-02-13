@@ -133,7 +133,7 @@ function Bam() {
         <h3>Mapping old colors to new ones</h3>
         <p>
           You will often somehow find yourself in a situation where you have
-          built a wonderful new color color palette, but your legacy code does
+          built a wonderful new color palette, but your legacy code does
           not reflect the beauty of it as a lot of different shades and colors
           have piled up over time.
         </p>
