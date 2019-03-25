@@ -57,14 +57,14 @@ function About() {
           involved with the subject of design in its full spectrum.
         </p>
         <p>
-          Since then I accompanied the development of numerous different digital
-          and physical products from the first sketches up to market readiness
-          and beyond.
+          Since then I accompanied the development of various digital and
+          physical products from the first sketches up to market readiness and
+          beyond.
         </p>
         <p style={{ marginBottom: 0 }}>
           In my work I try to balance the understanding of the technical aspects
           of creating products with the aesthetic and usability requirements
-          from a user's point of view. Currently I am working with{' '}
+          from a user's point of view. Currently I am working for{' '}
           <Link to="/lifetime">LifeTime</Link>.
         </p>
       </AboutWrapper>

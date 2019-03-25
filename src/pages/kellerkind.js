@@ -157,8 +157,7 @@ function Kellerkind() {
         <p>
           At the moment we have no plans to change this, but we are still eager
           to grow our events, to create sustainable processes and to keep
-          surprising our guests with ever more immersive and holistic
-          experiences.
+          surprising with ever more immersive and holistic experiences.
         </p>
       </ContentWrapper>
       <TwoImage

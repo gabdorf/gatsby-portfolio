@@ -126,16 +126,16 @@ function Bam() {
         </p>
         <LargeImage src={PalettteImage4} />
         <p>
-          When you are happy with your edit, simply export your new colors
+          When you are happy with your result, simply export your new colors
           again.
         </p>
         <br />
         <h3>Mapping old colors to new ones</h3>
         <p>
           You will often somehow find yourself in a situation where you have
-          built a wonderful new color palette, but your legacy code does
-          not reflect the beauty of it as a lot of different shades and colors
-          have piled up over time.
+          built a wonderful new color palette, but your legacy code does not
+          reflect the beauty of it as a lot of different shades and colors have
+          piled up over time.
         </p>
         <p>
           With palettte app, you can import those (legacy) colors and find the
@@ -153,6 +153,16 @@ function Bam() {
         <p>
           If you have ideas how to make this tool better, please let me know via{' '}
           <a href="https://twitter.com/gabdorf">Twitter</a>.
+        </p>
+        <p>
+          <i>Update:</i>{' '}
+          <a href="https://twitter.com/steveschoger/status/1097890956873998336">
+            Steve Schoger
+          </a>{' '}
+          and{' '}
+          <a href="https://twitter.com/erikdkennedy/status/1095012612230660096">
+            Eric Kennedy
+          </a> are now both using palettte.app.
         </p>
       </ContentWrapper>
       <Footer />

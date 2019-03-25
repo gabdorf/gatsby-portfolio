@@ -98,7 +98,7 @@ export default class App extends React.Component {
           />
           <meta
             property="og:image"
-            content="https://www.gabrieladorf.com/static/kellerkindCover.14f87246.jpg"
+            content="https://www.gabrieladorf.com/static/kellerkindCover-14f87246d1614ff1cf339940bdc58186.jpg"
           />
           <meta property="og:description" content="Gabriel Adorf's projects" />
           <meta property="og:type" content="website" />
