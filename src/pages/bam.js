@@ -1,18 +1,18 @@
 import React from 'react'
-import Header from '../components/article/header'
-import ContentWrapper from '../components/article/contentwrapper'
-import Footer from '../components/footer'
 
-import CoverImage from '../components/article/coverimage'
-import LargeImage from '../components/article/largeimage'
-import TwoImage from '../components/article/twoimage'
-import FullSizeImage from '../components/article/fullsizeimage'
+import Header from 'components/article/header'
+import ContentWrapper from 'components/article/contentwrapper'
+import Footer from 'components/footer'
+import CoverImage from 'components/article/coverimage'
+import LargeImage from 'components/article/largeimage'
+import TwoImage from 'components/article/twoimage'
+import FullSizeImage from 'components/article/fullsizeimage'
 
-import BamCoverImage from '../img/articles/bam/jj_climbing.jpg'
-import AfterClimbImage1 from '../img/articles/bam/afterclimb_wireframe.jpg'
-import AfterClimbImage2 from '../img/articles/bam/afterclimb_textured.jpg'
-import AfterClimbImage3 from '../img/articles/bam/afterclimb_montage.jpg'
-import AfterClimbImage4 from '../img/articles/bam/afterclimb_logo.jpg'
+import BamCoverImage from 'img/articles/bam/jj_climbing.jpg'
+import AfterClimbImage1 from 'img/articles/bam/afterclimb_wireframe.jpg'
+import AfterClimbImage2 from 'img/articles/bam/afterclimb_textured.jpg'
+import AfterClimbImage3 from 'img/articles/bam/afterclimb_montage.jpg'
+import AfterClimbImage4 from 'img/articles/bam/afterclimb_logo.jpg'
 
 function Bam() {
   return (

@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
 
-import ColorBar from '../components/colorbar'
-import Project from '../components/project'
-import ScenographicsLogo from '../img/scenographicslogo'
+import ColorBar from 'components/colorbar'
+import Project from 'components/project'
+
+import ScenographicsLogo from 'img/scenographicslogo'
 
 const Div = styled.div`
   display: flex;

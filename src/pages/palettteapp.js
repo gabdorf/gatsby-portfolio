@@ -1,19 +1,17 @@
 import React from 'react'
-import Header from '../components/article/header'
-import ContentWrapper from '../components/article/contentwrapper'
-import Footer from '../components/footer'
 import Link from 'gatsby-link'
 
-import CoverImage from '../components/article/coverimage'
-import LargeImage from '../components/article/largeimage'
-import TwoImage from '../components/article/twoimage'
-import FullSizeImage from '../components/article/fullsizeimage'
+import Header from 'components/article/header'
+import ContentWrapper from 'components/article/contentwrapper'
+import Footer from 'components/footer'
+import CoverImage from 'components/article/coverimage'
+import LargeImage from 'components/article/largeimage'
 
-import PalettteCoverImage from '../img/articles/palettteapp/palettteapp.jpg'
-import PalettteImage1 from '../img/articles/palettteapp/palettte1.jpg'
-import PalettteImage2 from '../img/articles/palettteapp/palettte2.jpg'
-import PalettteImage3 from '../img/articles/palettteapp/palettte3.jpg'
-import PalettteImage4 from '../img/articles/palettteapp/palettte4.jpg'
+import PalettteCoverImage from 'img/articles/palettteapp/palettteapp.jpg'
+import PalettteImage1 from 'img/articles/palettteapp/palettte1.jpg'
+import PalettteImage2 from 'img/articles/palettteapp/palettte2.jpg'
+import PalettteImage3 from 'img/articles/palettteapp/palettte3.jpg'
+import PalettteImage4 from 'img/articles/palettteapp/palettte4.jpg'
 
 function Bam() {
   return (

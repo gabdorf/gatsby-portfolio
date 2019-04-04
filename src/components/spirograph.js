@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import debounce from 'lodash/debounce'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
 
 const Fade = keyframes`
   from {

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../components/projectlogo'
+
+import Logo from 'components/projectlogo'
 
 const ProjectWrapper = styled.div`
   padding-bottom: 80px;

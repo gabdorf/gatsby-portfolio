@@ -1,9 +1,9 @@
 import React from 'react'
-import media from '../utils/media-queries'
 import styled from 'styled-components'
+import media from 'utils/media-queries'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import Spirograph from '../components/spirograph'
+import Spirograph from 'components/spirograph'
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -34,7 +34,6 @@ const LogoWrapper = styled.div`
 `
 
 const Name = styled.h1`
-  font-family: 'bebasneue', Helvetica, sans-serif;
   font-size: 80px;
   line-height: 60px;
   text-align: left;

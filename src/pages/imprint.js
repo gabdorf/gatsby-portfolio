@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../components/article/header'
 
-import ContentWrapper from '../components/article/contentwrapper'
-import Footer from '../components/footer'
+import Header from 'components/article/header'
+import ContentWrapper from 'components/article/contentwrapper'
+import Footer from 'components/footer'
 
 function Imprint() {
   return (

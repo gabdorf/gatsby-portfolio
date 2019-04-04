@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import media from '../../utils/media-queries'
+import media from 'utils/media-queries'
 
-import ColorBar from '../../components/colorbar'
+import ColorBar from 'components/colorbar'
 
 const ArticleHeaderSection = styled.div`
   display: flex;
@@ -27,7 +27,6 @@ const LogoLink = styled(Link)`
 `
 
 const Logo = styled.div`
-  font-family: 'bebasneue', Helvetica, sans-serif;
   font-size: 36px;
   line-height: 32px;
 `

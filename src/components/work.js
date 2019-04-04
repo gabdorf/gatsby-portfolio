@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
 
-import ColorBar from '../components/colorbar'
-import Project from '../components/project'
+import ColorBar from 'components/colorbar'
+import Project from 'components/project'
 
-import KellerkindLogo from '../img/kellerkindlogo'
-import PalettteAppLogo from '../img/palettteapplogo'
-import LifeTimeLogo from '../img/lifetimelogo'
-import BamLogo from '../img/bamlogo'
+import KellerkindLogo from 'img/kellerkindlogo'
+import PalettteAppLogo from 'img/palettteapplogo'
+import LifeTimeLogo from 'img/lifetimelogo'
+import BamLogo from 'img/bamlogo'
 
 const Div = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
 
 const Section = styled.section`
   padding-top: 96px;

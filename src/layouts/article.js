@@ -1,6 +1,7 @@
 import React from 'react'
-import ArticleHeader from '../components/article/header'
-import Footer from '../components/footer'
+
+import ArticleHeader from 'components/article/header'
+import Footer from 'components/footer'
 
 const ArticleLayout = ({}) => ({
   render() {

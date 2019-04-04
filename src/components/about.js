@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
 
-import ColorBar from '../components/colorbar'
-import ProfileImage from '../img/gabrieladorf.svg'
+import ColorBar from 'components/colorbar'
+
+import ProfileImage from 'img/gabrieladorf.svg'
 
 const Div = styled.div`
   display: flex;

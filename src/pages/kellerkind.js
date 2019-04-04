@@ -1,17 +1,17 @@
 import React from 'react'
-import Header from '../components/article/header'
 
-import CoverImage from '../components/article/coverimage'
-import ContentWrapper from '../components/article/contentwrapper'
-import Footer from '../components/footer'
-import TwoImage from '../components/article/twoimage'
-import LargeImage from '../components/article/largeimage'
+import Header from 'components/article/header'
+import CoverImage from 'components/article/coverimage'
+import ContentWrapper from 'components/article/contentwrapper'
+import Footer from 'components/footer'
+import TwoImage from 'components/article/twoimage'
+import LargeImage from 'components/article/largeimage'
 
-import KellerkindCoverImage from '../img/articles/kellerkind/kellerkindCover.jpg'
-import KellerkindImage1 from '../img/articles/kellerkind/schall_im_schilf.jpg'
-import KellerkindImage2 from '../img/articles/kellerkind/back_to_the_woods2.jpg'
-import KellerkindImage4 from '../img/articles/kellerkind/schall_im_schilf2.jpg'
-import KellerkindImage5 from '../img/articles/kellerkind/back_to_the_woods.jpg'
+import KellerkindCoverImage from 'img/articles/kellerkind/kellerkindCover.jpg'
+import KellerkindImage1 from 'img/articles/kellerkind/schall_im_schilf.jpg'
+import KellerkindImage2 from 'img/articles/kellerkind/back_to_the_woods2.jpg'
+import KellerkindImage4 from 'img/articles/kellerkind/schall_im_schilf2.jpg'
+import KellerkindImage5 from 'img/articles/kellerkind/back_to_the_woods.jpg'
 
 function Kellerkind() {
   return (

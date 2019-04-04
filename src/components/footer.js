@@ -9,7 +9,6 @@ const FooterSection = styled.div`
   text-align: center;
   font-size: 0.9em;
   line-height: 1.4em;
-  font-family: 'bebasneue';
 `
 
 const FooterText = styled.div`

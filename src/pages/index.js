@@ -1,88 +1,15 @@
 import React from 'react'
-import styledNormalize from 'styled-normalize'
 import Helmet from 'react-helmet'
-import { createGlobalStyle } from 'styled-components'
-import Breakpoints from '../utils/breakpoints'
+import GlobalStyle from 'styles/global-style'
+import Breakpoints from 'utils/breakpoints'
 
-import Hero from '../components/hero'
-import Section from '../components/section'
-import About from '../components/about'
-import Work from '../components/work'
-import Writing from '../components/writing'
-import Footer from '../components/footer'
+import Hero from 'components/hero'
+import Section from 'components/section'
+import About from 'components/about'
+import Work from 'components/work'
+import Writing from 'components/writing'
+import Footer from 'components/footer'
 
-import BebasNeueBoldWoff2 from '../fonts/bebasneuebold.woff2'
-import BebasNeueBoldWoff from '../fonts/bebasneuebold.woff'
-import CharterRegularWoff2 from '../fonts/charterregular.woff2'
-import CharterRegularWoff from '../fonts/charterregular.woff'
-import CharterBoldWoff2 from '../fonts/charterbold.woff2'
-import CharterBoldWoff from '../fonts/charterbold.woff'
-
-const GlobalStyle = createGlobalStyle`
-
-  /* ${styledNormalize} */
-
-  @font-face {
-    font-family: 'bebasneue';
-    src: url(${BebasNeueBoldWoff2}) format('woff2'),
-         url(${BebasNeueBoldWoff}) format('woff');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'charter';
-    src: url(${CharterRegularWoff2}) format('woff2');
-    src: url(${CharterRegularWoff}) format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'charter';
-    src: url(${CharterBoldWoff2}) format('woff2');
-    src: url(${CharterBoldWoff}) format('woff');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  a {
-    color: #333;
-    text-decoration: underline;
-    :hover {
-      color: red!important;
-      text-decoration: underline
-    }
-    :visited {
-      color: #333;
-    }
-  }
-
-  html {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-
-  p+ h2 {
-    margin-top: 1.2em;
-  }
-
-  p + h3 {
-    margin-top: 1.5em;
-  }
-`
 
 export default class App extends React.Component {
   render() {
