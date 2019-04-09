@@ -8,6 +8,7 @@ export const color = {
   grey300: '#E0E0E0',
   grey200: '#EDEDED',
   grey100: '#F9F9F9',
+  blue500: '#007DFF',
 }
 
 export const fontSize = {

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import GlobalWrapper from 'components/global-wrapper'
 import Header from 'components/article/header'
 import CoverImage from 'components/article/coverimage'
 import ContentWrapper from 'components/article/contentwrapper'
@@ -15,7 +16,7 @@ import KellerkindImage5 from 'img/articles/kellerkind/back_to_the_woods.jpg'
 
 function Kellerkind() {
   return (
-    <div>
+    <GlobalWrapper>
       <Header title="Kellerkind" />
       <CoverImage src={KellerkindCoverImage} focusX={'28%'} focusY={'70%'} />
       <ContentWrapper>
@@ -166,7 +167,7 @@ function Kellerkind() {
         maxHeight={'450px'}
       />
       <Footer />
-    </div>
+    </GlobalWrapper>
   )
 }
 

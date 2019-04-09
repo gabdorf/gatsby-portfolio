@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import GlobalWrapper from 'components/global-wrapper'
 import Header from 'components/article/header'
 import ContentWrapper from 'components/article/contentwrapper'
 import Footer from 'components/footer'
@@ -15,7 +16,7 @@ import PalettteImage4 from 'img/articles/palettteapp/palettte4.jpg'
 
 function Bam() {
   return (
-    <div>
+    <GlobalWrapper>
       <Header title="Palettte App" />
       <CoverImage src={PalettteCoverImage} focusX={'50%'} focusY={'0%'} />
       <ContentWrapper>
@@ -164,7 +165,7 @@ function Bam() {
         </p>
       </ContentWrapper>
       <Footer />
-    </div>
+    </GlobalWrapper>
   )
 }
 

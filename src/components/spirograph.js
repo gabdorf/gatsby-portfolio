@@ -43,18 +43,6 @@ const Rotate = keyframes`
   }
 `
 
-// const Canvas = styled.canvas.attrs({
-//   style: props => ({
-//     background: props.background,
-//   })
-// })`
-//   animation:
-//     ${Rotate} 30s linear infinite;
-//   ${media.sm`
-//     margin-top: 25vh;
-//   `};
-// `
-
 const Canvas = styled.canvas`
   animation: ${Rotate} 30s linear infinite;
   ${media.sm`
@@ -150,7 +138,7 @@ export default class Spirograph extends React.Component {
     // display config
     this.size = Math.min(
       498,
-      Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
+      Math.min(window.innerWidth / 2.9, window.innerHeight / 2.9)
     )
     this.dotSize = 7
     this.spiroColor = this.props.color

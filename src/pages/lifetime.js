@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import GlobalWrapper from 'components/global-wrapper'
 
 import Header from 'components/article/header'
 import CoverImage from 'components/article/coverimage'
@@ -45,7 +46,7 @@ const Video = styled.iframe`
 
 function LifeTime() {
   return (
-    <div>
+    <GlobalWrapper>
       <Header title="LifeTime" />
       <CoverImage src={LifeTimeCoverImage} focusX={'73.5%'} focusY={'50%'} />
       <ContentWrapper>
@@ -369,7 +370,7 @@ function LifeTime() {
         </p>
       </ContentWrapper>
       <Footer />
-    </div>
+    </GlobalWrapper>
   )
 }
 

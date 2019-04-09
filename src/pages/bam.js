@@ -1,5 +1,6 @@
 import React from 'react'
 
+import GlobalWrapper from 'components/global-wrapper'
 import Header from 'components/article/header'
 import ContentWrapper from 'components/article/contentwrapper'
 import Footer from 'components/footer'
@@ -16,7 +17,7 @@ import AfterClimbImage4 from 'img/articles/bam/afterclimb_logo.jpg'
 
 function Bam() {
   return (
-    <div>
+    <GlobalWrapper>
       <Header title="Bäm" />
       <CoverImage src={BamCoverImage} focusX={'44%'} focusY={'45%'} />
       <ContentWrapper>
@@ -44,7 +45,7 @@ function Bam() {
       <FullSizeImage src={AfterClimbImage3} alt="Afterclimb Montage" />
       <LargeImage src={AfterClimbImage4} alt="Afterclimb Logo" />
       <Footer />
-    </div>
+    </GlobalWrapper>
   )
 }
 
