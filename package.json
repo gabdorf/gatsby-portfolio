@@ -15,6 +15,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
+    "react-waypoint": "^9.0.1",
     "styled-components": "^4.1.1",
     "styled-normalize": "^8.0.1"
   },

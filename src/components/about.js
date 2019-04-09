@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'utils/media-queries'
 
+import WhenInView from 'components/wheninView'
 import ColorBar from 'components/colorbar'
 
 import ProfileImage from 'img/gabrieladorf.svg'
@@ -41,10 +42,23 @@ const AboutWrapper = styled.div`
   `};
 `
 
+const Reveal = styled.div`
+  opacity: ${props => (props.visible ? '1' : '0')};
+  transition: opacity 1s;
+  min-width: 500px;
+  height: 470px;
+`
+
 function About() {
   return (
     <Div>
-      <ProfileImageWrapper />
+      <WhenInView>
+        {({ isInView }) => (
+          <Reveal visible={isInView}>
+            <ProfileImageWrapper />
+          </Reveal>
+        )}
+      </WhenInView>
       <AboutWrapper>
         <h2>About</h2>
         <ColorBar barColor="#FFA6A6" />

@@ -56,11 +56,6 @@ let mousePressed = false
 export default class Spirograph extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      completed: false,
-      background: 'green',
-    }
-    this._onClick = this._onClick.bind(this)
     this.draw = this.draw.bind(this)
     this._resizeHandler = debounce(() => {
       if (window.innerWidth !== windowWidth) {
@@ -92,7 +87,6 @@ export default class Spirograph extends React.Component {
     this.plottingCanvas.width = this.canvasSize
     this.plottingCanvas.height = this.canvasSize
 
-    console.log('mounted')
     this.newSpirograph()
     window.requestAnimationFrame(this.draw)
   }
@@ -127,18 +121,10 @@ export default class Spirograph extends React.Component {
   delay = t => new Promise(resolve => setTimeout(resolve, t))
 
   newSpirograph() {
-    console.log('new spiro')
-
-    this.setState({
-      completed: false,
-      background: 'none',
-    })
-    console.log('completed: ' + this.state.completed)
-    console.log('background: ' + this.state.background)
     // display config
     this.size = Math.min(
       498,
-      Math.min(window.innerWidth / 2.9, window.innerHeight / 2.9)
+      Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
     )
     this.dotSize = 7
     this.spiroColor = this.props.color
@@ -263,14 +249,6 @@ export default class Spirograph extends React.Component {
       this.pctx.stroke()
     } else {
       // if completed, start new spirograph
-      console.log('completed')
-
-      this.setState({
-        completed: true,
-        background: 'red',
-      })
-      console.log('completed: ' + this.state.completed)
-      console.log('background: ' + this.state.background)
       this.mctx.clearRect(
         0,
         0,
@@ -293,10 +271,6 @@ export default class Spirograph extends React.Component {
     window.requestAnimationFrame(this.draw)
   }
 
-  _onClick() {
-    console.log('clicked')
-  }
-
   render() {
     return (
       <Div>
@@ -307,7 +281,6 @@ export default class Spirograph extends React.Component {
           onTouchEnd={this.speedDown}
         >
           <Canvas
-            background={this.state.background}
             ref={movingCanvas => (this.movingCanvas = movingCanvas)}
           />
         </CanvasWrapper>
@@ -318,7 +291,6 @@ export default class Spirograph extends React.Component {
           onTouchEnd={this.speedDown}
         >
           <Canvas
-            background={this.state.background}
             ref={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
           />
         </CanvasWrapper>
