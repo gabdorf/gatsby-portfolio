@@ -21,7 +21,9 @@ const Div = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  animation: ${Fade} 0.5s linear;
+  opacity: 0;
+  animation: ${Fade} 0.5s linear 400ms;
+  animation-fill-mode: forwards;
 `
 
 const CanvasWrapper = styled.div`

@@ -42,7 +42,9 @@ const LogoWrapper = styled.div`
   ${media.sm`
     padding: 24px 0 0 0;
   `};
-  animation: ${Fade} 1s linear 1s;
+  opacity: 0;
+  animation: ${Fade} 1s linear;
+  animation-fill-mode: forwards;
 `
 
 const Name = styled.h1`
@@ -70,9 +72,11 @@ const SocialLinks = styled.div`
   display: grid;
   grid-column-gap: 8px;
   grid-template-columns: auto auto auto;
-  padding: 24px 24px 0 0;
-  ${media.sm`
-  `};
+  padding: 24px 24px 0 24px;
+  justify-content: center;
+  opacity: 0;
+  animation: ${Fade} 1s linear 200ms;
+  animation-fill-mode: forwards;
 `
 
 const SocialLink = styled.a`
@@ -110,12 +114,16 @@ export const InlineSvg = styled.svg`
 `
 
 const Tooltip = styled.div`
-  padding: 2px 24px 0 0;
+  padding: 2px 24px 0 24px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   opacity: ${props => (props.visible ? '1' : '0')};
   transition: opacity 300ms;
+  ${media.sm`
+    justify-content: center;
+    padding-top: 6px;
+  `}
 `
 
 const TooltipIcon = styled.div`
@@ -136,6 +144,9 @@ const ArrowWrapper = styled.div`
   z-index: 10;
   text-align: center;
   align-items: flex-end;
+  opacity: 0;
+  animation: ${Fade} 1s linear 400ms;
+  animation-fill-mode: forwards;
 `
 
 const ArrowLink = styled(AnchorLink)`
@@ -162,10 +173,20 @@ class Hero extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log('mounted')
+    window.requestAnimationFrame(function() {
+      console.log('rendered?')
+    })
+  }
+
   showTooltip = tooltipText => {
     this.setState({
       tooltipIsVisible: true,
       tooltipText: tooltipText,
+      showLogo: false,
+      showSocialLinks: false,
+      showArrow: false,
     })
   }
 
