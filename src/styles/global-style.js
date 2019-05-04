@@ -26,7 +26,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-family: 'TTNormsPro';
     src: url(${TTNormsProBoldWoff}) format('woff');
     src: url(${TTNormsProBoldWoff2}) format('woff2');
-    font-weight: normal;
+    font-weight: 700;
     font-style: normal;
   }
 
@@ -34,7 +34,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-family: 'TTNormsPro';
     src: url(${TTNormsProRegularWoff}) format('woff');
     src: url(${TTNormsProRegularWoff2}) format('woff2');
-    font-weight: 700;
+    font-weight: normal;
     font-style: normal;
   }
 
@@ -89,14 +89,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-weight: 700;
     margin: 0 0 32px 0;
     padding: 0;
-    line-height: 1.2;
+    line-height: 1.1;
     ${media.xl`
       font-size: ${fontSize.f10};
-      line-height: 1.1;
     `}
     ${media.md`
       font-size: ${fontSize.f9};
-      line-height: 1.1;
     `}
     ${media.sm`
       font-size: ${fontSize.f7};
@@ -104,20 +102,13 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   h2 {
-    font-size: ${fontSize.f10};
+    font-size: ${fontSize.f6};
+    text-transform: uppercase;
     font-weight: 700;
-    margin: 0 0 24px 0;
-    padding: 0;
-    line-height: 1.2;
-    ${media.xl`
-      font-size: ${fontSize.f9};
-    `}
-    ${media.md`
-      font-size: ${fontSize.f8};
-    `}
-    ${media.sm`
-      font-size: ${fontSize.f6};
-    `}
+    margin: 9px 0 0 0;
+    padding: 8px 0 0 0;
+    line-height: 1.1;
+    border-top: 2px solid black;
   }
 
   h3 {
@@ -125,7 +116,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-weight: 900;
     margin: 0 0 16px 0;
     padding: 0;
-    line-height: 1.2;
+    line-height: 1.1;
     ${media.sm`
       font-size: ${fontSize.f5};
     `}
@@ -146,8 +137,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   p {
-    font-size: ${fontSize.f4};
-    line-height: 1.5;
+    font-size: ${fontSize.f5};
+    line-height: 1.4;
+    ${media.md`
+      font-size: ${fontSize.f5};
+    `}
     ${media.sm`
       font-size: ${fontSize.f3};
       line-height: 1.4;

@@ -3,87 +3,105 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'utils/media-queries'
 
+import { fontSize } from 'styles/theme'
+
 import WhenInView from 'components/wheninView'
-import ColorBar from 'components/colorbar'
 
 import ProfileImage from 'img/gabrieladorf.svg'
 
-const Div = styled.div`
+const Center = styled.div`
   display: flex;
-  flex-direction: row;
-  ${media.md`
-    flex-direction: column;
-  `};
+  justify-content: center;
 `
 
-const ProfileImageWrapper = styled.div`
-  width: 50%;
-  align-self: flex-end;
-  background-image: url(${ProfileImage});
-  background-size: cover;
-  background-position: 60% center;
-  height: 470px;
-  margin-right: 24px;
+const Div = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 128px;
+  grid-column-gap: 128px;
+  max-width: 1024px;
+  ${media.lg`
+    grid-row-gap: 96px;
+    grid-column-gap: 96px;
+  `}
   ${media.md`
-    border-bottom: 1px solid #e0e0e0;
-    background-position: 20% 22%;
-    height: 330px;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 24px;
-  `};
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    max-width: 640px;
+    grid-row-gap: 64px;
+  `}
 `
 
-const AboutWrapper = styled.div`
-  width: 50%;
+const Empty = styled.div`
   ${media.md`
-    width: 100%;
-    max-width: 100%;
-  `};
+    display: none;
+  `}
 `
 
 const Reveal = styled.div`
   opacity: ${props => (props.visible ? '1' : '0')};
-  transition: opacity 1s;
-  min-width: 500px;
-  height: 470px;
+  transform: translateY(${props => (props.visible ? '0px' : '30px')});
+  transition: all 1s;
+`
+
+const Big = styled.span`
+  font-size: ${fontSize.f7};
+  font-weight: 700;
+  ${media.md`
+    font-size: ${fontSize.f6};
+  `}
+`
+
+const Image = styled.div`
+  width: 200px;
+  height: 200px;
+  background: gainsboro;
+  border-radius: 8px;
+`
+
+const TwoColumn = styled.div`
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-column-gap: 160px;
+`
+
+const LeftColumn = styled.div`
+`
+
+const RightColumn = styled.div`
 `
 
 function About() {
   return (
-    <Div>
-      <WhenInView>
-        {({ isInView }) => (
-          <Reveal visible={isInView}>
-            <ProfileImageWrapper />
-          </Reveal>
-        )}
-      </WhenInView>
-      <AboutWrapper>
-        <h2>About</h2>
-        <ColorBar barColor="#FFA6A6" />
-        <p>
-          <strong>
-            Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin.
-          </strong>
-        </p>
-        <p>
-          After having studied management and engineering, I became increasingly
-          involved with the subject of design in its full spectrum.
-        </p>
-        <p>
-          Since then I accompanied the development of various digital and
-          physical products from the first sketches up to market readiness and
-          beyond.
-        </p>
-        <p style={{ marginBottom: 0 }}>
-          In my work I try to balance the understanding of the technical aspects
-          of creating products with the aesthetic and usability requirements
-          from a user's point of view. Currently I am working for{' '}
-          <Link to="/lifetime">LifeTime</Link>.
-        </p>
-      </AboutWrapper>
-    </Div>
+    <Center>
+      <TwoColumn>
+        <LeftColumn>
+          <h2>About</h2>
+        </LeftColumn>
+        <RightColumn>
+          <p>
+            <Big>
+              Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I help
+              to bring ideas to life with design and code.
+            </Big>
+          </p>
+          <p>
+            In my work I always strive to optimize the aesthetic value and
+            usability of products without losing sight of the technical
+            challenges and limitations.
+          </p>
+          <p>
+            Currently I'm designing the future of medical infrastructure at{' '}
+            <Link to="/lifetime">LifeTime</Link>.
+          </p>
+          <p style={{ marginBottom: 0 }}>
+            Outside of work I'm passionate about my family, climbing and riding
+            all kinds of boards on water and snow.
+          </p>
+        </RightColumn>
+      </TwoColumn>
+    </Center>
   )
 }
 

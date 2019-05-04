@@ -9,10 +9,6 @@ class WhenInView extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log(Waypoint)
-  }
-
   onEnter = () => {
     this.setState({
       isInView: true,

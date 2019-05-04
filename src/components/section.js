@@ -14,7 +14,7 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-  max-width: 1360px;
+  max-width: 916px;
   padding-left: 24px;
   padding-right: 24px;
   margin-left: auto;

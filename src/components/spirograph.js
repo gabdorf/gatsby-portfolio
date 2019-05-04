@@ -282,9 +282,7 @@ export default class Spirograph extends React.Component {
           onTouchStart={this.speedUp}
           onTouchEnd={this.speedDown}
         >
-          <Canvas
-            ref={movingCanvas => (this.movingCanvas = movingCanvas)}
-          />
+          <Canvas ref={movingCanvas => (this.movingCanvas = movingCanvas)} />
         </CanvasWrapper>
         <CanvasWrapper
           onMouseDown={this.speedUp}
