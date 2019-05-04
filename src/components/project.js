@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from 'utils/media-queries'
+
+import { fontSize } from 'styles/theme'
 
 import Logo from 'components/projectlogo'
 
 const ProjectWrapper = styled.div`
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   display: flex;
   @media (max-width: 660px) {
     flex-wrap: wrap;
@@ -21,9 +24,11 @@ const Description = styled.div`
 `
 
 const Title = styled.h3`
-  color: #333;
-  font-size: 1.6em;
+  font-size: ${fontSize.f6};
   font-weight: 700;
+  ${media.md`
+    font-size: ${fontSize.f6};
+  `}
   margin: 0 0 16px 0;
 `
 

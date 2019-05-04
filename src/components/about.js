@@ -46,7 +46,7 @@ const Reveal = styled.div`
 `
 
 const Big = styled.span`
-  font-size: ${fontSize.f7};
+  font-size: ${fontSize.f6};
   font-weight: 700;
   ${media.md`
     font-size: ${fontSize.f6};
@@ -62,15 +62,13 @@ const Image = styled.div`
 
 const TwoColumn = styled.div`
   display: grid;
-  grid-template-columns: 250px auto;
-  grid-column-gap: 160px;
+  grid-template-columns: 100px auto;
+  grid-column-gap: 272px;
 `
 
-const LeftColumn = styled.div`
-`
+const LeftColumn = styled.div``
 
-const RightColumn = styled.div`
-`
+const RightColumn = styled.div``
 
 function About() {
   return (
@@ -82,14 +80,14 @@ function About() {
         <RightColumn>
           <p>
             <Big>
-              Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I help
-              to bring ideas to life with design and code.
+              Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I
+              bring ideas to life with design and&nbsp;code.
             </Big>
           </p>
           <p>
-            In my work I always strive to optimize the aesthetic value and
-            usability of products without losing sight of the technical
-            challenges and limitations.
+            In my work I strive to optimize the aesthetic value and usability of
+            products without losing sight of the technical challenges and
+            limitations.
           </p>
           <p>
             Currently I'm designing the future of medical infrastructure at{' '}
@@ -97,7 +95,7 @@ function About() {
           </p>
           <p style={{ marginBottom: 0 }}>
             Outside of work I'm passionate about my family, climbing and riding
-            all kinds of boards on water and snow.
+            boards on water and snow.
           </p>
         </RightColumn>
       </TwoColumn>

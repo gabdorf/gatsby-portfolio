@@ -3,30 +3,16 @@ import styled from 'styled-components'
 import media from 'utils/media-queries'
 
 const Section = styled.section`
-  padding-top: 96px;
-  padding-bottom: 96px;
-  ${media.md`
-    padding-top: 40px;
-    padding-bottom: 40px;
-  `} &:nth-of-type(2n) {
-    background: #f9f9f9;
-  }
+  margin: 0 24px;
+  display: flex;
+  justify-content: center;
 `
 
 const Container = styled.div`
+  border-top: 2px solid gainsboro;
   max-width: 916px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  ${media.xl`
-    padding-left: 64px;
-    padding-right: 64px;
-  `}
-  ${media.md`
-    padding-left: 24px;
-    padding-right: 24px;
-  `}
+  /* border-top: 2px solid black; */
+  padding: 128px 0;
 `
 
 function SectionComponent(props) {

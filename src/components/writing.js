@@ -29,26 +29,35 @@ const Projects = styled.div`
   `};
 `
 
+const TwoColumn = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-column-gap: 200px;
+`
+
+const LeftColumn = styled.div``
+
+const RightColumn = styled.div``
+
 const ScenographicsLink = (
   <a href="http://medium.com/scenographics">Read More an Medium ↗</a>
 )
 
 function Writing() {
   return (
-    <Div>
-      <Title>
+    <TwoColumn>
+      <LeftColumn>
         <h2>Writing</h2>
-        <ColorBar barColor="#A6E7FF" />
-      </Title>
-      <Projects>
+      </LeftColumn>
+      <RightColumn>
         <Project
           logo={ScenographicsLogo()}
           title="Scenographics"
           abstract="Interview series with creative people within the festival scene. (German only)"
           link={ScenographicsLink}
         />
-      </Projects>
-    </Div>
+      </RightColumn>
+    </TwoColumn>
   )
 }
 

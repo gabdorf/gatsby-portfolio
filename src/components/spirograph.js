@@ -21,9 +21,7 @@ const Div = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  opacity: 0;
-  animation: ${Fade} 0.5s linear 400ms;
-  animation-fill-mode: forwards;
+  animation: ${Fade} 0.5s linear;
 `
 
 const CanvasWrapper = styled.div`
@@ -251,6 +249,7 @@ export default class Spirograph extends React.Component {
       this.pctx.stroke()
     } else {
       // if completed, start new spirograph
+
       this.mctx.clearRect(
         0,
         0,
@@ -282,7 +281,9 @@ export default class Spirograph extends React.Component {
           onTouchStart={this.speedUp}
           onTouchEnd={this.speedDown}
         >
-          <Canvas ref={movingCanvas => (this.movingCanvas = movingCanvas)} />
+          <Canvas
+            ref={movingCanvas => (this.movingCanvas = movingCanvas)}
+          />
         </CanvasWrapper>
         <CanvasWrapper
           onMouseDown={this.speedUp}

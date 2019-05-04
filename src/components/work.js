@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import media from 'utils/media-queries'
 
-import ColorBar from 'components/colorbar'
 import Project from 'components/project'
 
 import KellerkindLogo from 'img/kellerkindlogo'
@@ -33,6 +32,16 @@ const Projects = styled.div`
   `};
 `
 
+const TwoColumn = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-column-gap: 200px;
+`
+
+const LeftColumn = styled.div``
+
+const RightColumn = styled.div``
+
 const LifeTimeLink = <Link to="/lifetime">Read More</Link>
 const PalettteLink = <Link to="/palettteapp">Read More</Link>
 const KellerkindLink = <Link to="/kellerkind">Read More</Link>
@@ -40,12 +49,11 @@ const BamLink = <Link to="/bam">Read More</Link>
 
 function Work() {
   return (
-    <Div>
-      <Title>
+    <TwoColumn>
+      <LeftColumn>
         <h2>Work</h2>
-        <ColorBar barColor="#A6FFD7" />
-      </Title>
-      <Projects>
+      </LeftColumn>
+      <RightColumn>
         <Project
           logo={LifeTimeLogo()}
           title="LifeTime"
@@ -70,8 +78,8 @@ function Work() {
           abstract="Climbing products and other stuff that gives you the bäm effect."
           link={BamLink}
         />
-      </Projects>
-    </Div>
+      </RightColumn>
+    </TwoColumn>
   )
 }
 
