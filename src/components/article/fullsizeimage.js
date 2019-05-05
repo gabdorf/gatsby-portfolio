@@ -6,6 +6,7 @@ const Image = styled.img`
   margin-left: auto;
   margin-right: auto;
   max-height: 750px;
+  max-width: 100%;
 `
 
 function FullSizeImage(props) {

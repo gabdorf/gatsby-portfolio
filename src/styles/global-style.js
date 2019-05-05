@@ -78,7 +78,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     line-height: 1.5;
     font-size: ${fontSize.f5};
     ${media.sm`
-      font-size: ${fontSize.f3};
+      font-size: ${fontSize.f4};
       line-height: 1.4;
     `}
     -webkit-tap-highlight-color: transparent;
@@ -88,48 +88,31 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-size: ${fontSize.f11};
     color: ${color.grey900};
     font-weight: 700;
-    margin: 0 0 32px 0;
+    margin: 0 0 24px 0;
     padding: 0;
     line-height: 1.1;
-    ${media.xl`
-      font-size: ${fontSize.f10};
-    `}
-    ${media.md`
-      font-size: ${fontSize.f9};
-    `}
     ${media.sm`
-      font-size: ${fontSize.f7};
+      font-size: ${fontSize.f9};
     `}
   }
 
   h2 {
-    border-top: 2px solid ${color.grey900};;
-    display: inline-block;
-    font-size: ${fontSize.f5};
+    font-size: ${fontSize.f9};
     color: ${color.grey900};
-    letter-spacing: 5px;
-    text-transform: uppercase;
     font-weight: 700;
-    margin: 6px 0 0 0;
-    padding: 16px 0 0 0;
+    margin: 10px 0 20px 0;
+    padding: 0;
     line-height: 1.1;
-    ${media.md`
-      border: none;
-      margin-bottom: 54px;
-      text-transform: none;
-      letter-spacing: 0px;
-      font-size: ${fontSize.f6};
-    `}
     ${media.sm`
-      font-size: ${fontSize.f5};
+      font-size: ${fontSize.f7};
     `}
   }
 
   h3 {
     font-size: ${fontSize.f6};
     color: ${color.grey900};
-    font-weight: 900;
-    margin: 0 0 16px 0;
+    font-weight: 700;
+    margin: 0px 0 12px 0;
     padding: 0;
     line-height: 1.1;
     ${media.sm`
@@ -140,16 +123,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   h4 {
     font-size: ${fontSize.f5};
     color: ${color.grey900};
-    font-weight: 900;
-    margin: 0 0 12px 0;
+    font-weight: 700;
+    margin: 0 0 8px 0;
     padding: 0;
     line-height: 1.1;
-    ${media.md`
-      font-size: ${fontSize.f4};
-    `}
-    ${media.sm`
-      font-size: ${fontSize.f3};
-    `}
   }
 
   p {
@@ -159,13 +136,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
       font-size: ${fontSize.f4};
       line-height: 1.4;
     `}
+  }
+
+  p + h2 {
+    margin-top: 48px;
+  }
+
+  p + h3 {
     margin-top: 32px;
-    &:first-of-type {
-      margin-top: 0;
-    }
-    &:last-of-type {
-      margin-top: 0;
-    }
   }
 
   a {

@@ -5,11 +5,13 @@ const TwoImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 100%;
 `
 
 const Image = styled.img`
   max-height: ${props => props.maxHeight};
   align-self: center;
+  max-width: 100%;
 `
 
 function TwoImage(props) {

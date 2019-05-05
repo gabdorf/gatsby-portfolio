@@ -13,15 +13,15 @@ export const color = {
 }
 
 export const fontSize = {
-  f11: '58px',
+  f11: '64px',
   f10: '48px',
   f9: '42px',
   f8: '36px',
   f7: '30px',
   f6: '26px',
   f5: '22px',
-  f4: '18px',
-  f3: '16px',
-  f2: '14px',
-  f1: '12px',
+  f4: '20px',
+  f3: '18px',
+  f2: '16px',
+  f1: '14px',
 }

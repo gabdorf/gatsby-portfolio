@@ -46,9 +46,9 @@ const Rotate = keyframes`
 
 const Canvas = styled.canvas`
   animation: ${Rotate} 30s linear infinite;
-  ${media.sm`
-    margin-top: 25vh;
-  `};
+  /* ${media.sm`
+    margin-top: 20vh;
+  `}; */
 `
 
 let windowWidth

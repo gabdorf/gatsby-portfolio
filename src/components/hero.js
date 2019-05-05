@@ -24,6 +24,9 @@ const HeroSection = styled.section`
   flex-direction: column;
   overflow: hidden;
   width: 100vw;
+  ${media.sm`
+    height: calc(100vh - 76px);
+  `}
 `
 
 const Header = styled.div`
@@ -55,6 +58,7 @@ const Name = styled.h1`
   line-height: 1.2;
   ${media.sm`
     text-align: center;
+    font-size: ${fontSize.f7};
   `};
 `
 
@@ -62,8 +66,10 @@ const Role = styled.div`
   color: ${color.grey700};
   text-align: left;
   line-height: 1.4;
+  font-size: ${fontSize.f5};
   ${media.sm`
     text-align: center;
+    font-size: ${fontSize.f6};
   `};
 `
 
@@ -72,6 +78,9 @@ const SocialLinks = styled.div`
   grid-column-gap: 4px;
   grid-template-columns: auto auto auto;
   padding: 15px 24px 0 24px;
+  ${media.sm`
+    padding: 4px 0 0 0;
+  `}
   justify-content: center;
   opacity: 0;
   animation: ${Fade} 1s linear 200ms;
@@ -93,10 +102,10 @@ const SocialLink = styled.a`
     background: ${color.grey150};
   }
   &:active {
-    color: white;
+    color: ${color.grey900};
   }
   &:visited {
-    color: white;
+    color: ${color.grey900};
   }
 `
 

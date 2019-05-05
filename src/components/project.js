@@ -7,14 +7,17 @@ import { fontSize } from 'styles/theme'
 import Logo from 'components/projectlogo'
 
 const ProjectWrapper = styled.div`
-  padding-bottom: 100px;
+  margin-bottom: 100px;
   display: flex;
   @media (max-width: 660px) {
-    flex-wrap: wrap;
   }
   &:last-of-type {
-    padding-bottom: 0px;
+    margin-bottom: 0px;
   }
+  ${media.sm`
+    flex-wrap: wrap;
+    margin-bottom: 68px;
+  `}
 `
 
 const Description = styled.div`
