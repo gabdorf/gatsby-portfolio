@@ -76,9 +76,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
-    font-size: ${fontSize.f5};
+    font-size: ${fontSize.f4};
     ${media.sm`
-      font-size: ${fontSize.f4};
+      font-size: ${fontSize.f3};
       line-height: 1.4;
     `}
     -webkit-tap-highlight-color: transparent;
@@ -97,14 +97,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   h2 {
-    font-size: ${fontSize.f7};
+    font-size: ${fontSize.f8};
     color: ${color.grey900};
     font-weight: 700;
     margin: 10px 0 20px 0;
     padding: 0;
     line-height: 1.1;
     ${media.sm`
-      font-size: ${fontSize.f6};
+      font-size: ${fontSize.f7};
     `}
   }
 
@@ -133,10 +133,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   p {
-    font-size: ${fontSize.f5};
+    font-size: ${fontSize.f4};
     line-height: 1.5;
     ${media.sm`
-      font-size: ${fontSize.f4};
+      font-size: ${fontSize.f3};
       line-height: 1.4;
     `}
   }

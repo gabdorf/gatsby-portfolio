@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  max-width: 752px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 `

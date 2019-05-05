@@ -30,12 +30,10 @@ function About() {
       leftColumn={<SectionHeading>About</SectionHeading>}
       rightColumn={
         <Fragment>
-          <p>
-            <Big>
-              Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I
-              bring ideas to life with design and&nbsp;code.
-            </Big>
-          </p>
+          <Big>
+            Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I bring
+            ideas to life with design and&nbsp;code.
+          </Big>
           <p>
             In my work I strive to optimize the aesthetic value and usability of
             products without losing sight of the technical challenges and

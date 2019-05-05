@@ -9,7 +9,6 @@ import Header from 'components/header'
 import Icon from 'components/icons'
 
 const TitleBar = styled.div`
-  margin-top: 40px;
 `
 
 const BackArrow = styled(Link)`

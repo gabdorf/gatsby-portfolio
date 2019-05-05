@@ -24,8 +24,6 @@ const Div = styled.div`
   `};
   z-index: 10;
   height: ${props => (props.article ? '74px' : '')};
-  border-bottom: ${props =>
-    props.article ? `1px solid ${color.grey400}` : 'none'};
 `
 
 const LogoWrapper = styled.div`

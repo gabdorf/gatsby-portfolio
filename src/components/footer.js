@@ -8,10 +8,10 @@ import Section from 'components/section'
 
 const FooterText = styled.div`
   text-align: center;
-  font-size: ${fontSize.f3};
+  font-size: ${fontSize.f2};
   ${media.sm`
     text-align: left;
-    font-size: ${fontSize.f2};
+    font-size: ${fontSize.f1};
   `}
 `
 
