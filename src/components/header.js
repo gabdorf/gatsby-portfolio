@@ -20,16 +20,18 @@ const Div = styled.div`
   flex-direction: row;
   flex: 0 0 auto;
   ${media.sm`
-    display: block;
+    display: ${props => (props.article ? 'flex' : 'block')};
   `};
   z-index: 10;
-  height: 110px;
+  height: ${props => (props.article ? '74px' : '')};
+  border-bottom: ${props =>
+    props.article ? `1px solid ${color.grey400}` : 'none'};
 `
 
 const LogoWrapper = styled.div`
   padding: 24px 0 24px 24px;
   ${media.sm`
-    padding: 24px 0 0 0;
+    padding: ${props => (props.article ? '24px 0 24px 24px' : '24px 0 0 0')};
   `};
   opacity: 0;
   animation: ${Fade} 1s linear;
@@ -47,8 +49,8 @@ const Name = styled.h1`
   margin: 0;
   line-height: 1.2;
   ${media.sm`
-    text-align: center;
-    font-size: ${fontSize.f7};
+    text-align: ${props => (props.article ? 'left' : 'center')};
+    font-size: ${props => (props.article ? fontSize.f6 : fontSize.f7)};
   `};
 `
 
@@ -69,7 +71,7 @@ const SocialLinks = styled.div`
   grid-template-columns: auto auto auto;
   padding: 15px 24px 0 24px;
   ${media.sm`
-    padding: 4px 0 0 0;
+    padding: ${props => (props.article ? '15px 24px 0 24px' : '4px 0 0 0')};
   `}
   justify-content: center;
   opacity: 0;
@@ -90,6 +92,7 @@ const SocialLink = styled.a`
   &:hover {
     border: 1px solid ${color.grey150};
     background: ${color.grey150};
+    color: ${color.grey900};
   }
   &:active {
     color: ${color.grey900};
@@ -159,18 +162,20 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Div>
-        <LogoWrapper>
+      <Div article={this.props.article}>
+        <LogoWrapper article={this.props.article}>
           {this.props.article && (
             <NameLink href="/">
-              <Name>Gabriel Adorf</Name>
+              <Name article={this.props.article}>Gabriel Adorf</Name>
             </NameLink>
           )}
-          {!this.props.article && <Name>Gabriel Adorf</Name>}
+          {!this.props.article && (
+            <Name article={this.props.article}>Gabriel Adorf</Name>
+          )}
           {!this.props.article && <Role>UI / UX Design</Role>}
         </LogoWrapper>
         <div>
-          <SocialLinks>
+          <SocialLinks article={this.props.article}>
             <SocialLink
               href="mailto:gabriel.adorf@gmail.com"
               onMouseOver={() => this.showTooltip('Mail')}
@@ -207,12 +212,17 @@ class Header extends React.Component {
               </SvgWrapper>
             </SocialLink>
           </SocialLinks>
-          <Tooltip visible={this.state.tooltipIsVisible}>
-            <TooltipText>{this.state.tooltipText}</TooltipText>
-            <TooltipIcon>
-              <Icon glyph="arrow" size={24} />
-            </TooltipIcon>
-          </Tooltip>
+          {!this.props.article && (
+            <Tooltip
+              visible={this.state.tooltipIsVisible}
+              article={this.props.article}
+            >
+              <TooltipText>{this.state.tooltipText}</TooltipText>
+              <TooltipIcon>
+                <Icon glyph="arrow" size={24} />
+              </TooltipIcon>
+            </Tooltip>
+          )}
         </div>
       </Div>
     )

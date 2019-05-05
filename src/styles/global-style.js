@@ -97,14 +97,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   h2 {
-    font-size: ${fontSize.f9};
+    font-size: ${fontSize.f7};
     color: ${color.grey900};
     font-weight: 700;
     margin: 10px 0 20px 0;
     padding: 0;
     line-height: 1.1;
     ${media.sm`
-      font-size: ${fontSize.f7};
+      font-size: ${fontSize.f6};
     `}
   }
 
@@ -127,6 +127,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     margin: 0 0 8px 0;
     padding: 0;
     line-height: 1.1;
+    ${media.sm`
+      font-size: ${fontSize.f4};
+    `}
   }
 
   p {
@@ -147,6 +150,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   a {
+    color: ${color.grey700};
+    &:visited {
+      color: ${color.grey700};
+    }
+    &:active {
+      color: ${color.blue500};
+    }
+    &:hover {
+      color: ${color.blue500};
+    }
     :focus {
       outline: ${props => (props.displayOutlines ? '' : 'none')};
     }

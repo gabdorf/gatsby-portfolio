@@ -9,7 +9,7 @@ import SectionHeading from 'components/sectionHeading'
 import ScenographicsLogo from 'img/scenographicslogo'
 
 const ScenographicsLink = (
-  <a href="http://medium.com/scenographics">Read More an Medium ↗</a>
+  <a href="http://medium.com/scenographics">Read More on Medium ↗</a>
 )
 
 function Writing() {

@@ -1,13 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from 'utils/media-queries'
+
 const Image = styled.div`
   background: #cdcdcd;
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: ${props => props.focusX} ${props => props.focusY};
   width: 100%;
-  height: 82vh;
+  height: calc(100vh - 208px);
+  ${media.sm`
+    height: calc(100vh - 184px);
+  `}
 `
 
 function LargeImage(props) {

@@ -21,7 +21,7 @@ function Footer() {
       <FooterText>
         This page is open source, Check it out on{' '}
         <a href="https://github.com/gabdorf/gabriel-adorf-portfolio">Github</a>
-        .<br />© 2018 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <br />© 2019 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <a href="/imprint">Imprint</a>
       </FooterText>
     </Section>

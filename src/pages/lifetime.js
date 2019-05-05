@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import GlobalWrapper from 'components/global-wrapper'
+import media from 'utils/media-queries'
 
 import Header from 'components/article/header'
 import CoverImage from 'components/article/coverimage'
@@ -22,6 +23,9 @@ import LifeTimeHubImage2 from 'img/articles/lifetime/lifetimeHub2.jpg'
 
 const Section = styled.section`
   margin: 64px 0;
+  ${media.sm`
+    margin: 40px 0;
+  `}
 `
 
 const EmbedContainer = styled.div`

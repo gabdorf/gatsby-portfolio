@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'utils/media-queries'
@@ -6,17 +6,31 @@ import media from 'utils/media-queries'
 import { color, fontSize, shadow } from 'styles/theme'
 
 import Header from 'components/header'
+import Icon from 'components/icons'
 
-const BackArrow = styled.svg`
-  margin: 16px 0 0 24px;
+const TitleBar = styled.div`
+  margin-top: 40px;
+`
+
+const BackArrow = styled(Link)`
   position: absolute;
-  fill: #333;
-  :hover {
-    fill: red;
-  }
+  left: 10px;
+  transform: rotate(90deg);
+  max-width: 64px;
+  max-height: 64px;
+  color: ${color.grey900};
   ${media.sm`
     display: none;
   `};
+  &:visited {
+    color: ${color.grey900};
+  }
+  &:hover {
+    color: ${color.grey900};
+  }
+  &:active {
+    color: ${color.grey900};
+  }
 `
 
 const Title = styled.div`
@@ -24,33 +38,20 @@ const Title = styled.div`
   text-align: center;
 `
 
-const Center = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`
-
 function ArticleHeader(props) {
   return (
-    <div>
+    <Fragment>
       <Header article />
-      <Link to="/#projects">
-        <BackArrow
-          width="28"
-          height="42"
-          viewBox="0 0 28 42"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.84 17.69L21.295.232l6.01 6.01-14.45 14.452 14.45 14.45-6.01 6.012L.834 20.695 3.84 17.69z"
-            fillRule="nonzero"
-          />
-        </BackArrow>
-      </Link>
-      <Title>
-        <h1>{props.title}</h1>
-      </Title>
-    </div>
+      <TitleBar>
+          <BackArrow to="/#projects">
+            <Icon glyph="arrow" size={64}/>
+          </BackArrow>
+        {/* </Link> */}
+        <Title>
+          <h1>{props.title}</h1>
+        </Title>
+      </TitleBar>
+    </Fragment>
   )
 }
 
