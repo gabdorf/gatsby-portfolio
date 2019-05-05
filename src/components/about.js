@@ -3,11 +3,9 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'utils/media-queries'
 
-import { fontSize } from 'styles/theme'
+import { color, fontSize } from 'styles/theme'
 
 import WhenInView from 'components/wheninView'
-
-import ProfileImage from 'img/gabrieladorf.svg'
 
 const Center = styled.div`
   display: flex;
@@ -47,28 +45,29 @@ const Reveal = styled.div`
 
 const Big = styled.span`
   font-size: ${fontSize.f6};
+  color: ${color.grey900};
   font-weight: 700;
-  ${media.md`
-    font-size: ${fontSize.f6};
+  ${media.sm`
+    font-size: ${fontSize.f5};
   `}
-`
-
-const Image = styled.div`
-  width: 200px;
-  height: 200px;
-  background: gainsboro;
-  border-radius: 8px;
 `
 
 const TwoColumn = styled.div`
   display: grid;
   grid-template-columns: 100px auto;
-  grid-column-gap: 272px;
+  justify-content: space-between;
+  width: 100%;
+  ${media.md`
+    grid-template-columns: auto;
+    justify-content: center;
+  `}
 `
 
 const LeftColumn = styled.div``
 
-const RightColumn = styled.div``
+const RightColumn = styled.div`
+  max-width: 544px;
+`
 
 function About() {
   return (

@@ -67,7 +67,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   body {
     font-family: 'TTNormsPro', system-ui, sans-serif;
     height: 100%;
-    color: ${color.grey900};
+    color: ${color.grey700};
     font-feature-settings: "liga","kern";
     font-variant-ligatures: contextual common-ligatures;
     font-kerning: normal;
@@ -86,6 +86,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
   h1 {
     font-size: ${fontSize.f11};
+    color: ${color.grey900};
     font-weight: 700;
     margin: 0 0 32px 0;
     padding: 0;
@@ -102,19 +103,31 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 
   h2 {
-    border-top: 2px solid black;
+    border-top: 2px solid ${color.grey900};;
     display: inline-block;
     font-size: ${fontSize.f5};
-    letter-spacing: 6px;
+    color: ${color.grey900};
+    letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 700;
     margin: 6px 0 0 0;
     padding: 16px 0 0 0;
     line-height: 1.1;
+    ${media.md`
+      border: none;
+      margin-bottom: 54px;
+      text-transform: none;
+      letter-spacing: 0px;
+      font-size: ${fontSize.f6};
+    `}
+    ${media.sm`
+      font-size: ${fontSize.f5};
+    `}
   }
 
   h3 {
     font-size: ${fontSize.f6};
+    color: ${color.grey900};
     font-weight: 900;
     margin: 0 0 16px 0;
     padding: 0;
@@ -126,6 +139,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
   h4 {
     font-size: ${fontSize.f5};
+    color: ${color.grey900};
     font-weight: 900;
     margin: 0 0 12px 0;
     padding: 0;
@@ -140,11 +154,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
   p {
     font-size: ${fontSize.f5};
-    line-height: 1.4;
+    line-height: 1.5;
     ${media.sm`
-      font-size: ${fontSize.f3};
+      font-size: ${fontSize.f4};
       line-height: 1.4;
     `}
+    margin-top: 32px;
     &:first-of-type {
       margin-top: 0;
     }

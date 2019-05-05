@@ -69,9 +69,9 @@ const Role = styled.div`
 
 const SocialLinks = styled.div`
   display: grid;
-  grid-column-gap: 8px;
+  grid-column-gap: 4px;
   grid-template-columns: auto auto auto;
-  padding: 24px 24px 0 24px;
+  padding: 15px 24px 0 24px;
   justify-content: center;
   opacity: 0;
   animation: ${Fade} 1s linear 200ms;
@@ -84,9 +84,14 @@ const SocialLink = styled.a`
   align-items: center;
   width: 40px;
   height: 40px;
-  background: ${color.grey900};
+  background: white;
   border-radius: 20px;
-  color: white;
+  color: ${color.grey900};
+  border: 1px solid white;
+  &:hover {
+    border: 1px solid ${color.grey150};
+    background: ${color.grey150};
+  }
   &:active {
     color: white;
   }
@@ -127,16 +132,16 @@ const Tooltip = styled.div`
 
 const TooltipIcon = styled.div`
   transform: rotate(270deg);
+  margin-left: 8px;
 `
 
-const TooltipText = styled.div`
-`
+const TooltipText = styled.div``
 
 const Spacer = styled.div`
   flex: 1 1 0;
 `
 
-const ArrowWrapper = styled.div`
+const GearValues = styled.div`
   display: flex;
   justify-content: center;
   z-index: 10;
@@ -145,18 +150,7 @@ const ArrowWrapper = styled.div`
   opacity: 0;
   animation: ${Fade} 1s linear 400ms;
   animation-fill-mode: forwards;
-`
-
-const ArrowLink = styled(AnchorLink)`
-  display: block;
-  width: 100vw;
-  color: ${color.grey900};
-  transition: all 300ms;
-  padding: 40px;
-  height: 32px;
-  ${media.sm`
-    display: none;
-  `};
+  padding-bottom: 48px;
 `
 
 class Hero extends React.Component {
@@ -168,20 +162,10 @@ class Hero extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log('mounted')
-    window.requestAnimationFrame(function() {
-      console.log('rendered?')
-    })
-  }
-
   showTooltip = tooltipText => {
     this.setState({
       tooltipIsVisible: true,
       tooltipText: tooltipText,
-      showLogo: false,
-      showSocialLinks: false,
-      showArrow: false,
     })
   }
 
@@ -191,10 +175,18 @@ class Hero extends React.Component {
     })
   }
 
+  getGearValues = (gearA, gearB, ratio) => {
+    this.setState({
+      gearA: gearA,
+      gearB: gearB,
+      ratio: ratio,
+    })
+  }
+
   render() {
     return (
       <HeroSection>
-        <Spirograph color="#333" speed={0.012} />
+        <Spirograph speed={0.012} getGearValues={this.getGearValues} />
         <Header>
           <LogoWrapper>
             <Name>Gabriel Adorf</Name>
@@ -202,6 +194,17 @@ class Hero extends React.Component {
           </LogoWrapper>
           <div>
             <SocialLinks>
+              <SocialLink
+                href="mailto:gabriel.adorf@gmail.com"
+                onMouseOver={() => this.showTooltip('Mail')}
+                onMouseLeave={this.hideTooltip}
+              >
+                <SvgWrapper>
+                  <InlineSvg>
+                    <path d="m22.3592881 5.82427054v.59619016c0 .24378184-.1417446.46531584-.3630886.56747461l-8.9485541 4.13010189c-.6647377.306802-1.4305531.306802-2.0952908 0l-8.94855408-4.13010189c-.22134402-.10215877-.36308864-.32369277-.36308864-.56747461v-.59619016c0-.55012277.44596262-.99608539.9960854-.99608539h18.72640542c.5501228 0 .9960854.44596262.9960854.99608539zm-1.25 13.34754436h-18.21857622c-.69035594 0-1.25-.5596441-1.25-1.25v-8.52329148c0-.20710678.16789322-.375.375-.375.05424403 0 .10784237.01176807.15709707.03449228l8.78345405 4.0523453c.6647826.3067049 1.4305981.306593 2.095291-.0003062l8.7755375-4.05180448c.1880319-.08681729.4108411-.00476666.4976584.18326519.0227541.04928162.0345382.1029156.0345382.1571966v8.52310279c0 .6903559-.559644 1.25-1.25 1.25z" />
+                  </InlineSvg>
+                </SvgWrapper>
+              </SocialLink>
               <SocialLink
                 href="https://twitter.com/gabdorf"
                 target="blank"
@@ -226,32 +229,19 @@ class Hero extends React.Component {
                   </InlineSvg>
                 </SvgWrapper>
               </SocialLink>
-              <SocialLink
-                href="mailto:gabriel.adorf@gmail.com"
-                onMouseOver={() => this.showTooltip('Mail')}
-                onMouseLeave={this.hideTooltip}
-              >
-                <SvgWrapper>
-                  <InlineSvg>
-                    <path d="m22.3592881 5.82427054v.59619016c0 .24378184-.1417446.46531584-.3630886.56747461l-8.9485541 4.13010189c-.6647377.306802-1.4305531.306802-2.0952908 0l-8.94855408-4.13010189c-.22134402-.10215877-.36308864-.32369277-.36308864-.56747461v-.59619016c0-.55012277.44596262-.99608539.9960854-.99608539h18.72640542c.5501228 0 .9960854.44596262.9960854.99608539zm-1.25 13.34754436h-18.21857622c-.69035594 0-1.25-.5596441-1.25-1.25v-8.52329148c0-.20710678.16789322-.375.375-.375.05424403 0 .10784237.01176807.15709707.03449228l8.78345405 4.0523453c.6647826.3067049 1.4305981.306593 2.095291-.0003062l8.7755375-4.05180448c.1880319-.08681729.4108411-.00476666.4976584.18326519.0227541.04928162.0345382.1029156.0345382.1571966v8.52310279c0 .6903559-.559644 1.25-1.25 1.25z" />
-                  </InlineSvg>
-                </SvgWrapper>
-              </SocialLink>
             </SocialLinks>
             <Tooltip visible={this.state.tooltipIsVisible}>
+              <TooltipText>{this.state.tooltipText}</TooltipText>
               <TooltipIcon>
                 <Icon glyph="arrow" size={24} />
               </TooltipIcon>
-              <TooltipText>{this.state.tooltipText}</TooltipText>
             </Tooltip>
           </div>
         </Header>
         <Spacer />
-        {/* <ArrowWrapper>
-          <ArrowLink href="#about">
-            <Icon glyph="arrow" size={40} />
-          </ArrowLink>
-        </ArrowWrapper> */}
+        {/* <GearValues>
+          {this.state.gearA} | {this.state.gearB} | {this.state.ratio}
+        </GearValues> */}
       </HeroSection>
     )
   }
