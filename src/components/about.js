@@ -47,7 +47,7 @@ function About() {
           </p>
           <p style={{ marginBottom: 0 }}>
             Outside of work I'm passionate about my family, climbing and riding
-            boards on water and snow.
+            all kinds of boards on concrete, water and snow.
           </p>
         </Fragment>
       }

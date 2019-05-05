@@ -4,6 +4,7 @@ import media from 'utils/media-queries'
 
 import TwoColumns from 'components/twoColumns'
 import Project from 'components/project'
+import SectionHeading from 'components/sectionHeading'
 
 import ScenographicsLogo from 'img/scenographicslogo'
 
@@ -15,7 +16,7 @@ function Writing() {
   return (
     <TwoColumns
       wide
-      leftColumn={<h2>Writing</h2>}
+      leftColumn={<SectionHeading>Writing</SectionHeading>}
       rightColumn={
         <Project
           logo={ScenographicsLogo()}

@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import media from 'utils/media-queries'
 
 import TwoColumns from 'components/twoColumns'
+import SectionHeading from 'components/sectionHeading'
 import Project from 'components/project'
 
 import KellerkindLogo from 'img/kellerkindlogo'
@@ -20,7 +21,7 @@ function Work() {
   return (
     <TwoColumns
       wide
-      leftColumn={<h2>Work</h2>}
+      leftColumn={<SectionHeading>Work</SectionHeading>}
       rightColumn={
         <Fragment>
           <Project
