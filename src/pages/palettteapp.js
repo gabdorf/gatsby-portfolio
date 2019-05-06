@@ -19,7 +19,7 @@ import PalettteImage4 from 'img/articles/palettteapp/palettte4.jpg'
 const Section = styled.section`
   margin: 64px 0;
   ${media.sm`
-    margin: 40px 0;
+    margin: 0;
   `}
 `
 

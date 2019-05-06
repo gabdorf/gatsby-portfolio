@@ -19,7 +19,7 @@ import KellerkindImage5 from 'img/articles/kellerkind/back_to_the_woods.jpg'
 const Section = styled.section`
   margin: 64px 0;
   ${media.sm`
-    margin: 40px 0;
+    margin: 0;
   `}
 `
 

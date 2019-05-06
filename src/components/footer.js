@@ -19,7 +19,7 @@ function Footer() {
   return (
     <Section>
       <FooterText>
-        This page is open source, Check it out on{' '}
+        This page is open source, Check it out on&nbsp;
         <a href="https://github.com/gabdorf/gabriel-adorf-portfolio">Github</a>
         <br />© 2019 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <a href="/imprint">Imprint</a>

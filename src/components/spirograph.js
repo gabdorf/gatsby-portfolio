@@ -22,7 +22,7 @@ const Div = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  animation: ${Fade} 0.5s linear;
+  /* animation: ${Fade} 0.5s linear; */
 `
 
 const CanvasWrapper = styled.div`

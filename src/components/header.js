@@ -31,9 +31,9 @@ const LogoWrapper = styled.div`
   ${media.sm`
     padding: ${props => (props.article ? '24px 0 24px 24px' : '24px 0 0 0')};
   `};
-  opacity: 0;
+  /* opacity: 0;
   animation: ${Fade} 1s linear;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 `
 
 const NameLink = styled.a`
@@ -47,16 +47,25 @@ const Name = styled.h1`
   margin: 0;
   line-height: 1.2;
   ${media.sm`
-    text-align: ${props => (props.article ? 'left' : 'center')};
-    font-size: ${props => (props.article ? fontSize.f6 : fontSize.f7)};
+    text-align: center;
+    font-size: ${fontSize.f7};
   `};
+`
+
+const NameArticle = styled.div`
+  white-space: nowrap;
+  font-size: ${fontSize.f5};
+  font-weight: 700;
+  text-align: left;
+  margin: 0;
+  line-height: 1.2;
 `
 
 const Role = styled.div`
   color: ${color.grey700};
   text-align: left;
   line-height: 1.4;
-  font-size: ${fontSize.f5};
+  font-size: ${fontSize.f4};
   ${media.sm`
     text-align: center;
     font-size: ${fontSize.f6};
@@ -69,12 +78,13 @@ const SocialLinks = styled.div`
   grid-template-columns: auto auto auto;
   padding: 15px 24px 0 24px;
   ${media.sm`
-    padding: ${props => (props.article ? '15px 24px 0 24px' : '4px 0 0 0')};
+    padding: ${props => (props.article ? '15px 12px 0 8px' : '4px 0 0 0')};
+    grid-column-gap: 0;
   `}
   justify-content: center;
-  opacity: 0;
+  /* opacity: 0;
   animation: ${Fade} 1s linear 200ms;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 `
 
 const SocialLink = styled.a`
@@ -164,7 +174,9 @@ class Header extends React.Component {
         <LogoWrapper article={this.props.article}>
           {this.props.article && (
             <NameLink href="/">
-              <Name article={this.props.article}>Gabriel Adorf</Name>
+              <NameArticle article={this.props.article}>
+                Gabriel Adorf
+              </NameArticle>
             </NameLink>
           )}
           {!this.props.article && (

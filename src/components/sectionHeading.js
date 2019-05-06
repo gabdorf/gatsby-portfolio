@@ -15,15 +15,13 @@ const H2 = styled.h2`
   padding: 16px 0 0 0;
   line-height: 1.1;
   ${media.md`
-      border: none;
+      border-top: none;
       margin-bottom: 72px;
-      text-transform: none;
-      letter-spacing: 0px;
-      font-size: ${fontSize.f6};
+      padding-bottom: 12px;
+      border-bottom: 2px solid ${color.grey900};
     `}
   ${media.sm`
       margin-bottom: 60px;
-      border-bottom: 2px solid ${color.grey900};
       padding-bottom: 8px;
     `}
 `

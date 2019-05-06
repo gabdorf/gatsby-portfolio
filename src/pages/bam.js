@@ -20,7 +20,7 @@ import AfterClimbImage4 from 'img/articles/bam/afterclimb_logo.jpg'
 const Section = styled.section`
   margin: 64px 0;
   ${media.sm`
-    margin: 40px 0;
+    margin: 0;
   `}
 `
 

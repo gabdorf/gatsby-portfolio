@@ -24,7 +24,7 @@ import LifeTimeHubImage2 from 'img/articles/lifetime/lifetimeHub2.jpg'
 const Section = styled.section`
   margin: 64px 0;
   ${media.sm`
-    margin: 40px 0;
+    margin: 0;
   `}
 `
 

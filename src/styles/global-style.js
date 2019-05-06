@@ -92,7 +92,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     padding: 0;
     line-height: 1.1;
     ${media.sm`
-      font-size: ${fontSize.f9};
+      font-size: ${fontSize.f10};
+    `}
+    ${media.xs`
+      font-size: ${fontSize.f8};
     `}
   }
 
