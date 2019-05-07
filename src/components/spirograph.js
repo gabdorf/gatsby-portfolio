@@ -134,7 +134,7 @@ export default class Spirograph extends React.Component {
     this.N = this.reduce(randomN, randomM)[0]
     this.M = this.reduce(randomN, randomM)[1]
     this.gearRadius = this.N / this.M
-    this.f = (Math.random() * (0.9 - 0.2) + 0.2).toFixed(1)
+    this.f = Math.random() * (0.9 - 0.2) + 0.2
     // this.props.getGearValues(this.N, this.M, this.f)
 
     // calculate gear values
