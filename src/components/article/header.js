@@ -3,13 +3,12 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'utils/media-queries'
 
-import { color, fontSize, shadow } from 'styles/theme'
+import { color } from 'styles/theme'
 
 import Header from 'components/header'
 import Icon from 'components/icons'
 
-const TitleBar = styled.div`
-`
+const TitleBar = styled.div``
 
 const BackArrow = styled(Link)`
   position: absolute;
@@ -42,10 +41,9 @@ function ArticleHeader(props) {
     <Fragment>
       <Header article />
       <TitleBar>
-          <BackArrow to="/#projects">
-            <Icon glyph="arrow" size={64}/>
-          </BackArrow>
-        {/* </Link> */}
+        <BackArrow to="/#projects">
+          <Icon glyph="arrow" size={64} />
+        </BackArrow>
         <Title>
           <h1>{props.title}</h1>
         </Title>

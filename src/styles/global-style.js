@@ -3,12 +3,6 @@ import media from 'utils/media-queries'
 
 import { color, fontSize } from 'styles/theme'
 
-import InterRegularWoff2 from 'fonts/Inter-Regular.woff2'
-import InterRegularWoff from 'fonts/Inter-Regular.woff'
-
-import InterBoldWoff2 from 'fonts/Inter-Bold.woff2'
-import InterBoldWoff from 'fonts/Inter-Bold.woff'
-
 import TTNormsProBoldWoff from 'fonts/TTNormsProBold.woff'
 import TTNormsProBoldWoff2 from 'fonts/TTNormsProBold.woff2'
 
@@ -35,22 +29,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     src: url(${TTNormsProRegularWoff}) format('woff');
     src: url(${TTNormsProRegularWoff2}) format('woff2');
     font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'inter';
-    src: url(${InterRegularWoff2}) format('woff2');
-    src: url(${InterRegularWoff}) format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'inter';
-    src: url(${InterBoldWoff2}) format('woff2');
-    src: url(${InterBoldWoff}) format('woff');
-    font-weight: 700;
     font-style: normal;
   }
 

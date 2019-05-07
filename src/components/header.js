@@ -1,18 +1,9 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import media from 'utils/media-queries'
 import { color, fontSize } from 'styles/theme'
 
 import Icon from 'components/icons'
-
-const Fade = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`
 
 const Div = styled.div`
   display: flex;
@@ -24,6 +15,10 @@ const Div = styled.div`
   `};
   z-index: 10;
   height: ${props => (props.article ? '74px' : '')};
+  ${media.xs`
+    display: block;
+    height: 112px;
+  `}
 `
 
 const LogoWrapper = styled.div`
@@ -31,9 +26,9 @@ const LogoWrapper = styled.div`
   ${media.sm`
     padding: ${props => (props.article ? '24px 0 24px 24px' : '24px 0 0 0')};
   `};
-  /* opacity: 0;
-  animation: ${Fade} 1s linear;
-  animation-fill-mode: forwards; */
+  ${media.xs`
+    padding: 24px 0 0 0;
+  `}
 `
 
 const NameLink = styled.a`
@@ -59,6 +54,10 @@ const NameArticle = styled.div`
   text-align: left;
   margin: 0;
   line-height: 1.2;
+  color: ${color.grey900};
+  ${media.xs`
+    text-align: center;
+  `};
 `
 
 const Role = styled.div`
@@ -81,10 +80,10 @@ const SocialLinks = styled.div`
     padding: ${props => (props.article ? '15px 12px 0 8px' : '4px 0 0 0')};
     grid-column-gap: 0;
   `}
+  ${media.xs`
+    padding: 0;
+  `}
   justify-content: center;
-  /* opacity: 0;
-  animation: ${Fade} 1s linear 200ms;
-  animation-fill-mode: forwards; */
 `
 
 const SocialLink = styled.a`

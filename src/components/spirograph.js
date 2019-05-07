@@ -2,16 +2,6 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { color } from 'styles/theme'
 import debounce from 'lodash/debounce'
-import media from 'utils/media-queries'
-
-const Fade = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`
 
 const Div = styled.div`
   position: absolute;
@@ -22,7 +12,6 @@ const Div = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* animation: ${Fade} 0.5s linear; */
 `
 
 const CanvasWrapper = styled.div`
@@ -46,9 +35,6 @@ const Rotate = keyframes`
 
 const Canvas = styled.canvas`
   animation: ${Rotate} 30s linear infinite;
-  /* ${media.sm`
-    margin-top: 20vh;
-  `}; */
 `
 
 let windowWidth
@@ -149,7 +135,7 @@ export default class Spirograph extends React.Component {
     this.M = this.reduce(randomN, randomM)[1]
     this.gearRadius = this.N / this.M
     this.f = (Math.random() * (0.9 - 0.2) + 0.2).toFixed(1)
-    this.props.getGearValues(this.N, this.M, this.f)
+    // this.props.getGearValues(this.N, this.M, this.f)
 
     // calculate gear values
     this.angle = 0
