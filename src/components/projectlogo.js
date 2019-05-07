@@ -1,15 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from 'utils/media-queries'
 
-const size = 180
+const size = 150
 
 const Image = styled.div`
   background: white;
-  /*box-shadow: 0px 10px 15px 3px rgba(0,0,0,0.05);*/
-  border: 1px solid rgba(0, 0, 0, 0.1);
   flex: 0 0 ${size}px;
   height: ${size}px;
   margin-right: 40px;
+  border-radius: 8px;
+  margin-top: -28px;
+  ${media.md`
+    margin-left: -28px;
+  `}
+  ${media.sm`
+    margin-bottom: -20px;
+  `}
 `
 
 function ProjectLogo(props) {

@@ -1,37 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from 'utils/media-queries'
 
-const FooterSection = styled.div`
-  color: #a6a6a6;
-  background: #1a1a1a;
-  height: 200px;
-  padding-top: 55px;
-  text-align: center;
-  font-size: 0.9em;
-  line-height: 1.4em;
-  font-family: 'bebasneue';
-`
+import { fontSize } from 'styles/theme'
+
+import Section from 'components/section'
 
 const FooterText = styled.div`
-  margin: 20px auto 0 auto;
-`
-
-const FooterLink = styled.a`
-  color: #a6a6a6 !important;
+  text-align: center;
+  font-size: ${fontSize.f2};
+  ${media.sm`
+    text-align: left;
+    font-size: ${fontSize.f1};
+  `}
 `
 
 function Footer() {
   return (
-    <FooterSection>
+    <Section>
       <FooterText>
-        This page is open source, Check it out on{' '}
-        <FooterLink href="https://github.com/gabdorf/gabriel-adorf-portfolio">
-          Github
-        </FooterLink>
-        .<br />© 2018 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <FooterLink href="/imprint">Imprint</FooterLink>
+        This page is open source, Check it out on&nbsp;
+        <a href="https://github.com/gabdorf/gabriel-adorf-portfolio">Github</a>
+        <br />© 2019 Gabriel Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a href="/imprint">Imprint</a>
       </FooterText>
-    </FooterSection>
+    </Section>
   )
 }
 

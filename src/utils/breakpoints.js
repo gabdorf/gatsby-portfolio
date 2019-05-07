@@ -140,9 +140,10 @@ class Breakpoints extends React.Component {
         <Button value={this.state.breakpointsButtonLabel} type='button' onClick={this.handleBreakpointClick} />
         <Button2 value={this.state.screensButtonLabel} type='button' onClick={this.handleScreenClick} />
         <BreakpointWrapper breakpointsAreVisible={this.state.breakpointsAreVisible}>
+          <Breakpoint width='350px' name='XS' />
           <Breakpoint width='600px' name='SM' />
           <Breakpoint width='900px' name='MD' />
-          <Breakpoint width='1200px' name='L' />
+          <Breakpoint width='1200px' name='LG' />
           <Breakpoint width='1700px' name='XL' />
         </BreakpointWrapper>
         <ScreenWrapper screensAreVisible={this.state.screensAreVisible}>

@@ -1,32 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
-import media from '../utils/media-queries'
+import media from 'utils/media-queries'
+
+import { color } from 'styles/theme'
 
 const Section = styled.section`
-  padding-top: 96px;
-  padding-bottom: 96px;
-  ${media.md`
-    padding-top: 40px;
-    padding-bottom: 40px;
-  `} &:nth-of-type(2n) {
-    background: #f9f9f9;
-  }
+  margin: 0 96px;
+  ${media.lg`
+    margin: 0 64px;
+  `}
+  ${media.sm`
+    margin: 0 24px;
+  `}
+  display: flex;
+  justify-content: center;
 `
 
 const Container = styled.div`
-  max-width: 1360px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  ${media.xl`
-    padding-left: 64px;
-    padding-right: 64px;
+  border-top: 1px solid ${color.grey400};
+  max-width: 916px;
+  padding: 128px 0;
+  ${media.sm`
+    padding: 64px 0;
   `}
-  ${media.md`
-    padding-left: 24px;
-    padding-right: 24px;
-  `}
+  width: 100%;
 `
 
 function SectionComponent(props) {

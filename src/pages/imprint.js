@@ -1,12 +1,13 @@
 import React from 'react'
-import Header from '../components/article/header'
 
-import ContentWrapper from '../components/article/contentwrapper'
-import Footer from '../components/footer'
+import GlobalWrapper from 'components/global-wrapper'
+import Header from 'components/article/header'
+import ContentWrapper from 'components/article/contentwrapper'
+import Footer from 'components/footer'
 
 function Imprint() {
   return (
-    <div>
+    <GlobalWrapper>
       <Header title="Imprint / Impressum" />
       <ContentWrapper>
         <h2>Angaben gemäß § 5 TMG</h2>
@@ -96,7 +97,7 @@ function Imprint() {
         </p>
       </ContentWrapper>
       <Footer />
-    </div>
+    </GlobalWrapper>
   )
 }
 

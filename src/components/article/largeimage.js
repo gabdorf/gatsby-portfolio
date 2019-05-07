@@ -6,6 +6,7 @@ const Image = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
 `
 
 function LargeImage(props) {
