@@ -37,7 +37,7 @@ function Work() {
           <Project
             logo={KellerkindLogo()}
             title="Kellerkind"
-            abstract="A social event company organizing two open air festivals with 15.000 yearly event visitors north of munich."
+            abstract="A social event company organizing two festivals for electronic music and art with ~20.000 yearly visitors north of munich."
             link={KellerkindLink}
           />
           <Project

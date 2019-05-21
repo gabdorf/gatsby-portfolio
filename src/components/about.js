@@ -41,11 +41,12 @@ function About() {
           </p>
           <p>
             Currently I'm designing the future of medical infrastructure at{' '}
-            <Link to="/lifetime">LifeTime</Link>.
+            <Link to="/lifetime">LifeTime</Link> and hosting electronic music
+            festivals with <Link to="/kellerkind">Kellerkind</Link>.
           </p>
           <p style={{ marginBottom: 0 }}>
             Outside of work I'm passionate about my family, climbing and riding
-            all kinds of boards on concrete, water and snow.
+            all kinds of boards on roads, water and snow.
           </p>
         </Fragment>
       }
