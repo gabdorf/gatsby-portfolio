@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <GlobalWrapper>
-        <Breakpoints />
+        {/* <Breakpoints /> */}
         <Hero />
         <Section id={'about'}>
           <About />
