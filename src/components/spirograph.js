@@ -121,6 +121,8 @@ export default class Spirograph extends React.Component {
     if (mousePressed === false) {
       this.speed = this.props.speed
     }
+    this.mctx.lineWidth = 1.2
+    this.pctx.lineWidth = 1.2
 
     // clear canvas
     this.mctx.clearRect(0, 0, this.movingCanvas.width, this.movingCanvas.height)
