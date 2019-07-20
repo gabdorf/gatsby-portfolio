@@ -8,20 +8,21 @@ import Footer from 'components/footer'
 function Imprint() {
   return (
     <GlobalWrapper>
-      <Header title="Imprint / Impressum" />
+      <Header title="Impressum" />
       <ContentWrapper>
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
           Gabriel Adorf
           <br />
-          Isländische Str. 7<br />
-          10439 Berlin
+          {process.env.GATSBY_STREET}
+          <br />
+          {process.env.GATSBY_CITY}
         </p>
         <h3>Kontakt</h3>
         <p>
-          Telefon: +49 1573 7654 210
+          Telefon: {process.env.GATSBY_PHONE}
           <br />
-          E-Mail: gabriel.adorf[ääät]gmail.com
+          E-Mail: {process.env.GATSBY_EMAIL}
         </p>
         <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
         <p>

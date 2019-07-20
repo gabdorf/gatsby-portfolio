@@ -186,7 +186,7 @@ class Header extends React.Component {
         <div>
           <SocialLinks article={this.props.article}>
             <SocialLink
-              href="mailto:gabriel.adorf@gmail.com"
+              href={`mailto:${process.env.GATSBY_EMAIL}`}
               onMouseOver={() => this.showTooltip('Mail')}
               onMouseLeave={this.hideTooltip}
             >
