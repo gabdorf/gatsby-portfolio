@@ -9,3 +9,4 @@ yarn-error.log
 yarn.lock
 portfolio.code-workspace
 .netlify/
+.env.development
