@@ -24,18 +24,7 @@ const CanvasWrapper = styled.div`
   align-items: center;
 `
 
-const Rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-`
-
-const Canvas = styled.canvas`
-  animation: ${Rotate} 30s linear infinite;
-`
+const Canvas = styled.canvas``
 
 let windowWidth
 let mousePressed = false
