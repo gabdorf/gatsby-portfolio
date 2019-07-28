@@ -12,6 +12,7 @@ const HeroSection = styled.section`
   flex-direction: column;
   overflow: hidden;
   width: 100vw;
+  max-width: 100%;
   ${media.sm`
     height: calc(100vh - 76px);
   `}
