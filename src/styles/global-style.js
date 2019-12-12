@@ -55,6 +55,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     font-size: ${fontSize.f4};
+    letter-spacing: -0.1px;
     ${media.sm`
       font-size: ${fontSize.f3};
       line-height: 1.4;
