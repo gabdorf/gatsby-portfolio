@@ -4,20 +4,16 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.4.2",
-    "gatsby-link": "^2.1.1",
-    "gatsby-plugin-google-analytics": "^2.0.19",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "lodash": "^4.17.4",
-    "react": "^16.8.6",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^16.8.6",
+    "gatsby": "^2.18.11",
+    "gatsby-link": "^2.2.27",
+    "gatsby-plugin-google-analytics": "^2.1.31",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-styled-components": "^3.1.16",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-waypoint": "^9.0.2",
-    "styled-components": "^4.2.0",
-    "styled-normalize": "^8.0.6"
+    "styled-components": "^4.4.1"
   },
   "keywords": [
     "gatsby"
@@ -31,7 +27,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby-plugin-root-import": "^2.0.5",
-    "prettier": "^1.17.0"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.3"
   }
 }
