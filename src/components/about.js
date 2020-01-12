@@ -13,6 +13,7 @@ const Big = styled.span`
   color: ${color.grey900};
   font-weight: 700;
   letter-spacing: -0.4px;
+  line-height: 1.35;
   ${media.sm`
     font-size: ${fontSize.f5};
   `}
