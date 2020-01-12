@@ -71,7 +71,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     margin: 0 0 24px 0;
     padding: 0;
     line-height: 1.1;
-    letter-spacing: -0.9px;
+    letter-spacing: -1.5px;
     ${media.sm`
       font-size: ${fontSize.f10};
     `}
