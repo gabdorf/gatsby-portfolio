@@ -61,6 +61,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
       line-height: 1.4;
     `}
     -webkit-tap-highlight-color: transparent;
+    letter-spacing: -0.2px;
   }
 
   h1 {
@@ -70,6 +71,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     margin: 0 0 24px 0;
     padding: 0;
     line-height: 1.1;
+    letter-spacing: -0.9px;
     ${media.sm`
       font-size: ${fontSize.f10};
     `}
@@ -82,9 +84,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-size: ${fontSize.f8};
     color: ${color.grey900};
     font-weight: 700;
-    margin: 10px 0 20px 0;
+    margin: 16px 0 20px 0;
     padding: 0;
     line-height: 1.1;
+    letter-spacing: -0.4px;
     ${media.sm`
       font-size: ${fontSize.f7};
     `}
@@ -94,9 +97,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     font-size: ${fontSize.f6};
     color: ${color.grey900};
     font-weight: 700;
-    margin: 0px 0 12px 0;
+    margin: 0 0 28px 0;
     padding: 0;
-    line-height: 1.1;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
     ${media.sm`
       font-size: ${fontSize.f5};
     `}
@@ -109,6 +113,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     margin: 0 0 8px 0;
     padding: 0;
     line-height: 1.1;
+    letter-spacing: -0.4px;
     ${media.sm`
       font-size: ${fontSize.f4};
     `}
