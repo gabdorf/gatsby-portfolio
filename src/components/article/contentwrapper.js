@@ -8,6 +8,9 @@ const Container = styled.div`
   margin-right: auto;
 `
 const Content = styled.div`
+  p + h3 {
+    margin-top: 42px;
+  }
   padding: 56px 24px 26px 24px;
   ${media.xs`
   padding: 56px 16px 26px 16px;

@@ -39,6 +39,8 @@ const EmbedContainer = styled.div`
   overflow: hidden;
   width: 100%;
   height: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
   @media (min-width: 1000px) {
     width: 1000px;
     height: 562px;

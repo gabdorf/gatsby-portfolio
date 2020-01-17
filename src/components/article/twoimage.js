@@ -6,6 +6,8 @@ const TwoImageWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   max-width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
 `
 
 const Image = styled.img`
