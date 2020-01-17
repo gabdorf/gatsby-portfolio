@@ -9,21 +9,21 @@ import ContentWrapper from 'components/article/contentwrapper'
 import Footer from 'components/footer'
 import FullSizeImage from 'components/article/fullsizeimage'
 
-import CoverSrc from 'img/articles/lifetime/cover.svg'
-import SilosSrc from 'img/articles/lifetime/silos3.svg'
-import Silos2Src from 'img/articles/lifetime/silos4.svg'
-import UISrc from 'img/articles/lifetime/ui.jpg'
-import UI2Src from 'img/articles/lifetime/ui2.jpg'
-import TasksSrc from 'img/articles/lifetime/aufgaben.jpg'
-import OnboardingSrc from 'img/articles/lifetime/onboarding.svg'
-import DesktopSrc from 'img/articles/lifetime/desktop.jpg'
-import PaperPlaneSrc from 'img/articles/lifetime/paperplane.svg'
-import TypeIconsSrc from 'img/articles/lifetime/typeicons.svg'
-import IconsSrc from 'img/articles/lifetime/icons.svg'
-import ColorsSrc from 'img/articles/lifetime/colors.jpg'
-import LetterBoxSrc from 'img/articles/lifetime/letterbox.jpg'
-import LogoSrc from 'img/articles/lifetime/Logo.svg'
-import HeartSpinnerSrc from 'img/articles/lifetime/heartspinner.gif'
+import CoverSrc from 'img/articles/lifetime/lifetime-cover.svg'
+import SilosSrc from 'img/articles/lifetime/lifetime-silos1.svg'
+import Silos2Src from 'img/articles/lifetime/lifetime-silos2.svg'
+import UISrc from 'img/articles/lifetime/lifetime-app.jpg'
+import UI2Src from 'img/articles/lifetime/lifetime-app2.jpg'
+import TasksSrc from 'img/articles/lifetime/lifetime-tasks.jpg'
+import OnboardingSrc from 'img/articles/lifetime/lifetime-illustration.svg'
+import DesktopSrc from 'img/articles/lifetime/lifetime-desktop.jpg'
+import PaperPlaneSrc from 'img/articles/lifetime/lifetime-paperplane.svg'
+import TypeIconsSrc from 'img/articles/lifetime/lifetime-typeicons.svg'
+import IconsSrc from 'img/articles/lifetime/lifetime-icons.svg'
+import ColorsSrc from 'img/articles/lifetime/lifetime-colors.jpg'
+import LetterBoxSrc from 'img/articles/lifetime/lifetime-letterbox.jpg'
+import LogoSrc from 'img/articles/lifetime/lifetime-logo.svg'
+import HeartSpinnerSrc from 'img/articles/lifetime/lifetime-logoanimation.gif'
 
 const Section = styled.section`
   margin: 64px 0;
@@ -71,6 +71,9 @@ const ImageGrid = styled.div`
   ${media.md`
     margin: 0;
     margin: 0 0 16px 0;
+  `}
+  ${media.sm`
+    padding: 16px;
   `}
 `
 
