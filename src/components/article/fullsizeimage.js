@@ -7,8 +7,12 @@ const Image = styled.img`
   margin: 16px auto;
   max-height: 750px;
   max-width: 100%;
+  border-radius: 16px;
   ${media.lg`
     max-height: 600px;
+  `}
+  ${media.md`
+    border-radius: 0px;
   `}
 `
 

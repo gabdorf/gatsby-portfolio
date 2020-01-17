@@ -10,7 +10,7 @@ import Footer from 'components/footer'
 import FullSizeImage from 'components/article/fullsizeimage'
 
 import CoverSrc from 'img/articles/lifetime/lifetime-cover.svg'
-import SilosSrc from 'img/articles/lifetime/lifetime-silos1.svg'
+import SilosSrc from 'img/articles/lifetime/lifetime-silos.svg'
 import Silos2Src from 'img/articles/lifetime/lifetime-silos2.svg'
 import UISrc from 'img/articles/lifetime/lifetime-app.jpg'
 import UI2Src from 'img/articles/lifetime/lifetime-app2.jpg'
