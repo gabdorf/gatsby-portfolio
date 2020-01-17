@@ -31,7 +31,7 @@ function Bam() {
       <CoverImage src={BamCoverImage} focusX={'44%'} focusY={'45%'} />
       <Section>
         <ContentWrapper>
-          <h2 id="toc_0">Products with extra bäm effect</h2>
+          <h2>Products with extra bäm effect</h2>
 
           <p>
             Bäm is a brand and registered trademark by Dr. Johannes Jacubeit,

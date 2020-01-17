@@ -26,7 +26,7 @@ function About() {
       rightColumn={
         <Fragment>
           <Big>
-            Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I bring
+            Hi. I'm Gabriel, a UI and UX designer living in&nbsp;Berlin. I bring
             ideas to life with design and&nbsp;code.
           </Big>
           <p>
