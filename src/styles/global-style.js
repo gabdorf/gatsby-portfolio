@@ -131,7 +131,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
       margin: 0.9em 0;
     `}
     ${media.sm`
-      font-size: ${fontSize.f3};
       line-height: 1.4;
     `}
   }
@@ -163,6 +162,18 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   ::selection {
     background: rgba(0, 125, 255, .99);
     color: white;
+  }
+
+  code {
+    background: ${color.grey200};
+    border-radius: 4px;
+    border: 1px solid ${color.grey400};
+    padding: 1px 4px;
+    margin: 0 3px;
+    font-size: ${fontSize.f3};
+    ${media.lg`
+      font-size: ${fontSize.f2};
+    `}
   }
 `
 
