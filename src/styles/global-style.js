@@ -55,13 +55,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     font-size: ${fontSize.f4};
-    letter-spacing: -0.1px;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: -0.2px;
+    ${media.lg`
+      font-size: ${fontSize.f3};
+    `}
     ${media.sm`
       font-size: ${fontSize.f3};
       line-height: 1.4;
     `}
-    -webkit-tap-highlight-color: transparent;
-    letter-spacing: -0.2px;
   }
 
   h1 {
@@ -72,7 +74,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     padding: 0;
     line-height: 1.1;
     letter-spacing: -1.5px;
-    ${media.sm`
+    ${media.lg`
       font-size: ${fontSize.f10};
     `}
     ${media.xs`
@@ -88,7 +90,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     padding: 0;
     line-height: 1.1;
     letter-spacing: -0.4px;
-    ${media.sm`
+    ${media.lg`
       font-size: ${fontSize.f7};
     `}
   }
@@ -101,8 +103,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
     padding: 0;
     line-height: 1.25;
     letter-spacing: -0.4px;
-    ${media.sm`
+    ${media.lg`
       font-size: ${fontSize.f5};
+      letter-spacing: -0.3px;
+      margin: 0 0 16px 0;
     `}
   }
 
@@ -122,6 +126,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   p {
     font-size: ${fontSize.f4};
     line-height: 1.5;
+    ${media.lg`
+      font-size: ${fontSize.f3};
+      margin: 0.9em 0;
+    `}
     ${media.sm`
       font-size: ${fontSize.f3};
       line-height: 1.4;

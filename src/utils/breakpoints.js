@@ -143,7 +143,7 @@ class Breakpoints extends React.Component {
           <Breakpoint width='350px' name='XS' />
           <Breakpoint width='600px' name='SM' />
           <Breakpoint width='900px' name='MD' />
-          <Breakpoint width='1200px' name='LG' />
+          <Breakpoint width='1300px' name='LG' />
           <Breakpoint width='1700px' name='XL' />
         </BreakpointWrapper>
         <ScreenWrapper screensAreVisible={this.state.screensAreVisible}>

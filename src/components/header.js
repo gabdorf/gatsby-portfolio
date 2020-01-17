@@ -10,6 +10,9 @@ const Div = styled.div`
   justify-content: space-between;
   flex-direction: row;
   flex: 0 0 auto;
+  ${media.lg`
+  height: ${props => (props.article ? '64px' : '')};
+  `}
   ${media.sm`
     display: ${props => (props.article ? 'flex' : 'block')};
   `};

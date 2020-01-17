@@ -64,7 +64,14 @@ const ImageGrid = styled.div`
   padding: 40px;
   margin: 32px 0;
   text-align: center;
-
+  ${media.lg`
+    padding: 32px;
+    margin: 0 0 24px 0;
+  `}
+  ${media.md`
+    margin: 0;
+    margin: 0 0 16px 0;
+  `}
 `
 
 const Img = styled.img`
@@ -72,13 +79,20 @@ const Img = styled.img`
   max-height: 300px;
   margin: 8px;
   display: inline-block;
+  ${media.lg`
+    max-height: 200px;
+  `}
+  ${media.md`
+    max-height: 125px;
+    margin: 4px;
+  `}
 `
 
 function LifeTime() {
   return (
     <GlobalWrapper>
       <Header title="LifeTime" />
-      <CoverImage src={CoverSrc} focusX={'73.5%'} focusY={'50%'} />
+      <CoverImage src={CoverSrc} focusX={'35%'} focusY={'50%'} />
       <Section>
         <ContentWrapper>
           <h2>Data flow in medicine is broken</h2>

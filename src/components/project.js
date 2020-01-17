@@ -14,6 +14,9 @@ const ProjectWrapper = styled.div`
   &:last-of-type {
     margin-bottom: 0px;
   }
+  ${media.lg`
+    margin-bottom: 92px;
+  `}
   ${media.sm`
     flex-wrap: wrap;
     margin-bottom: 68px;
@@ -29,6 +32,10 @@ const Description = styled.div`
 const Title = styled.h3`
   font-size: ${fontSize.f6};
   font-weight: 700;
+  ${media.lg`
+    font-size: ${fontSize.f5};
+    letter-spacing: -0.3px;
+  `}
   ${media.md`
     font-size: ${fontSize.f6};
   `}

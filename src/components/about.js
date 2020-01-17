@@ -14,6 +14,10 @@ const Big = styled.span`
   font-weight: 700;
   letter-spacing: -0.4px;
   line-height: 1.35;
+  ${media.lg`
+    font-size: ${fontSize.f5};
+    letter-spacing: -0.3px;
+  `}
   ${media.sm`
     font-size: ${fontSize.f5};
   `}

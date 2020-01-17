@@ -14,6 +14,11 @@ const H2 = styled.h2`
   margin: 6px 0 0 0;
   padding: 16px 0 0 0;
   line-height: 1.1;
+  ${media.lg`
+    font-size: ${fontSize.f4};
+    padding: 12px 0 0 0;
+    margin: 2px 0 0 0;
+  `}
   ${media.md`
       border-top: none;
       margin-bottom: 72px;
