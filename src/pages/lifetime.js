@@ -84,12 +84,19 @@ const Img = styled.img`
   max-height: 300px;
   margin: 8px;
   display: inline-block;
+  ${media.xl`
+    max-height: 240px;
+  `}
   ${media.lg`
     max-height: 200px;
   `}
   ${media.md`
-    max-height: 125px;
+    max-height: 120px;
     margin: 4px;
+  `}
+  ${media.sm`
+    max-height: 80px;
+    margin: 2px;
   `}
 `
 
