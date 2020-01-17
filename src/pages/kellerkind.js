@@ -30,7 +30,7 @@ function Kellerkind() {
       <CoverImage src={KellerkindCoverImage} focusX={'28%'} focusY={'70%'} />
       <Section>
         <ContentWrapper>
-          <h2 id="toc_0">The beginnings</h2>
+          <h2>The beginnings</h2>
 
           <p>
             The first event organized by the Kellerkind crew in 2009 in Garching
@@ -58,7 +58,7 @@ function Kellerkind() {
         </ContentWrapper>
         <LargeImage src={KellerkindImage1} />
         <ContentWrapper>
-          <h2 id="toc_1">The core principles of our event designs</h2>
+          <h2>The core principles of our event designs</h2>
 
           <ul>
             <li>
@@ -119,7 +119,7 @@ function Kellerkind() {
         </ContentWrapper>
         <LargeImage src={KellerkindImage4} />
         <ContentWrapper>
-          <h2 id="toc_2">Remote, transparent &amp; social</h2>
+          <h2>Remote, transparent &amp; social</h2>
 
           <p>
             In the beginning we were a small circle of friends all living in the
@@ -159,7 +159,7 @@ function Kellerkind() {
             people in one way or another
           </p>
 
-          <h2 id="toc_3">Outlook</h2>
+          <h2>Outlook</h2>
 
           <p>
             The lose structure of the company and spendings for charity are only
