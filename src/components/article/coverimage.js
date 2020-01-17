@@ -9,7 +9,10 @@ const Image = styled.div`
   background-size: cover;
   background-position: ${props => props.focusX} ${props => props.focusY};
   width: 100%;
-  height: calc(100vh - 208px);
+  height: calc(100vh - 170px);
+  ${media.lg`
+    height: calc(100vh - 148px);
+  `}
   ${media.sm`
     height: calc(100vh - 184px);
   `}

@@ -14,6 +14,10 @@ const Big = styled.span`
   font-weight: 700;
   letter-spacing: -0.4px;
   line-height: 1.35;
+  ${media.lg`
+    font-size: ${fontSize.f5};
+    letter-spacing: -0.3px;
+  `}
   ${media.sm`
     font-size: ${fontSize.f5};
   `}
@@ -26,7 +30,7 @@ function About() {
       rightColumn={
         <Fragment>
           <Big>
-            Hi. I'm Gabriel, a UI and UX designer based in&nbsp;Berlin. I bring
+            Hi. I'm Gabriel, a UI and UX designer living in&nbsp;Berlin. I bring
             ideas to life with design and&nbsp;code.
           </Big>
           <p>

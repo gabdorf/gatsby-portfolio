@@ -30,7 +30,7 @@ function PalettteApp() {
       <CoverImage src={PalettteCoverImage} focusX={'50%'} focusY={'0%'} />
       <Section>
         <ContentWrapper>
-          <h2 id="toc_0">Build, analyze and edit smooth color palettes</h2>
+          <h2>Build, analyze and edit smooth color palettes</h2>
           <p>
             <a href="https://palettte.app">Palettte App</a> is a tool I built in
             order to learn react and solve a specific problem I had when working

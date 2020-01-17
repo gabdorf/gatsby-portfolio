@@ -10,6 +10,9 @@ const Div = styled.div`
   justify-content: space-between;
   flex-direction: row;
   flex: 0 0 auto;
+  ${media.lg`
+  height: ${props => (props.article ? '64px' : '')};
+  `}
   ${media.sm`
     display: ${props => (props.article ? 'flex' : 'block')};
   `};
@@ -41,6 +44,7 @@ const Name = styled.h1`
   text-align: left;
   margin: 0;
   line-height: 1.2;
+  letter-spacing: -0.8px;
   ${media.sm`
     text-align: center;
     font-size: ${fontSize.f7};
@@ -54,6 +58,7 @@ const NameArticle = styled.div`
   text-align: left;
   margin: 0;
   line-height: 1.2;
+  letter-spacing: -0.6px;
   color: ${color.grey900};
   ${media.xs`
     text-align: center;

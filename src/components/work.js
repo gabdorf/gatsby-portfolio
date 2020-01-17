@@ -25,7 +25,7 @@ function Work() {
           <Project
             logo={LifeTimeLogo()}
             title="LifeTime"
-            abstract="A digital health solution facilitating medical data exchange."
+            abstract="Secure data exchange infrastructure for healthcare."
             link={LifeTimeLink}
           />
           <Project
@@ -43,7 +43,7 @@ function Work() {
           <Project
             logo={BamLogo()}
             title="Bäm"
-            abstract="Climbing products and other stuff that gives you the bäm effect."
+            abstract="Climbing products and other stuff that give you the extra bäm effect."
             link={BamLink}
           />
         </Fragment>

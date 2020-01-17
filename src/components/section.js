@@ -7,7 +7,7 @@ import { color } from 'styles/theme'
 const Section = styled.section`
   margin: 0 96px;
   ${media.lg`
-    margin: 0 64px;
+    margin: 0 40px;
   `}
   ${media.sm`
     margin: 0 24px;
@@ -20,6 +20,9 @@ const Container = styled.div`
   border-top: 1px solid ${color.grey400};
   max-width: 916px;
   padding: 128px 0;
+  ${media.lg`
+    padding: 112px 0;
+  `}
   ${media.sm`
     padding: 64px 0;
   `}
