@@ -193,7 +193,9 @@ class Header extends React.Component {
             <SocialLink
               href={`mailto:${process.env.GATSBY_EMAIL}`}
               onMouseOver={() => this.showTooltip('Mail')}
+              onFocus={() => this.showTooltip('Mail')}
               onMouseLeave={this.hideTooltip}
+              onBlur={this.hideTooltip}
             >
               <SvgWrapper>
                 <InlineSvg>
@@ -205,7 +207,9 @@ class Header extends React.Component {
               href="https://twitter.com/gabdorf"
               target="blank"
               onMouseOver={() => this.showTooltip('Twitter')}
+              onFocus={() => this.showTooltip('Twitter')}
               onMouseLeave={this.hideTooltip}
+              onBlur={this.hideTooltip}
             >
               <SvgWrapper>
                 <InlineSvg>
@@ -217,7 +221,9 @@ class Header extends React.Component {
               href="https://dribbble.com/gabdorf"
               target="blank"
               onMouseOver={() => this.showTooltip('Dribbble')}
+              onFocus={() => this.showTooltip('Dribbble')}
               onMouseLeave={this.hideTooltip}
+              onBlur={this.hideTooltip}
             >
               <SvgWrapper>
                 <InlineSvg>

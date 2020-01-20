@@ -1,5 +1,4 @@
 import React from 'react'
-import Breakpoints from 'utils/breakpoints'
 
 import GlobalWrapper from 'components/global-wrapper'
 import Hero from 'components/hero'
@@ -13,7 +12,6 @@ export default class App extends React.Component {
   render() {
     return (
       <GlobalWrapper>
-        {/* <Breakpoints /> */}
         <Hero />
         <Section id={'about'}>
           <About />
