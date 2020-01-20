@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { color, fontSize } from 'styles/theme'
 import GlobalWrapper from 'components/global-wrapper'
 import media from 'utils/media-queries'
 

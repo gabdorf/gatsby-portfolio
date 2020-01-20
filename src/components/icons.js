@@ -54,6 +54,7 @@ export const Glyph = ({ glyph }) => {
           />
         </g>
       )
+    default:
   }
 }
 

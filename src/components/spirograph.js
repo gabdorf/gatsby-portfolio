@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { color } from 'styles/theme'
 import debounce from 'lodash/debounce'
 
@@ -126,7 +126,6 @@ export default class Spirograph extends React.Component {
     this.M = this.reduce(randomN, randomM)[1]
     this.gearRadius = this.N / this.M
     this.f = Math.random() * (0.9 - 0.2) + 0.2
-    // this.props.getGearValues(this.N, this.M, this.f)
 
     // calculate gear values
     this.angle = 0

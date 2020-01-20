@@ -17,49 +17,12 @@ const HeroSection = styled.section`
   `}
 `
 
-const Spacer = styled.div`
-  flex: 1 1 0;
-`
-
-// const GearValues = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   z-index: 10;
-//   text-align: center;
-//   align-items: flex-end;
-//   padding-bottom: 48px;
-// `
-
-class Hero extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     gearA: 0,
-  //     gearB: 0,
-  //     ratio: 0,
-  //   }
-  // }
-
-  // getGearValues = (gearA, gearB, ratio) => {
-  //   this.setState({
-  //     gearA: gearA,
-  //     gearB: gearB,
-  //     ratio: ratio,
-  //   })
-  // }
-
-  render() {
-    return (
-      <HeroSection>
-        <Spirograph speed={0.012} getGearValues={this.getGearValues} />
-        <Header />
-        <Spacer />
-        {/* <GearValues>
-          {this.state.gearA} | {this.state.gearB} | {this.state.ratio}
-        </GearValues> */}
-      </HeroSection>
-    )
-  }
+function Hero() {
+  return (
+    <HeroSection>
+      <Spirograph speed={0.012} />
+      <Header />
+    </HeroSection>
+  )
 }
-
 export default Hero
