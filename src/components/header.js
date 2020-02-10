@@ -196,6 +196,7 @@ class Header extends React.Component {
               onFocus={() => this.showTooltip('Mail')}
               onMouseLeave={this.hideTooltip}
               onBlur={this.hideTooltip}
+              aria-label="Send an email to Gabriel"
             >
               <SvgWrapper>
                 <InlineSvg>
@@ -210,6 +211,7 @@ class Header extends React.Component {
               onFocus={() => this.showTooltip('Twitter')}
               onMouseLeave={this.hideTooltip}
               onBlur={this.hideTooltip}
+              aria-label="Gabriel's twitter profile"
             >
               <SvgWrapper>
                 <InlineSvg>
@@ -224,6 +226,7 @@ class Header extends React.Component {
               onFocus={() => this.showTooltip('Dribbble')}
               onMouseLeave={this.hideTooltip}
               onBlur={this.hideTooltip}
+              aria-label="Gabriel's dribbble profile"
             >
               <SvgWrapper>
                 <InlineSvg>
