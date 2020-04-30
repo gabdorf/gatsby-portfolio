@@ -23,7 +23,7 @@ const Content = styled.div`
   `}
 `
 
-function ContentWrapper(props) {
+const ContentWrapper = (props) => {
   return (
     <Container>
       <Content>{props.children}</Content>

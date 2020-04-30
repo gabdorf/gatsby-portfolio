@@ -16,7 +16,7 @@ const Image = styled.img`
   `}
 `
 
-function FullSizeImage(props) {
+const FullSizeImage = (props) => {
   return <Image src={props.src} alt={props.alt} />
 }
 

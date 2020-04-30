@@ -15,7 +15,7 @@ const PalettteLink = <Link to="/palettteapp">Read More</Link>
 const KellerkindLink = <Link to="/kellerkind">Read More</Link>
 const BamLink = <Link to="/bam">Read More</Link>
 
-function Work() {
+const Work = () => {
   return (
     <TwoColumns
       wide

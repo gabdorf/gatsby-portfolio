@@ -10,7 +10,7 @@ const ScenographicsLink = (
   <a href="http://medium.com/scenographics">Read More on Medium ↗</a>
 )
 
-function Writing() {
+const Writing = () => {
   return (
     <TwoColumns
       wide

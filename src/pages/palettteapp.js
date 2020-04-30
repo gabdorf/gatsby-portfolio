@@ -23,7 +23,7 @@ const Section = styled.section`
   `}
 `
 
-function PalettteApp() {
+const PalettteApp = () => {
   return (
     <GlobalWrapper>
       <Header title="Palettte App" />

@@ -17,13 +17,13 @@ const Div = styled.div`
 const LeftColumn = styled.div``
 
 const RightColumn = styled.div`
-  max-width: ${props => props.wide ? '620px' : '544px'};
+  max-width: ${(props) => (props.wide ? '620px' : '544px')};
   ${media.md`
     max-width: 544px;
   `}
 `
 
-const TwoColumns = props => {
+const TwoColumns = (props) => {
   return (
     <Div>
       <LeftColumn>{props.leftColumn}</LeftColumn>

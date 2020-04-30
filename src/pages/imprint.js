@@ -5,7 +5,7 @@ import Header from 'components/article/header'
 import ContentWrapper from 'components/article/contentwrapper'
 import Footer from 'components/footer'
 
-function Imprint() {
+const Imprint = () => {
   return (
     <GlobalWrapper>
       <Header title="Impressum" />
