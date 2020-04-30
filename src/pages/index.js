@@ -7,23 +7,25 @@ import About from 'components/about'
 import Work from 'components/work'
 import Writing from 'components/writing'
 import Footer from 'components/footer'
+// import Breakpoints from 'utils/breakpoints'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <GlobalWrapper>
-        <Hero />
-        <Section id={'about'}>
-          <About />
-        </Section>
-        <Section id={'projects'}>
-          <Work />
-        </Section>
-        <Section>
-          <Writing />
-        </Section>
-        <Footer />
-      </GlobalWrapper>
-    )
-  }
+const App = () => {
+  return (
+    <GlobalWrapper>
+      {/* <Breakpoints /> */}
+      <Hero />
+      <Section id={'about'}>
+        <About />
+      </Section>
+      <Section id={'projects'}>
+        <Work />
+      </Section>
+      <Section>
+        <Writing />
+      </Section>
+      <Footer />
+    </GlobalWrapper>
+  )
 }
+
+export default App
