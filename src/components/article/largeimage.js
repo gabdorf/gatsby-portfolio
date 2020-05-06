@@ -9,7 +9,7 @@ const Image = styled.img`
   max-width: 100%;
 `
 
-function LargeImage(props) {
+const LargeImage = (props) => {
   return <Image src={props.src} alt={props.alt} />
 }
 

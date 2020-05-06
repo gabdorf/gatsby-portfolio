@@ -36,7 +36,7 @@ const Title = styled.div`
   text-align: center;
 `
 
-function ArticleHeader(props) {
+const ArticleHeader = (props) => {
   return (
     <Fragment>
       <Header article />

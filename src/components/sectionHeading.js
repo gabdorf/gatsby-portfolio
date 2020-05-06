@@ -31,7 +31,7 @@ const H2 = styled.h2`
     `}
 `
 
-const SectionHeading = props => {
+const SectionHeading = (props) => {
   return <H2>{props.children}</H2>
 }
 

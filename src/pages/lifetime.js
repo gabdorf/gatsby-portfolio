@@ -99,7 +99,7 @@ const Img = styled.img`
   `}
 `
 
-function LifeTime() {
+const LifeTime = () => {
   return (
     <GlobalWrapper>
       <Header title="LifeTime" />

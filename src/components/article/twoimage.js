@@ -11,12 +11,12 @@ const TwoImageWrapper = styled.div`
 `
 
 const Image = styled.img`
-  max-height: ${props => props.maxHeight};
+  max-height: ${(props) => props.maxHeight};
   align-self: center;
   max-width: 100%;
 `
 
-function TwoImage(props) {
+const TwoImage = (props) => {
   return (
     <TwoImageWrapper>
       <Image src={props.src1} alt={props.alt1} maxHeight={props.maxHeight} />

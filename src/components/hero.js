@@ -17,10 +17,10 @@ const HeroSection = styled.section`
   `}
 `
 
-function Hero() {
+const Hero = () => {
   return (
     <HeroSection>
-      <Spirograph speed={0.012} />
+      <Spirograph />
       <Header />
     </HeroSection>
   )

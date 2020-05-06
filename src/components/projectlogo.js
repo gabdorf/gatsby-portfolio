@@ -19,7 +19,7 @@ const Image = styled.div`
   `}
 `
 
-function ProjectLogo(props) {
+const ProjectLogo = (props) => {
   return (
     <Image>
       <svg

@@ -18,7 +18,7 @@ const FooterText = styled.div`
   `}
 `
 
-function Footer() {
+const Footer = () => {
   return (
     <Section>
       <FooterText>

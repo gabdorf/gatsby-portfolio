@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { color } from 'styles/theme'
 import debounce from 'lodash/debounce'
@@ -26,59 +26,88 @@ const CanvasWrapper = styled.div`
 
 const Canvas = styled.canvas``
 
-let windowWidth
-let mousePressed = false
+const Spirograph = () => {
+  const movingCanvasContainer = useRef()
+  const plottingCanvasContainer = useRef()
+  let movingCanvas
+  let plottingCanvas
+  let isMounted
 
-export default class Spirograph extends React.Component {
-  constructor(props) {
-    super(props)
-    this.draw = this.draw.bind(this)
-    this.hasUnmounted = false
-    this._resizeHandler = debounce(() => {
-      if (window.innerWidth !== windowWidth) {
-        //check if window size has actually changed bc of iOS Safari Bug
-        this.canvasSize = Math.min(1000, window.innerWidth, window.innerHeight)
-        this.movingCanvas.width = this.canvasSize
-        this.movingCanvas.height = this.canvasSize
-        this.plottingCanvas.width = this.canvasSize
-        this.plottingCanvas.height = this.canvasSize
-        this.newSpirograph()
-        windowWidth = window.innerWidth
-      } else {
-        return
-      }
-    }, 500)
-  }
+  //canvas
+  let windowWidth
+  let size
+  let mctx
+  let pctx
 
-  componentDidMount() {
-    window.addEventListener('resize', this._resizeHandler)
+  // config
+  const dotSize = 7
+  const spiroColor = color.grey800
+  const circleColor = color.grey400
+  const lowSpeed = 0.012
+  const highSpeed = 0.07
+  const lineWidth = 1.2
 
+  // seed values
+  let randomM
+  let randomN
+  let f
+
+  // gear values
+  let m
+  let n
+  let speed = lowSpeed
+  let gearRadius
+  let angle
+  let centerX
+  let centerY
+  let gearX
+  let gearY
+  let spiroX
+  let spiroY
+
+  useEffect(() => {
+    isMounted = true
+    window.addEventListener('resize', resizeHandler)
+    movingCanvas = movingCanvasContainer.current
+    plottingCanvas = plottingCanvasContainer.current
+    mctx = movingCanvas.getContext('2d')
+    pctx = plottingCanvas.getContext('2d')
+    mctx.lineWidth = lineWidth
+    pctx.lineWidth = lineWidth
     windowWidth = window.innerWidth
+    setCanvasSize()
+    initSpirograph()
+    window.requestAnimationFrame(draw)
+    return function cleanup() {
+      window.removeEventListener('resize', resizeHandler)
+      isMounted = false
+    }
+  })
 
-    this.mctx = this.movingCanvas.getContext('2d')
-    this.pctx = this.plottingCanvas.getContext('2d')
+  const resizeHandler = debounce(() => {
+    //check if window size has actually changed bc of iOS Safari Bug
+    if (window.innerWidth !== windowWidth) {
+      setCanvasSize()
+      initSpirograph()
+      windowWidth = window.innerWidth
+    } else {
+      return
+    }
+  }, 500)
 
-    this.canvasSize = Math.min(1000, window.innerWidth, window.innerHeight)
-    this.movingCanvas.width = this.canvasSize
-    this.movingCanvas.height = this.canvasSize
-    this.plottingCanvas.width = this.canvasSize
-    this.plottingCanvas.height = this.canvasSize
-
-    this.newSpirograph()
-    window.requestAnimationFrame(this.draw)
+  const setCanvasSize = () => {
+    const canvasSize = Math.min(
+      1000,
+      window.innerWidth / 1.4 + 2,
+      window.innerHeight / 1.4 + 2
+    )
+    movingCanvas.width = canvasSize
+    movingCanvas.height = canvasSize
+    plottingCanvas.width = canvasSize
+    plottingCanvas.height = canvasSize
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this._resizeHandler)
-    this.hasUnmounted = true
-  }
-
-  shouldComponentUpdate() {
-    return true
-  }
-
-  // helper function
-  reduce(numerator, denominator) {
+  const reduceFraction = (numerator, denominator) => {
     var gcd = function(a, b) {
       return b ? gcd(b, a % b) : a
     }
@@ -86,203 +115,161 @@ export default class Spirograph extends React.Component {
     return [numerator / gcd, denominator / gcd]
   }
 
-  speedUp = () => {
-    this.speed = 0.07
-    mousePressed = true
+  const speedUp = () => {
+    speed = highSpeed
   }
 
-  speedDown = () => {
-    this.speed = 0.012
-    mousePressed = false
+  const speedDown = () => {
+    speed = lowSpeed
   }
 
-  delay = t => new Promise(resolve => setTimeout(resolve, t))
+  const delay = (t) => new Promise((resolve) => setTimeout(resolve, t))
 
-  newSpirograph() {
-    // display config
-    this.size = Math.min(
+  const initSpirograph = () => {
+    // calculate size based on window size
+    size = Math.min(
       498,
       Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
     )
-    this.dotSize = 7
-    this.spiroColor = color.grey800
-    this.circleColor = color.grey400
-    if (mousePressed === false) {
-      this.speed = this.props.speed
-    }
-    this.mctx.lineWidth = 1.2
-    this.pctx.lineWidth = 1.2
 
     // clear canvas
-    this.mctx.clearRect(0, 0, this.movingCanvas.width, this.movingCanvas.height)
-    this.pctx.clearRect(0, 0, this.movingCanvas.width, this.movingCanvas.height)
+    mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
+    pctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
 
-    // get random gear values
-    var randomM = Math.floor(Math.random() * (100 - 3)) + 3
-    var randomN =
+    // get seed values
+    randomM = Math.floor(Math.random() * (100 - 3)) + 3
+    randomN =
       Math.floor(Math.random() * (randomM / 2 - randomM / 10)) +
       Math.floor(randomM / 10 + 1)
-    this.N = this.reduce(randomN, randomM)[0]
-    this.M = this.reduce(randomN, randomM)[1]
-    this.gearRadius = this.N / this.M
-    this.f = Math.random() * (0.9 - 0.2) + 0.2
+    n = reduceFraction(randomN, randomM)[0]
+    m = reduceFraction(randomN, randomM)[1]
+    gearRadius = n / m
+    f = Math.random() * (0.9 - 0.2) + 0.2
 
-    // calculate gear values
-    this.angle = 0
-    this.centerX = this.movingCanvas.width / 2
-    this.centerY = this.movingCanvas.height / 2
-    this.gearX = (1 - this.gearRadius) * Math.cos(this.angle) * this.size
-    this.gearY = (1 - this.gearRadius) * Math.sin(this.angle) * this.size
-    this.spiroX =
-      this.centerX +
-      ((1 - this.gearRadius) * Math.cos(this.angle) +
-        this.f *
-          this.gearRadius *
-          Math.cos((1 / this.gearRadius - 1) * this.angle)) *
-        this.size
-    this.spiroY =
-      this.centerY +
-      ((1 - this.gearRadius) * Math.sin(this.angle) -
-        this.f *
-          this.gearRadius *
-          Math.sin((1 / this.gearRadius - 1) * this.angle)) *
-        this.size
-    this.mctx.strokeStyle = this.circleColor
+    // initial gear values
+    angle = 0
+    centerX = movingCanvas.width / 2
+    centerY = movingCanvas.height / 2
+    gearX = (1 - gearRadius) * Math.cos(angle) * size
+    gearY = (1 - gearRadius) * Math.sin(angle) * size
+    spiroX =
+      centerX +
+      ((1 - gearRadius) * Math.cos(angle) +
+        f * gearRadius * Math.cos((1 / gearRadius - 1) * angle)) *
+        size
+    spiroY =
+      centerY +
+      ((1 - gearRadius) * Math.sin(angle) -
+        f * gearRadius * Math.sin((1 / gearRadius - 1) * angle)) *
+        size
+    mctx.strokeStyle = circleColor
 
     // plot outer circle
-    this.pctx.strokeStyle = this.circleColor
-    this.pctx.beginPath()
-    this.pctx.arc(this.centerX, this.centerY, this.size, 0, 2 * Math.PI)
-    this.pctx.stroke()
-    this.pctx.strokeStyle = this.spiroColor
+    pctx.strokeStyle = circleColor
+    pctx.beginPath()
+    pctx.arc(centerX, centerY, size, 0, 2 * Math.PI)
+    pctx.stroke()
+    pctx.strokeStyle = spiroColor
   }
 
-  draw() {
-    if (this.hasUnmounted === false) {
+  const draw = () => {
+    if (isMounted === true) {
       // ----------- MOVING CANVAS ----------
       // clear moving canvas
-      this.mctx.clearRect(
-        0,
-        0,
-        this.movingCanvas.width,
-        this.movingCanvas.height
-      )
+      mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
 
       // gear
-      this.mctx.beginPath()
-      this.mctx.arc(
-        this.centerX + this.gearX,
-        this.centerY + this.gearY,
-        this.gearRadius * this.size,
+      mctx.beginPath()
+      mctx.arc(
+        centerX + gearX,
+        centerY + gearY,
+        gearRadius * size,
         0,
         2 * Math.PI
       )
-      this.mctx.stroke()
+      mctx.stroke()
 
       // inner gear
-      this.mctx.beginPath()
-      this.mctx.arc(
-        this.centerX + this.gearX,
-        this.centerY + this.gearY,
-        this.f * this.gearRadius * this.size,
+      mctx.beginPath()
+      mctx.arc(
+        centerX + gearX,
+        centerY + gearY,
+        f * gearRadius * size,
         0,
         2 * Math.PI
       )
-      this.mctx.stroke()
+      mctx.stroke()
 
       // drawing dot
-      this.mctx.beginPath()
-      this.mctx.arc(
-        this.centerX +
-          ((1 - this.gearRadius) * Math.cos(this.angle) +
-            this.f *
-              this.gearRadius *
-              Math.cos((1 / this.gearRadius - 1) * this.angle)) *
-            this.size,
-        this.centerY +
-          ((1 - this.gearRadius) * Math.sin(this.angle) -
-            this.f *
-              this.gearRadius *
-              Math.sin((1 / this.gearRadius - 1) * this.angle)) *
-            this.size,
-        this.dotSize,
+      mctx.beginPath()
+      mctx.arc(
+        centerX +
+          ((1 - gearRadius) * Math.cos(angle) +
+            f * gearRadius * Math.cos((1 / gearRadius - 1) * angle)) *
+            size,
+        centerY +
+          ((1 - gearRadius) * Math.sin(angle) -
+            f * gearRadius * Math.sin((1 / gearRadius - 1) * angle)) *
+            size,
+        dotSize,
         0,
         2 * Math.PI
       )
-      this.mctx.stroke()
+      mctx.stroke()
 
       // ---------- PLOTTING CANVAS ----------
-
-      //check if spirograph is uncomplete
-      if (this.angle - this.speed < this.N * 2 * Math.PI) {
-        this.pctx.beginPath()
-        this.pctx.moveTo(this.spiroX, this.spiroY)
-        this.spiroX =
-          this.centerX +
-          ((1 - this.gearRadius) * Math.cos(this.angle) +
-            this.f *
-              this.gearRadius *
-              Math.cos((1 / this.gearRadius - 1) * this.angle)) *
-            this.size
-        this.spiroY =
-          this.centerY +
-          ((1 - this.gearRadius) * Math.sin(this.angle) -
-            this.f *
-              this.gearRadius *
-              Math.sin((1 / this.gearRadius - 1) * this.angle)) *
-            this.size
-        this.pctx.lineTo(this.spiroX, this.spiroY)
-        this.pctx.stroke()
+      // check if spirograph is uncomplete
+      if (angle - speed < n * 2 * Math.PI) {
+        pctx.beginPath()
+        pctx.moveTo(spiroX, spiroY)
+        spiroX =
+          centerX +
+          ((1 - gearRadius) * Math.cos(angle) +
+            f * gearRadius * Math.cos((1 / gearRadius - 1) * angle)) *
+            size
+        spiroY =
+          centerY +
+          ((1 - gearRadius) * Math.sin(angle) -
+            f * gearRadius * Math.sin((1 / gearRadius - 1) * angle)) *
+            size
+        pctx.lineTo(spiroX, spiroY)
+        pctx.stroke()
       } else {
         // if completed, start new spirograph
-
-        this.mctx.clearRect(
-          0,
-          0,
-          this.movingCanvas.width,
-          this.movingCanvas.height
-        )
-        this.delay(3000)
-          .then(() => this.newSpirograph())
-          .then(() => window.requestAnimationFrame(this.draw))
-
+        mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
+        delay(3000)
+          .then(() => initSpirograph())
+          .then(() => window.requestAnimationFrame(draw))
         return
       }
 
       // ---------- INCREMENT ----------
-      this.gearX = (1 - this.gearRadius) * Math.cos(this.angle) * this.size
-      this.gearY = (1 - this.gearRadius) * Math.sin(this.angle) * this.size
-      this.angle += this.speed
+      gearX = (1 - gearRadius) * Math.cos(angle) * size
+      gearY = (1 - gearRadius) * Math.sin(angle) * size
+      angle += speed
 
-      // // draw next frame
-      window.requestAnimationFrame(this.draw)
+      // draw next frame
+      window.requestAnimationFrame(draw)
     } else {
       return
     }
   }
 
-  render() {
-    return (
-      <Div>
-        <CanvasWrapper
-          onMouseDown={this.speedUp}
-          onMouseUp={this.speedDown}
-          onTouchStart={this.speedUp}
-          onTouchEnd={this.speedDown}
-        >
-          <Canvas
-            ref={plottingCanvas => (this.plottingCanvas = plottingCanvas)}
-          />
-        </CanvasWrapper>
-        <CanvasWrapper
-          onMouseDown={this.speedUp}
-          onMouseUp={this.speedDown}
-          onTouchStart={this.speedUp}
-          onTouchEnd={this.speedDown}
-        >
-          <Canvas ref={movingCanvas => (this.movingCanvas = movingCanvas)} />
-        </CanvasWrapper>
-      </Div>
-    )
-  }
+  return (
+    <Div>
+      <CanvasWrapper>
+        <Canvas ref={plottingCanvasContainer} />
+      </CanvasWrapper>
+      <CanvasWrapper
+        onMouseDown={speedUp}
+        onMouseUp={speedDown}
+        onTouchStart={speedUp}
+        onTouchEnd={speedDown}
+      >
+        <Canvas ref={movingCanvasContainer} />
+      </CanvasWrapper>
+    </Div>
+  )
 }
+
+export default Spirograph

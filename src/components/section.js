@@ -29,7 +29,7 @@ const Container = styled.div`
   width: 100%;
 `
 
-function SectionComponent(props) {
+const SectionComponent = (props) => {
   return (
     <Section id={props.id}>
       <Container>{props.children}</Container>

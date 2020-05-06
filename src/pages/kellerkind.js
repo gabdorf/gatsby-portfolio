@@ -23,7 +23,7 @@ const Section = styled.section`
   `}
 `
 
-function Kellerkind() {
+const Kellerkind = () => {
   return (
     <GlobalWrapper>
       <Header title="Kellerkind" />

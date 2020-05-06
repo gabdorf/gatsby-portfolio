@@ -24,7 +24,7 @@ const Section = styled.section`
   `}
 `
 
-function Bam() {
+const Bam = () => {
   return (
     <GlobalWrapper>
       <Header title="Bäm" />

@@ -23,7 +23,7 @@ const Big = styled.span`
   `}
 `
 
-function About() {
+const About = () => {
   return (
     <TwoColumns
       leftColumn={<SectionHeading>About</SectionHeading>}

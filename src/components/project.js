@@ -46,7 +46,7 @@ const Abstract = styled.div`
   margin-bottom: 16px;
 `
 
-function Project(props) {
+const Project = (props) => {
   return (
     <ProjectWrapper>
       <Logo>{props.logo}</Logo>
