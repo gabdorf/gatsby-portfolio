@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import GlobalStyle from 'styles/global-style'
 
 const GlobalWrapper = (props) => {

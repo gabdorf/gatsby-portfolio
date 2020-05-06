@@ -108,7 +108,7 @@ const Spirograph = () => {
   }
 
   const reduceFraction = (numerator, denominator) => {
-    var gcd = function(a, b) {
+    var gcd = function (a, b) {
       return b ? gcd(b, a % b) : a
     }
     gcd = gcd(numerator, denominator)
