@@ -26,35 +26,36 @@ const CanvasWrapper = styled.div`
 
 const Canvas = styled.canvas``
 
-const Spirograph = (props) => {
+const Spirograph = () => {
   const movingCanvasContainer = useRef()
   const plottingCanvasContainer = useRef()
   let movingCanvas
   let plottingCanvas
-  let leftMouseIsPressed = false
   let isMounted
 
   //canvas
   let windowWidth
-  let canvasSize
   let size
   let mctx
   let pctx
 
   // config
-  let dotSize
-  let spiroColor
-  let circleColor
-  let speed
+  const dotSize = 7
+  const spiroColor = color.grey800
+  const circleColor = color.grey400
+  const lowSpeed = 0.012
+  const highSpeed = 0.07
+  const lineWidth = 1.2
 
   // seed values
   let randomM
   let randomN
   let f
 
-  // calculated values
+  // gear values
   let m
   let n
+  let speed = lowSpeed
   let gearRadius
   let angle
   let centerX
@@ -66,22 +67,24 @@ const Spirograph = (props) => {
 
   useEffect(() => {
     isMounted = true
-    window.addEventListener('resize', _resizeHandler)
+    window.addEventListener('resize', resizeHandler)
     movingCanvas = movingCanvasContainer.current
     plottingCanvas = plottingCanvasContainer.current
     mctx = movingCanvas.getContext('2d')
     pctx = plottingCanvas.getContext('2d')
+    mctx.lineWidth = lineWidth
+    pctx.lineWidth = lineWidth
     windowWidth = window.innerWidth
     setCanvasSize()
     initSpirograph()
     window.requestAnimationFrame(draw)
     return function cleanup() {
-      window.removeEventListener('resize', _resizeHandler)
+      window.removeEventListener('resize', resizeHandler)
       isMounted = false
     }
   })
 
-  const _resizeHandler = debounce(() => {
+  const resizeHandler = debounce(() => {
     //check if window size has actually changed bc of iOS Safari Bug
     if (window.innerWidth !== windowWidth) {
       setCanvasSize()
@@ -93,15 +96,18 @@ const Spirograph = (props) => {
   }, 500)
 
   const setCanvasSize = () => {
-    canvasSize = Math.min(1000, window.innerWidth, window.innerHeight) / 1.4 + 2
+    const canvasSize = Math.min(
+      1000,
+      window.innerWidth / 1.4 + 2,
+      window.innerHeight / 1.4 + 2
+    )
     movingCanvas.width = canvasSize
     movingCanvas.height = canvasSize
     plottingCanvas.width = canvasSize
     plottingCanvas.height = canvasSize
   }
 
-  // helper function
-  const reduce = (numerator, denominator) => {
+  const reduceFraction = (numerator, denominator) => {
     var gcd = function(a, b) {
       return b ? gcd(b, a % b) : a
     }
@@ -110,47 +116,37 @@ const Spirograph = (props) => {
   }
 
   const speedUp = () => {
-    speed = 0.07
-    leftMouseIsPressed = true
+    speed = highSpeed
   }
 
   const speedDown = () => {
-    speed = 0.012
-    leftMouseIsPressed = false
+    speed = lowSpeed
   }
 
   const delay = (t) => new Promise((resolve) => setTimeout(resolve, t))
 
   const initSpirograph = () => {
-    // display config
+    // calculate size based on window size
     size = Math.min(
       498,
       Math.min(window.innerWidth / 2.8, window.innerHeight / 2.8)
     )
-    dotSize = 7
-    spiroColor = color.grey800
-    circleColor = color.grey400
-    if (leftMouseIsPressed === false) {
-      speed = props.speed
-    }
-    mctx.lineWidth = 1.2
-    pctx.lineWidth = 1.2
 
     // clear canvas
     mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
     pctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
 
-    // get random gear values
+    // get seed values
     randomM = Math.floor(Math.random() * (100 - 3)) + 3
     randomN =
       Math.floor(Math.random() * (randomM / 2 - randomM / 10)) +
       Math.floor(randomM / 10 + 1)
-    n = reduce(randomN, randomM)[0]
-    m = reduce(randomN, randomM)[1]
+    n = reduceFraction(randomN, randomM)[0]
+    m = reduceFraction(randomN, randomM)[1]
     gearRadius = n / m
     f = Math.random() * (0.9 - 0.2) + 0.2
 
-    // calculate gear values
+    // initial gear values
     angle = 0
     centerX = movingCanvas.width / 2
     centerY = movingCanvas.height / 2
@@ -182,7 +178,7 @@ const Spirograph = (props) => {
       // clear moving canvas
       mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
 
-      // outer gear
+      // gear
       mctx.beginPath()
       mctx.arc(
         centerX + gearX,
@@ -222,8 +218,7 @@ const Spirograph = (props) => {
       mctx.stroke()
 
       // ---------- PLOTTING CANVAS ----------
-
-      //check if spirograph is uncomplete
+      // check if spirograph is uncomplete
       if (angle - speed < n * 2 * Math.PI) {
         pctx.beginPath()
         pctx.moveTo(spiroX, spiroY)
@@ -241,12 +236,10 @@ const Spirograph = (props) => {
         pctx.stroke()
       } else {
         // if completed, start new spirograph
-
         mctx.clearRect(0, 0, movingCanvas.width, movingCanvas.height)
         delay(3000)
           .then(() => initSpirograph())
           .then(() => window.requestAnimationFrame(draw))
-
         return
       }
 
@@ -255,7 +248,7 @@ const Spirograph = (props) => {
       gearY = (1 - gearRadius) * Math.sin(angle) * size
       angle += speed
 
-      // // draw next frame
+      // draw next frame
       window.requestAnimationFrame(draw)
     } else {
       return
@@ -264,12 +257,7 @@ const Spirograph = (props) => {
 
   return (
     <Div>
-      <CanvasWrapper
-        onMouseDown={speedUp}
-        onMouseUp={speedDown}
-        onTouchStart={speedUp}
-        onTouchEnd={speedDown}
-      >
+      <CanvasWrapper>
         <Canvas ref={plottingCanvasContainer} />
       </CanvasWrapper>
       <CanvasWrapper
