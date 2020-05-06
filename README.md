@@ -3,7 +3,7 @@ Gabriel Adorf's personal website built with [gatsby](https://github.com/gatsbyjs
 
 Check it out here: [gabrieladorf.com](https://gabrieladorf.com)
 
-###Creating your own version
+### Creating your own version
 
 Feel free to build your own portfolio by forking and customizing this page.
 Before publishing your page please make sure to:
