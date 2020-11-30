@@ -21,9 +21,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-splitbee`,
       options: {
-        trackingId: 'UA-107072121-1',
+        includeInDevelopment: false,
+        delayTimeout: 0,
       },
     },
   ],
