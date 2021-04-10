@@ -25,19 +25,19 @@ const Work = () => {
           <Project
             logo={LifeTimeLogo()}
             title="LifeTime"
-            abstract="Secure data exchange infrastructure for healthcare."
+            abstract="Secure messenger for the healthcare sector."
             link={LifeTimeLink}
           />
           <Project
             logo={PalettteAppLogo()}
             title="Palettte App"
-            abstract="An app that allows you to build, analyze and edit smooth color palettes."
+            abstract="Build, analyze and edit smooth color palettes."
             link={PalettteLink}
           />
           <Project
             logo={KellerkindLogo()}
             title="Kellerkind"
-            abstract="A social event company organizing two festivals for electronic music and art with ~20.000 yearly visitors north of munich."
+            abstract="Social event company organizing two festivals for electronic music and art with ~20.000 yearly visitors north of munich."
             link={KellerkindLink}
           />
           <Project
