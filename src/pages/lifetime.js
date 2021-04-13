@@ -292,8 +292,9 @@ const LifeTime = () => {
           <p>
             On the patient side, LifeTime provides an Android and an iOS app
             that serve as electronic medical records and have elaborated
-            features for managing, scanning, receiving and sending files. It is
-            also equipped with sophisticated medication reminder features.
+            features for messaging and managing, scanning, receiving and sending
+            files. It is also equipped with sophisticated medication reminder
+            features.
           </p>
           <p>
             Originally, I had designed two relatively different apps for both
@@ -324,8 +325,7 @@ const LifeTime = () => {
           <h3>LifeTime for Doctors: The best interface is no interface</h3>
           <p>
             On the doctor&#39;s side LifeTime provides an Electron app for
-            asynchronous, encrypted transmission of files to patients or, as of
-            late, also directly to colleagues.
+            encrypted messaging to patients and colleagues.
           </p>
           <p>
             Here I had fewer comparable applications and fewer known patterns to
