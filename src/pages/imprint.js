@@ -19,11 +19,7 @@ const Imprint = () => {
           {process.env.GATSBY_CITY}
         </p>
         <h3>Kontakt</h3>
-        <p>
-          Telefon: {process.env.GATSBY_PHONE}
-          <br />
-          E-Mail: {process.env.GATSBY_EMAIL}
-        </p>
+        <p>E-Mail: {process.env.GATSBY_EMAIL}</p>
         <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
         <p>
           Gabriel Adorf
