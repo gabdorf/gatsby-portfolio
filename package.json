@@ -4,16 +4,16 @@
   "version": "1.0.0",
   "author": "Gabriel Adorf",
   "dependencies": {
-    "gatsby": "^4.4.0",
-    "gatsby-link": "^4.4.0",
-    "gatsby-plugin-react-helmet": "^5.4.0",
+    "gatsby": "^4.16.0",
+    "gatsby-link": "^4.16.0",
+    "gatsby-plugin-react-helmet": "^5.16.0",
     "gatsby-plugin-splitbee": "^0.2.0",
-    "gatsby-plugin-styled-components": "^5.4.0",
+    "gatsby-plugin-styled-components": "^5.16.0",
     "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.5"
   },
   "keywords": [
     "gatsby"
