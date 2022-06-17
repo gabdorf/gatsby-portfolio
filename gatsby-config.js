@@ -25,6 +25,7 @@ module.exports = {
       options: {
         includeInDevelopment: false,
         delayTimeout: 0,
+        disableCookie: true,
       },
     },
   ],
