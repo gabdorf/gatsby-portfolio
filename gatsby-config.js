@@ -20,13 +20,5 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-splitbee`,
-      options: {
-        includeInDevelopment: false,
-        delayTimeout: 0,
-        disableCookie: true,
-      },
-    },
   ],
 }

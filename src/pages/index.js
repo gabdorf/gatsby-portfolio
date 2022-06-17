@@ -7,6 +7,12 @@ import About from 'components/about'
 import Work from 'components/work'
 import Footer from 'components/footer'
 // import Breakpoints from 'utils/breakpoints'
+import splitbee from '@splitbee/web'
+
+// This initiliazes Splitbee.js
+splitbee.init({
+  disableCookie: true,
+})
 
 const App = () => {
   return (
