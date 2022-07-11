@@ -24,9 +24,7 @@ const Footer = () => {
       <FooterText>
         This page is open source, Check it out on&nbsp;
         <a href="https://github.com/gabdorf/gabriel-adorf-portfolio">Github</a>
-        <br />© {new Date().getFullYear()} Gabriel
-        Adorf&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="/imprint">Imprint</a>
+        <br />© {new Date().getFullYear()} John Doe
       </FooterText>
     </Section>
   )

@@ -21,20 +21,20 @@ const GlobalWrapper = (props) => {
     <Fragment>
       <Helmet>
         <html lang="en" />
-        <title>Gabriel Adorf</title>
-        <meta name="description" content="Gabriel Adorf's projects" />
+        <title>John Doe</title>
+        <meta name="description" content="John Doe's projects" />
         <meta
           name="keywords"
-          content="design, ux, ui, product, graphic, health, climbing, app, interface, experience, festival, techno, code"
+          content="keyword1, keyword2, keyword3"
         />
         <meta
           property="og:image"
-          content="https://www.gabrieladorf.com/static/kellerkindCover-14f87246d1614ff1cf339940bdc58186.jpg"
+          content="https://via.placeholder.com/250"
         />
-        <meta property="og:description" content="Gabriel Adorf's projects" />
+        <meta property="og:description" content="John Doe's projects" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gabrieladorf.com" />
-        <meta property="og:title" content="Gabriel Adorf" />
+        <meta property="og:url" content="https://johndoe.com" />
+        <meta property="og:title" content="John Doe" />
 
         <link
           rel="apple-touch-icon"

@@ -29,23 +29,11 @@ const About = () => {
       leftColumn={<SectionHeading>About</SectionHeading>}
       rightColumn={
         <Fragment>
-          <Big>
-            Hi. I'm Gabriel, a UI and UX designer living in&nbsp;Berlin. I bring
-            ideas to life with design and&nbsp;code.
-          </Big>
-          <p>
-            In my work I strive to optimize the aesthetic value and usability of
-            products without losing sight of the technical challenges and
-            limitations.
-          </p>
-          <p>
-            I am currently designing the future of medical infrastructure at{' '}
-            <Link to="/lifetime">LifeTime</Link> and hosting electronic music
-            festivals with <Link to="/kellerkind">Kellerkind</Link>.
-          </p>
+          <Big>Hi. I'm John. I love to design stuff.</Big>
+          <p>Currently I'm designing for Acme.</p>
           <p style={{ marginBottom: 0 }}>
-            Outside of work I'm passionate about my family, climbing,
-            windsurfing, snowboarding and mountain biking.
+            Outside of work I'm passionate about climbing, snowboarding and
+            mountain biking.
           </p>
         </Fragment>
       }

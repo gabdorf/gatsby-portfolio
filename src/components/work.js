@@ -5,15 +5,11 @@ import TwoColumns from 'components/twoColumns'
 import SectionHeading from 'components/sectionHeading'
 import Project from 'components/project'
 
-import KellerkindLogo from 'img/kellerkindlogo'
-import PalettteAppLogo from 'img/palettteapplogo'
-import LifeTimeLogo from 'img/lifetimelogo'
-import BamLogo from 'img/bamlogo'
+import Project1Logo from 'img/articles/project1/img1.jpg'
 
-const LifeTimeLink = <Link to="/lifetime">Read More</Link>
-const PalettteLink = <Link to="/palettteapp">Read More</Link>
-const KellerkindLink = <Link to="/kellerkind">Read More</Link>
-const BamLink = <Link to="/bam">Read More</Link>
+const Project1Link = <Link to="/project1">Read More</Link>
+const Project2Link = <Link to="/project2">Read More</Link>
+const Project3Link = <Link to="/project3">Read More</Link>
 
 const Work = () => {
   return (
@@ -23,28 +19,22 @@ const Work = () => {
       rightColumn={
         <Fragment>
           <Project
-            logo={LifeTimeLogo()}
-            title="LifeTime"
-            abstract="Secure messenger for the healthcare sector."
-            link={LifeTimeLink}
+            logo={Project1Logo}
+            title="Project 1"
+            abstract="This is the description for project 1."
+            link={Project1Link}
           />
           <Project
-            logo={PalettteAppLogo()}
-            title="Palettte App"
-            abstract="Build, analyze and edit smooth color palettes."
-            link={PalettteLink}
+            logo=""
+            title="Project 2"
+            abstract="This description is a little bit longer than the first one."
+            link={Project2Link}
           />
           <Project
-            logo={KellerkindLogo()}
-            title="Kellerkind"
-            abstract="Social event company organizing two festivals for electronic music and art with ~20.000 yearly visitors north of munich."
-            link={KellerkindLink}
-          />
-          <Project
-            logo={BamLogo()}
-            title="Bäm"
-            abstract="Climbing products and other stuff that give you the extra bäm effect."
-            link={BamLink}
+            logo=""
+            title="Project 3"
+            abstract="And this is the longest description. But it's a project worth a few more words than the second one."
+            link={Project3Link}
           />
         </Fragment>
       }

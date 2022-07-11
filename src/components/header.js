@@ -11,13 +11,13 @@ const Div = styled.div`
   flex-direction: row;
   flex: 0 0 auto;
   ${media.lg`
-  height: ${(props) => (props.article ? '64px' : '')};
+  height: ${props => (props.article ? '64px' : '')};
   `}
   ${media.sm`
-    display: ${(props) => (props.article ? 'flex' : 'block')};
+    display: ${props => (props.article ? 'flex' : 'block')};
   `};
   z-index: 10;
-  height: ${(props) => (props.article ? '74px' : '')};
+  height: ${props => (props.article ? '74px' : '')};
   ${media.xs`
     display: block;
     height: 112px;
@@ -27,7 +27,7 @@ const Div = styled.div`
 const LogoWrapper = styled.div`
   padding: 24px 0 24px 24px;
   ${media.sm`
-    padding: ${(props) => (props.article ? '24px 0 24px 24px' : '24px 0 0 0')};
+    padding: ${props => (props.article ? '24px 0 24px 24px' : '24px 0 0 0')};
   `};
   ${media.xs`
     padding: 24px 0 0 0;
@@ -82,7 +82,7 @@ const SocialLinks = styled.div`
   grid-template-columns: auto auto auto;
   padding: 15px 24px 0 24px;
   ${media.sm`
-    padding: ${(props) => (props.article ? '15px 12px 0 8px' : '4px 0 0 0')};
+    padding: ${props => (props.article ? '15px 12px 0 8px' : '4px 0 0 0')};
     grid-column-gap: 0;
   `}
   ${media.xs`
@@ -136,7 +136,7 @@ const Tooltip = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  opacity: ${(props) => (props.visible ? '1' : '0')};
+  opacity: ${props => (props.visible ? '1' : '0')};
   transition: opacity 300ms;
   ${media.sm`
     justify-content: center;
@@ -151,11 +151,11 @@ const TooltipIcon = styled.div`
 
 const TooltipText = styled.div``
 
-const Header = (props) => {
+const Header = props => {
   const [tooltipIsVisible, setTooltipIsVisible] = useState(false)
   const [tooltipText, setTooltipText] = useState('')
 
-  const showTooltip = (tooltipText) => {
+  const showTooltip = tooltipText => {
     setTooltipIsVisible(true)
     setTooltipText(tooltipText)
   }
@@ -169,21 +169,21 @@ const Header = (props) => {
       <LogoWrapper article={props.article}>
         {props.article && (
           <NameLink href="/">
-            <NameArticle article={props.article}>Gabriel Adorf</NameArticle>
+            <NameArticle article={props.article}>John Doe</NameArticle>
           </NameLink>
         )}
-        {!props.article && <Name article={props.article}>Gabriel Adorf</Name>}
-        {!props.article && <Role>UI / UX Design</Role>}
+        {!props.article && <Name article={props.article}>John Doe</Name>}
+        {!props.article && <Role>Designer</Role>}
       </LogoWrapper>
       <div>
         <SocialLinks article={props.article}>
           <SocialLink
-            href={`mailto:${process.env.GATSBY_EMAIL}`}
+            href={`mailto:johndoe@email.com`}
             onMouseOver={() => showTooltip('Mail')}
             onFocus={() => showTooltip('Mail')}
             onMouseLeave={hideTooltip}
             onBlur={hideTooltip}
-            aria-label="Send an email to Gabriel"
+            aria-label="Send an email to John"
           >
             <SvgWrapper>
               <InlineSvg>
@@ -192,13 +192,13 @@ const Header = (props) => {
             </SvgWrapper>
           </SocialLink>
           <SocialLink
-            href="https://twitter.com/gabdorf"
+            href="https://twitter.com"
             target="blank"
             onMouseOver={() => showTooltip('Twitter')}
             onFocus={() => showTooltip('Twitter')}
             onMouseLeave={hideTooltip}
             onBlur={hideTooltip}
-            aria-label="Gabriel's twitter profile"
+            aria-label="John's twitter profile"
           >
             <SvgWrapper>
               <InlineSvg>
@@ -207,13 +207,13 @@ const Header = (props) => {
             </SvgWrapper>
           </SocialLink>
           <SocialLink
-            href="https://dribbble.com/gabdorf"
+            href="https://dribbble.com"
             target="blank"
             onMouseOver={() => showTooltip('Dribbble')}
             onFocus={() => showTooltip('Dribbble')}
             onMouseLeave={hideTooltip}
             onBlur={hideTooltip}
-            aria-label="Gabriel's dribbble profile"
+            aria-label="John's dribbble profile"
           >
             <SvgWrapper>
               <InlineSvg>
