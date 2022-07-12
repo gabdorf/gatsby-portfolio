@@ -1,0 +1,34 @@
+{
+  "name": "gatsby-portfolio",
+  "description": "A personal page built with gatsby",
+  "version": "1.0.0",
+  "author": "Gabriel Schneider",
+  "dependencies": {
+    "gatsby": "^4.16.0",
+    "gatsby-link": "^4.16.0",
+    "gatsby-plugin-react-helmet": "^5.16.0",
+    "gatsby-plugin-splitbee": "^0.2.0",
+    "gatsby-plugin-styled-components": "^5.16.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.5"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.2",
+    "gatsby-plugin-root-import": "^2.0.8",
+    "prettier": "^2.5.1"
+  }
+}
